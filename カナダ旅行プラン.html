@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍁 カナダ旅行 2026 — Calgary & Rockies</title>
+<style>
+:root {
+  --bg: #EFF3F8;
+  --card: #FFFFFF;
+  --navy: #1B3A5C;
+  --navy-mid: #2A5A8C;
+  --navy-light: #3D7AB5;
+  --navy-xlight: #D6E6F5;
+  --navy-faint: #EBF3FA;
+  --gold: #8B6320;
+  --gold-light: #F9F3E3;
+  --red: #6B2020;
+  --red-light: #F7EEEE;
+  --green: #1A4D30;
+  --green-light: #EAF3EE;
+  --text: #1A2B3C;
+  --text-mid: #4A6078;
+  --text-light: #7A90A8;
+  --border: #C5D5E8;
+  --border-light: #E0EAF4;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+/* スマホでタップ可能エリアを適切に */
+a, button, input[type=checkbox] { touch-action: manipulation; }
+body {
+  font-family: -apple-system, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', 'Meiryo', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+a { color: var(--navy-mid); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 12px 12px 48px; }
+
+/* ━━━ HERO ━━━ */
+.hero {
+  background: linear-gradient(160deg, #0D2440 0%, #1B3A5C 50%, #2A5A8C 100%);
+  border-radius: 14px;
+  padding: 36px 28px 28px;
+  color: white;
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '🍁';
+  font-size: 140px;
+  position: absolute;
+  right: -10px;
+  top: -20px;
+  opacity: 0.08;
+  line-height: 1;
+}
+.hero .eyebrow { font-size: 11px; letter-spacing: 3px; color: #90B8D8; text-transform: uppercase; margin-bottom: 8px; }
+.hero h1 { font-size: 28px; font-weight: 800; letter-spacing: 1px; margin-bottom: 6px; }
+.hero .tagline { color: #A8C8E8; font-size: 14px; margin-bottom: 16px; }
+.hero-meta { display: flex; gap: 20px; flex-wrap: wrap; }
+.hero-meta span {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 13px;
+  color: #D0E4F5;
+}
+
+/* ━━━ SUMMARY CARDS ━━━ */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+@media (min-width: 600px) { .summary-grid { grid-template-columns: repeat(4,1fr); } }
+.sum-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(27,58,92,0.07);
+}
+.sum-card .icon { font-size: 24px; margin-bottom: 4px; }
+.sum-card .label { font-size: 10px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+.sum-card .val { font-size: 13px; font-weight: 700; color: var(--navy); }
+.sum-card .sub { font-size: 11px; color: var(--text-mid); margin-top: 2px; }
+
+/* ━━━ SECTION ━━━ */
+.section {
+  background: var(--card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(27,58,92,0.06);
+}
+.sec-hd {
+  background: var(--navy);
+  color: white;
+  padding: 11px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sec-hd.mid { background: var(--navy-mid); }
+.sec-hd.gold-hd { background: var(--gold); }
+.sec-hd.red-hd { background: var(--red); }
+.sec-hd.green-hd { background: var(--green); }
+.sec-body { padding: 16px 18px; }
+
+/* ━━━ NOTICE ━━━ */
+.notice {
+  border-radius: 7px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin: 10px 0;
+  border-left: 4px solid;
+}
+.notice.warn  { background: var(--gold-light);  border-color: var(--gold);  color: var(--text); }
+.notice.alert { background: var(--red-light);   border-color: var(--red);   color: var(--text); }
+.notice.info  { background: var(--navy-faint);  border-color: var(--navy-light); color: var(--text); }
+.notice.ok    { background: var(--green-light); border-color: var(--green); color: var(--text); }
+
+/* ━━━ TABLE ━━━ */
+.tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 320px; }
+th { background: var(--navy-xlight); color: var(--navy); padding: 8px 10px; text-align: left; font-weight: 700; border: 1px solid var(--border); }
+td { padding: 7px 10px; border: 1px solid var(--border); vertical-align: top; }
+tr:nth-child(even) td { background: var(--navy-faint); }
+.kv th { width: 100px; white-space: nowrap; }
+.kv td { font-size: 13px; }
+
+/* ━━━ TWO-COL ━━━ */
+.two-col { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 16px; }
+@media (min-width: 620px) { .two-col { grid-template-columns: 1fr 1fr; } }
+.two-col .section { margin-bottom: 0; }
+
+/* ━━━ MAP / LINK BUTTON ━━━ */
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--navy-xlight);
+  color: var(--navy);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  min-height: 36px;
+}
+.map-btn:hover { background: var(--navy); color: white; text-decoration: none; }
+.web-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: white;
+  color: var(--navy-mid);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  min-height: 36px;
+}
+.web-btn:hover { background: var(--navy-mid); color: white; text-decoration: none; }
+
+/* ━━━ FLIGHT TABLE ━━━ */
+.flight-group { margin-bottom: 14px; }
+.flight-label { font-weight: 700; color: var(--navy); font-size: 14px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.tag {
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 1px 7px;
+  letter-spacing: 0.5px;
+}
+.tag-navy { background: var(--navy); color: white; }
+.tag-mid  { background: var(--navy-mid); color: white; }
+
+/* ━━━ DAY CARDS ━━━ */
+.day-card { border-radius: 10px; overflow: hidden; margin-bottom: 10px; border: 1px solid var(--border-light); box-shadow: 0 1px 4px rgba(27,58,92,0.08); }
+.day-hd {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  color: white;
+  gap: 10px;
+  background: var(--navy);
+}
+.day-num { font-size: 11px; font-weight: 700; background: rgba(255,255,255,0.18); border-radius: 4px; padding: 3px 9px; white-space: nowrap; letter-spacing: 1px; flex-shrink: 0; }
+.day-title { font-weight: 700; font-size: 15px; flex: 1; }
+.day-date { font-size: 12px; opacity: 0.7; white-space: nowrap; flex-shrink: 0; }
+.day-body { background: white; }
+.day-item { padding: 9px 14px; font-size: 14px; border-bottom: 1px solid var(--border-light); display: flex; align-items: baseline; gap: 8px; }
+.day-item:last-child { border-bottom: none; }
+.day-item:nth-child(even) { background: var(--navy-faint); }
+.day-time { color: var(--navy-mid); font-weight: 700; font-size: 12px; white-space: nowrap; min-width: 48px; flex-shrink: 0; }
+.day-item.alert-row { background: var(--red-light) !important; color: var(--red); font-weight: 600; }
+.day-item.kent-row { background: #EFF5FB !important; }
+
+/* day header color variants */
+.dc-2 .day-hd { background: #1F4D7A; }
+.dc-3 .day-hd { background: #1A4D30; }
+.dc-4 .day-hd { background: #3D405B; }
+.dc-5 .day-hd { background: #1B3A5C; }
+.dc-6 .day-hd { background: #1A4D30; }
+.dc-7 .day-hd { background: var(--red); }
+
+/* ━━━ STAMPEDE ━━━ */
+.stampede-hero {
+  background: linear-gradient(135deg, #0D2440 0%, #1B3A5C 100%);
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  margin-bottom: 14px;
+  border: 1px solid var(--border);
+}
+.stampede-hero h3 { font-size: 18px; margin-bottom: 4px; }
+.stampede-hero .stamp-sub { color: #90B8D8; font-size: 13px; margin-bottom: 14px; }
+.stamp-events {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 8px;
+}
+@media (min-width: 600px) { .stamp-events { grid-template-columns: repeat(3,1fr); } }
+.stamp-ev {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.stamp-ev .ev-icon { font-size: 22px; margin-bottom: 4px; }
+.stamp-ev .ev-name { font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+.stamp-ev .ev-desc { font-size: 11px; color: #A8C8E8; line-height: 1.4; }
+
+/* ━━━ SPOT CARDS ━━━ */
+.spot-grid { display: flex; flex-direction: column; gap: 10px; }
+.spot-card {
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+}
+.spot-hd {
+  background: var(--navy-faint);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.spot-name { font-weight: 700; font-size: 14px; color: var(--navy); flex: 1; }
+.stars { color: var(--gold); font-size: 13px; }
+.star-empty { color: var(--border); }
+.spot-body { padding: 10px 14px; font-size: 13px; }
+.spot-desc { color: var(--text); margin-bottom: 8px; line-height: 1.6; }
+.spot-pros-cons { display: grid; grid-template-columns: 1fr; gap: 6px; margin-bottom: 8px; }
+@media (min-width: 500px) { .spot-pros-cons { grid-template-columns: 1fr 1fr; } }
+.pros, .cons { font-size: 12px; border-radius: 6px; padding: 6px 10px; }
+.pros { background: var(--green-light); color: var(--green); }
+.cons { background: var(--red-light); color: var(--red); }
+.pros b, .cons b { display: block; margin-bottom: 2px; }
+.spot-links { display: flex; gap: 6px; flex-wrap: wrap; }
+.spot-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.meta-badge {
+  background: var(--navy-xlight);
+  color: var(--navy-mid);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ━━━ SPOT PHOTO ━━━ */
+.spot-photo {
+  height: 160px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  background: #1B3A5C;
+}
+.spot-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.spot-photo:hover img { transform: scale(1.04); }
+/* グラデーションフォールバック用（写真なしスポット） */
+.spot-photo.no-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+}
+.spot-photo-lbl {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  margin-top: 6px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 0 8px;
+  line-height: 1.3;
+}
+/* ━━━ SECTION SUBTITLE ━━━ */
+.subsec {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 18px 0 10px;
+  padding-left: 10px;
+  border-left: 3px solid var(--navy-mid);
+}
+.subsec:first-child { margin-top: 0; }
+
+/* ━━━ CHECKLIST ━━━ */
+.chk-list { list-style: none; }
+.chk-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border-light); font-size: 14px; }
+.chk-item:last-child { border-bottom: none; }
+.chk-item input[type=checkbox] { width: 20px; height: 20px; flex-shrink: 0; cursor: pointer; accent-color: var(--navy); }
+.chk-cat { font-size: 11px; font-weight: 700; color: var(--text-light); width: 48px; flex-shrink: 0; }
+
+/* ━━━ NOTE BLOCKS ━━━ */
+.note-blk { border: 1px solid var(--border-light); border-radius: 8px; overflow: hidden; margin-bottom: 8px; }
+.note-title { background: var(--navy); color: white; padding: 7px 14px; font-size: 13px; font-weight: 700; }
+.note-blk ul { list-style: none; }
+.note-blk ul li { padding: 6px 14px; font-size: 13px; border-bottom: 1px solid var(--border-light); }
+.note-blk ul li:last-child { border-bottom: none; }
+.note-blk ul li:nth-child(even) { background: var(--navy-faint); }
+.note-blk ul li::before { content: "・"; color: var(--navy-light); }
+
+/* ━━━ TODO ━━━ */
+.todo-tbl td:first-child { white-space: nowrap; font-size: 12px; }
+.todo-tbl td:nth-child(3) { text-align: center; white-space: nowrap; }
+.badge-done { background: var(--green-light); color: var(--green); border-radius: 4px; padding: 1px 7px; font-size: 11px; font-weight: 700; }
+.badge-todo { background: var(--gold-light); color: var(--gold); border-radius: 4px; padding: 1px 7px; font-size: 11px; font-weight: 700; }
+.badge-need { background: var(--red-light); color: var(--red); border-radius: 4px; padding: 1px 7px; font-size: 11px; font-weight: 700; }
+
+/* ━━━ FOOTER ━━━ */
+.footer { text-align: center; color: var(--text-light); font-size: 12px; padding: 20px 0 10px; border-top: 1px solid var(--border-light); margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ━━━ HERO ━━━ -->
+<div class="hero">
+  <div class="eyebrow">Canada Trip 2026</div>
+  <h1>🍁 カナダ、行くぞ。</h1>
+  <div class="tagline">カルガリー・バンフ・ドラムヘラー &mdash; 7日間の大冒険</div>
+  <div class="hero-meta">
+    <span>📅 7月8日（水）〜 14日（火）</span>
+    <span>👥 4名</span>
+    <span>🏠 Okotoks 拠点</span>
+    <span>🚙 SUV レンタカー</span>
+  </div>
+</div>
+
+<!-- ━━━ SUMMARY ━━━ -->
+<div class="summary-grid">
+  <div class="sum-card">
+    <div class="icon">✈️</div>
+    <div class="label">フライト</div>
+    <div class="val">WS081 / WS080</div>
+    <div class="sub">WestJet 直行便</div>
+  </div>
+  <div class="sum-card">
+    <div class="icon">🚙</div>
+    <div class="label">レンタカー</div>
+    <div class="val">Ford Edge SUV</div>
+    <div class="sub">Thrifty / 7日間</div>
+  </div>
+  <div class="sum-card">
+    <div class="icon">🏠</div>
+    <div class="label">宿泊</div>
+    <div class="val">Mountain View</div>
+    <div class="sub">Okotoks, Alberta</div>
+  </div>
+  <div class="sum-card">
+    <div class="icon">📱</div>
+    <div class="label">eSIM</div>
+    <div class="val">10GB / Bell LTE</div>
+    <div class="sub">Airalo 購入済み</div>
+  </div>
+</div>
+
+<!-- ━━━ FLIGHTS ━━━ -->
+<div class="section">
+  <div class="sec-hd">✈ フライト情報</div>
+  <div class="sec-body">
+    <div class="flight-group">
+      <div class="flight-label"><span class="tag tag-navy">3名</span> エアトリ手配</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>区間</th><th>出発</th><th>到着</th><th>便名</th></tr>
+        <tr><td>成田T1 → カルガリー</td><td>7/8（水）18:30</td><td>12:40（現地同日）</td><td>WS081</td></tr>
+        <tr><td>カルガリー → 成田T1</td><td>7/14（火）<strong>14:50</strong></td><td>7/15（水）16:20</td><td>WS080</td></tr>
+      </table></div>
+    </div>
+    <div class="flight-group">
+      <div class="flight-label"><span class="tag tag-mid">健太郎（KENTARO SUGIURA）</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>区間</th><th>出発</th><th>到着</th><th>便名</th></tr>
+        <tr><td>成田 → カルガリー</td><td><strong>7/10（金）18:30</strong></td><td><strong>7/10（金）12:40</strong></td><td>WS081</td></tr>
+        <tr><td>カルガリー → 成田</td><td><strong>7/13（月）14:50</strong></td><td>7/14（火）16:20</td><td>WS080</td></tr>
+      </table></div>
+    </div>
+    <div class="notice alert">⚠ <strong>健太郎は2日遅れで到着（7/10）、1日早く帰国（7/13）。</strong> 到着日はドラムヘラーDay、帰国日はバンフDay と被るため、それぞれ送迎の調整が必要。</div>
+  </div>
+</div>
+
+<!-- ━━━ CAR + STAY ━━━ -->
+<div class="two-col">
+  <div class="section">
+    <div class="sec-hd">🚙 レンタカー</div>
+    <div class="sec-body">
+      <table class="kv">
+        <tr><th>会社</th><td>Thrifty（Discover Cars）</td></tr>
+        <tr><th>受け取り</th><td>7/8（水）13:30<br><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Thrifty+Car+Rental+Calgary+International+Airport" target="_blank">📍 地図で確認</a></td></tr>
+        <tr><th>返却</th><td>7/14（火）<span style="color:var(--red);font-weight:700;">実質 12:30 締切</span></td></tr>
+        <tr><th>車両</th><td>Ford Edge SUV（5席 / AT）</td></tr>
+        <tr><th>補償</th><td>完全補償済み<br><small style="color:var(--text-mid);">追加保険は断ってOK</small></td></tr>
+        <tr><th>燃料</th><td>満タンプラン<br><small style="color:var(--text-mid);">返却時の給油不要</small></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="section">
+    <div class="sec-hd">🏠 宿泊</div>
+    <div class="sec-body">
+      <table class="kv">
+        <tr><th>物件</th><td>Mountain View Retreat</td></tr>
+        <tr><th>住所</th><td>15 Aster Link, Okotoks, AB<br><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=15+Aster+Link+Okotoks+Alberta" target="_blank">📍 地図で確認</a></td></tr>
+        <tr><th>ホスト</th><td>Amie</td></tr>
+        <tr><th>IN</th><td>7/8（水）16:00〜</td></tr>
+        <tr><th>OUT</th><td>7/14（火）11:00まで</td></tr>
+        <tr><th>ルール</th><td>22:00〜7:00 静音 / ペット不可</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="notice info">🗺 <strong>アクセス（空港→宿）:</strong> Highway 2 南下 → Okotoks 出口 → D'arcy Ranch Drive 右折 → Aster Link 左折（約45分）<br>入口：家の側面ドア → 階段を下りてスイートへ。駐車は裏口または路上OK。</div>
+
+<!-- ━━━ SCHEDULE ━━━ -->
+<div class="section">
+  <div class="sec-hd">📅 日程プラン</div>
+  <div class="sec-body">
+
+    <!-- Day 1 -->
+    <div class="day-card">
+      <div class="day-hd">
+        <span class="day-num">DAY 1</span>
+        <span class="day-title">到着 &amp; カジノ 🎰</span>
+        <span class="day-date">7月8日（水）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">12:40</span><span>✈ 3名 カルガリー空港 YYC 着（WS081）</span></div>
+        <div class="day-item"><span class="day-time">13:30</span><span>🚙 Thrifty レンタカー受け取り（ターミナル内カウンター） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Thrifty+Car+Rental+Calgary+International+Airport" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">〜16:00</span><span>🤠 カルガリー市内観光 or スタンピード（開催中！）/ 軽く食事</span></div>
+        <div class="day-item"><span class="day-time">16:00</span><span>🏠 Mountain View Retreat チェックイン（Okotoks） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=15+Aster+Link+Okotoks+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">夜</span><span>🎰 <strong>カジノ</strong> — Grey Eagle Resort &amp; Casino（宿から約35分） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Grey+Eagle+Resort+Casino+Calgary" target="_blank">📍 地図</a></span></div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card dc-2">
+      <div class="day-hd">
+        <span class="day-num">DAY 2</span>
+        <span class="day-title">ホームパーティ 🎉</span>
+        <span class="day-date">7月9日（木）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">午前</span><span>🛒 買い出し — <a href="https://www.google.com/maps/search/?api=1&query=T%26T+Supermarket+Calgary" target="_blank">T&amp;T スーパーマーケット</a>（アジア食材充実）/ Co-op / Safeway</span></div>
+        <div class="day-item"><span class="day-time">午後</span><span>🎉 ホームパーティ 開始！</span></div>
+        <div class="day-item"><span class="day-time">tip</span><span>🍋 手土産：レモンサワー缶、日本のお菓子（ポッキー・抹茶Kit Kat等）が喜ばれる</span></div>
+        <div class="day-item"><span class="day-time">tip</span><span>🤠 <strong>スタンピード開催中！</strong> 夜にスタンピードパークへ足を延ばすのもアリ（40分）</span></div>
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-card dc-3">
+      <div class="day-hd">
+        <span class="day-num">DAY 3</span>
+        <span class="day-title">ドラムヘラー 🦕 &amp; 健太郎 到着</span>
+        <span class="day-date">7月10日（金）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">早朝</span><span>🚗 Okotoksを出発 → ドラムヘラーへ（東へ約2時間）</span></div>
+        <div class="day-item"><span class="day-time">午前</span><span>🦕 <strong>ロイヤル・ティレル博物館</strong>（世界最大級の恐竜博物館・事前予約推奨） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Royal+Tyrrell+Museum+Drumheller+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item kent-row"><span class="day-time">12:40</span><span>🧳 <strong>健太郎 YYC 到着</strong>（WS081）→ Uberで宿へ直行（約45分）or 帰路で合流</span></div>
+        <div class="day-item"><span class="day-time">午後</span><span>🪨 <strong>Horseshoe Canyon</strong>（バッドランドの絶景） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Horseshoe+Canyon+Drumheller+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">午後</span><span>🗿 <strong>ホードゥー</strong>（柱状奇岩群・無料） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Drumheller+Hoodoos+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">夕方</span><span>🏠 宿に戻り4名全員合流！</span></div>
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day-card dc-4">
+      <div class="day-hd">
+        <span class="day-num">DAY 4</span>
+        <span class="day-title">結婚式 💍</span>
+        <span class="day-date">7月11日（土）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">終日</span><span>👔 <strong>結婚式</strong>（カルガリー周辺 / Okotoksから〜1時間圏内）4名で参加</span></div>
+        <div class="day-item"><span class="day-time">持参</span><span>スーツ・ネクタイ・革靴 ← 忘れずに！</span></div>
+        <div class="day-item"><span class="day-time">確認</span><span>式場・開始時刻・ドレスコードを事前に主催側へ確認</span></div>
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="day-card dc-5">
+      <div class="day-hd">
+        <span class="day-num">DAY 5</span>
+        <span class="day-title">なつきと遊ぶ 🤝</span>
+        <span class="day-date">7月12日（日）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">終日</span><span>🤝 なつきさんと合流（4名 + なつきさん）— 場所・内容は事前調整</span></div>
+        <div class="day-item"><span class="day-time">tip</span><span>🤠 <strong>スタンピード最終日！</strong>（〜7/13）一緒に行くのも最高の思い出になるかも</span></div>
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="day-card dc-6">
+      <div class="day-hd">
+        <span class="day-num">DAY 6</span>
+        <span class="day-title">バンフ 🏔 &amp; 健太郎 帰国</span>
+        <span class="day-date">7月13日（月）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item kent-row"><span class="day-time">⚠ 注意</span><span><strong>健太郎はこの日 14:50 カルガリー発</strong> → チェックイン締切は <strong>12:50</strong><br>空港はバンフから約1.5時間 → <strong>11:00〜11:30 には現地を出発</strong>すること</span></div>
+        <div class="day-item"><span class="day-time">早朝</span><span>🚗 Okotoksを出発 → バンフ・ルイーズ方面へ（西へ約1.5時間）</span></div>
+        <div class="day-item"><span class="day-time">午前</span><span>💎 <strong>レイク・ルイーズ</strong>（早めに行くほど空いてる・駐車場争奪） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Lake+Louise+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">午前</span><span>🌊 <strong>モレーン湖</strong>（シャトルバス事前予約必須） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Moraine+Lake+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">〜11:00</span><span>🏘 <strong>バンフ旧市街</strong>で昼食・土産 → ここで切り上げて出発 <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Banff+Avenue+Banff+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item kent-row"><span class="day-time">11:00</span><span>🚗 <strong>健太郎を空港へ送る</strong>（バンフ → YYC 約1.5時間）</span></div>
+        <div class="day-item kent-row"><span class="day-time">12:30</span><span>🧳 <strong>健太郎 YYC チェックイン（12:50締切）</strong><br>✈ 14:50 WS080 カルガリー出発 → 翌7/14（火）16:20 成田着</span></div>
+        <div class="day-item"><span class="day-time">13:00〜</span><span>🚡 残り3名：時間があれば <strong>サルファー山ゴンドラ</strong> or <strong>バーミリオン湖</strong> <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Vermilion+Lakes+Banff+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">夕方</span><span>🏠 3名 Okotoks 宿に戻る（最終夜）</span></div>
+      </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="day-card dc-7">
+      <div class="day-hd">
+        <span class="day-num">DAY 7</span>
+        <span class="day-title">3名 帰国 ⚠ 時間厳守！</span>
+        <span class="day-date">7月14日（火）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">11:00</span><span>🏠 Mountain View Retreat チェックアウト（3名）</span></div>
+        <div class="day-item"><span class="day-time">〜12:00</span><span>🚗 カルガリー空港 YYC 到着（宿から約45分）</span></div>
+        <div class="day-item alert-row"><span class="day-time">⚠ 12:30</span><span><strong>Thrifty レンタカー返却 ← ここが実質の締切！</strong>（契約は15:00だが搭乗に間に合わない）</span></div>
+        <div class="day-item"><span class="day-time">12:50</span><span>チェックインカウンター締切（14:50発の2時間前）</span></div>
+        <div class="day-item"><span class="day-time">14:50</span><span>✈ WS080 カルガリー出発（3名）→ 翌7/15（水）16:20 成田T1 着</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ━━━ STAMPEDE SPECIAL ━━━ -->
+<div class="section">
+  <div class="sec-hd gold-hd">🤠 特集：カルガリー・スタンピード — 滞在中まるかぶり開催！</div>
+  <div class="sec-body">
+    <div class="notice warn" style="margin-top:0;">📅 <strong>2026年 開催期間：7月3日〜12日</strong> ── 滞在中の 7/8〜12 の5日間がドンピシャで重なる！</div>
+    <div class="stampede-hero">
+      <h3>🌎 "地球上最大の野外ショー"</h3>
+      <div class="stamp-sub">毎年100万人以上が訪れる、カナダが誇る世界最大のカウボーイ祭り。ロデオ・音楽・グルメ・花火が10日間にわたって街全体で展開される。</div>
+      <div class="stamp-events">
+        <div class="stamp-ev">
+          <div class="ev-icon">🤠</div>
+          <div class="ev-name">世界最高額ロデオ</div>
+          <div class="ev-desc">世界中から猛者が集結。馬・牛に乗る8秒間のドラマに会場が沸騰する。</div>
+        </div>
+        <div class="stamp-ev">
+          <div class="ev-icon">🏇</div>
+          <div class="ev-name">チャックワゴンレース</div>
+          <div class="ev-desc">4頭立て馬車が砂煙を上げながら疾走。スピードと迫力で毎回大歓声。</div>
+        </div>
+        <div class="stamp-ev">
+          <div class="ev-icon">🎤</div>
+          <div class="ev-name">毎夜コンサート</div>
+          <div class="ev-desc">グランドスタンドでビッグアーティストのライブ。チケットは事前購入推奨。</div>
+        </div>
+        <div class="stamp-ev">
+          <div class="ev-icon">🎆</div>
+          <div class="ev-name">グランドスタンドショー</div>
+          <div class="ev-desc">コンサート後の大花火フィナーレ。カナダ最大規模の演出。</div>
+        </div>
+        <div class="stamp-ev">
+          <div class="ev-icon">🥞</div>
+          <div class="ev-name">無料パンケーキ朝食</div>
+          <div class="ev-desc">市内各所で毎朝開催。長蛇の列でも食べる価値あり！地元民も並ぶ。</div>
+        </div>
+        <div class="stamp-ev">
+          <div class="ev-icon">🍟</div>
+          <div class="ev-name">スタンピードフード</div>
+          <div class="ev-desc">ディープフライドオレオ・バッファローステーキ・クレイジーなフードが勢揃い。</div>
+        </div>
+        <div class="stamp-ev">
+          <div class="ev-icon">🎡</div>
+          <div class="ev-name">ミッドウェイ（遊園地）</div>
+          <div class="ev-desc">乗り物・射的・ゲームが集まる巨大アミューズメントエリア。</div>
+        </div>
+        <div class="stamp-ev">
+          <div class="ev-icon">🪶</div>
+          <div class="ev-name">インディアンビレッジ</div>
+          <div class="ev-desc">先住民族の伝統文化・踊り・工芸品を間近で体験できる貴重な場所。</div>
+        </div>
+        <div class="stamp-ev">
+          <div class="ev-icon">👢</div>
+          <div class="ev-name">カウボーイ気分で参加</div>
+          <div class="ev-desc">街全体がウエスタンモードに！カウボーイハットで乗り込もう。</div>
+        </div>
+      </div>
+    </div>
+    <div class="pros" style="margin-bottom:8px;">
+      <b>✔ おすすめポイント</b>
+      一生に一度は見るべきスケール。カルガリーに来たなら絶対に外せない。7/8（Day1）の夜にカジノの代わりに行くのも全然アリ。入場料は高いが無料エリアも多い。
+    </div>
+    <div class="cons" style="margin-bottom:10px;">
+      <b>✘ デメリット</b>
+      入場料 $20〜30 + グランドスタンドは別料金。駐車場は激混み（公共交通機関 or Uber 推奨）。7月の昼は炎天下なので帽子・日焼け止め必須。
+    </div>
+    <div class="spot-links">
+      <a class="web-btn" href="https://www.calgarystampede.com/" target="_blank">🌐 公式サイト（英語）</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Calgary+Stampede+Park+Calgary+Alberta" target="_blank">📍 Googleマップ</a>
+    </div>
+  </div>
+</div>
+
+<!-- ━━━ SPOTS ━━━ -->
+<div class="section">
+  <div class="sec-hd mid">🗺 おすすめ観光スポット・アクティビティ</div>
+  <div class="sec-body">
+
+    <!-- Okotoks -->
+    <div class="subsec">🏘 Okotoks 周辺（拠点から近い）</div>
+    <div class="spot-grid">
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">Okotoks Erratic（Big Rock）</span>
+          <span class="stars">★★★<span class="star-empty">★★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Bigrock.jpg" alt="Okotoks Erratic — Big Rock" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 宿から5分</span>
+            <span class="meta-badge">無料</span>
+            <span class="meta-badge">屋外</span>
+          </div>
+          <div class="spot-desc">約18,000トン！氷河期に遠くカナダ北部から運ばれてきた世界最大級の迷子石。何もないカナダの大平原にドンと鎮座する姿はなんとも不思議で圧倒的。写真映え間違いなし。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>宿から5分・無料・ユニークな体験</div>
+            <div class="cons"><b>✘ デメリット</b>観光施設ではないので滞在は30分程度</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Okotoks+Erratic+Big+Rock+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">Sheep River Provincial Park</span>
+          <span class="stars">★★★★<span class="star-empty">★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo no-photo" style="background:linear-gradient(150deg,#1A4D30,#2D7A45);">🌿<div class="spot-photo-lbl">Sheep River Provincial Park</div></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 宿から20分</span>
+            <span class="meta-badge">無料</span>
+            <span class="meta-badge">ハイキング</span>
+          </div>
+          <div class="spot-desc">Sheep Riverに沿って広がる州立公園。初心者でも歩けるハイキングコースが多数あり、運がよければシカやムース、ビッグホーンシープに遭遇できる。7月は花も美しく、川のせせらぎが気持ちいい。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>無料・宿から近い・自然が豊か</div>
+            <div class="cons"><b>✘ デメリット</b>日差し強烈・虫除けスプレー推奨</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Sheep+River+Provincial+Park+Alberta" target="_blank">📍 Googleマップ</a>
+            <a class="web-btn" href="https://www.travelalberta.com/ja/" target="_blank">🌐 Travel Alberta（日本語）</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Calgary -->
+    <div class="subsec">🏙 カルガリー市内（宿から40〜50分）</div>
+    <div class="spot-grid">
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">Heritage Park Historical Village</span>
+          <span class="stars">★★★★<span class="star-empty">★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Mainstreet-Heritage_park.jpg" alt="Heritage Park Historical Village" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 宿から40分</span>
+            <span class="meta-badge">入場料 $30前後</span>
+            <span class="meta-badge">半日</span>
+          </div>
+          <div class="spot-desc">カナダ西部最大の野外博物館。19世紀の開拓時代の建物や蒸気機関車が丸ごと保存されていて、まるでタイムスリップしたよう。馬車や蒸気船にも乗れる。歴史に興味がなくても普通に楽しい。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>体験型で楽しい・写真映え・半日過ごせる</div>
+            <div class="cons"><b>✘ デメリット</b>入場料がやや高め・夏は暑い</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Heritage+Park+Historical+Village+Calgary" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">カルガリータワー展望台</span>
+          <span class="stars">★★★<span class="star-empty">★★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Calgary_Tower_%288033515499%29_straightened_2012.jpg" alt="Calgary Tower" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 宿から45分</span>
+            <span class="meta-badge">入場料 $18前後</span>
+            <span class="meta-badge">1〜2時間</span>
+          </div>
+          <div class="spot-desc">高さ190mの展望台からカルガリー市内とロッキー山脈が一望できる。ガラスの床の上に立てるスリル体験も！スタンピード期間中は街がカウボーイ一色に染まっていて眺めも面白い。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>街の全景が見える・ガラス床スリル体験</div>
+            <div class="cons"><b>✘ デメリット</b>景色はシンプル・コスパはやや低め</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Calgary+Tower+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">17th Avenue SW（グルメ&amp;バーストリート）</span>
+          <span class="stars">★★★★<span class="star-empty">★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo no-photo" style="background:linear-gradient(150deg,#1A2040,#3D2B5E);">🍺<div class="spot-photo-lbl">17th Avenue SW</div></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 宿から45分</span>
+            <span class="meta-badge">無料（飲食代のみ）</span>
+            <span class="meta-badge">夜がおすすめ</span>
+          </div>
+          <div class="spot-desc">カルガリー随一の食とナイトライフのメインストリート。世界各国のレストラン・おしゃれなバー・クラフトビールのブルワリーが建ち並ぶ。スタンピード期間中は特に賑わい、カウボーイスタイルの人々で溢れかえる。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>選択肢豊富・夜の雰囲気が最高・スタンピード中は格別</div>
+            <div class="cons"><b>✘ デメリット</b>駐車場が少ない・スタンピード中は混雑</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=17th+Avenue+SW+Calgary+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">Grey Eagle Resort &amp; Casino</span>
+          <span class="stars">★★★★<span class="star-empty">★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo no-photo" style="background:linear-gradient(150deg,#0D1F33,#1B3A5C);">🎰<div class="spot-photo-lbl">Grey Eagle Resort &amp; Casino</div></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 宿から35分</span>
+            <span class="meta-badge">19歳以上</span>
+            <span class="meta-badge">深夜まで営業</span>
+          </div>
+          <div class="spot-desc">Okotoksから最も近い大型カジノリゾート。スロット・テーブルゲーム（ブラックジャック・ポーカー等）から本格ライブエンターテイメントまで揃う。レストランも充実しているので夕食から流れ込んでカジノを楽しめる。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>宿から一番近い・深夜まで営業・食事込みで楽しめる</div>
+            <div class="cons"><b>✘ デメリット</b>車が必要・飲酒運転厳禁なのでドライバーが必要</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Grey+Eagle+Resort+Casino+Calgary" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">T&amp;T スーパーマーケット</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo no-photo" style="background:linear-gradient(150deg,#1A4D30,#2874A6);">🛒<div class="spot-photo-lbl">T&amp;T Supermarket</div></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 市内数店舗</span>
+            <span class="meta-badge">必須立ち寄り</span>
+          </div>
+          <div class="spot-desc">カナダ最大のアジア系スーパー。日本の調味料・インスタント食品・チューハイ類・お菓子がほぼ全部揃う。ホームパーティの買い出しはここ一択。日本語表記の商品も多くて安心。レモンサワーも現地調達可能。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>日本食材が揃う・価格手頃・現地調達で手荷物減らせる</div>
+            <div class="cons"><b>✘ デメリット</b>市内なので少し遠い（約40〜50分）</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=T%26T+Supermarket+Calgary+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Drumheller -->
+    <div class="subsec">🦕 ドラムヘラー周辺（Day 3 / 7月10日）</div>
+    <div class="spot-grid">
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">ロイヤル・ティレル博物館</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Royal_Tyrrell_Museum_from_the_staircase.jpg" alt="Royal Tyrrell Museum" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 Okotoksから2時間</span>
+            <span class="meta-badge">入場料 $23前後</span>
+            <span class="meta-badge">2〜3時間</span>
+            <span class="meta-badge" style="background:var(--red-light);color:var(--red);">⚠ 事前予約推奨</span>
+          </div>
+          <div class="spot-desc">世界最大級の恐竜博物館。40体以上の実物大骨格が所狭しと並ぶ圧倒的スケールは、大人も子供も関係なく興奮する。バッドランドの真っ只中に建つ建物自体もかっこいい。恐竜好きじゃなくても行ったら絶対楽しめる。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>圧倒的スケール・世界最高水準・ドラムヘラーの絶対メイン</div>
+            <div class="cons"><b>✘ デメリット</b>夏の混雑が激しい・事前予約がほぼ必須・英語のみ</div>
+          </div>
+          <div class="spot-links">
+            <a class="web-btn" href="https://tyrrellmuseum.com/" target="_blank">🌐 公式サイト</a>
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Royal+Tyrrell+Museum+Drumheller+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">Horseshoe Canyon（ホースシュー渓谷）</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Badlands-Drumheller.jpg" alt="Horseshoe Canyon — Drumheller Badlands" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 博物館から10分</span>
+            <span class="meta-badge">無料</span>
+            <span class="meta-badge">1〜2時間</span>
+          </div>
+          <div class="spot-desc">「カナダのグランドキャニオン」と称される赤茶色の大渓谷。7500万年前の地層がむき出しになった地形は地球の歴史を肌で感じる体験。日の出・日の入り時刻は色が劇的に変わって絶景。歩いて谷底まで下りることもできる。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>無料・絶景・博物館のついでに立ち寄れる</div>
+            <div class="cons"><b>✘ デメリット</b>日差しが強烈・日焼け止め必須・夏の昼は暑すぎる</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Horseshoe+Canyon+Drumheller+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">ホードゥー（Hoodoos）</span>
+          <span class="stars">★★★★<span class="star-empty">★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Hoodoos%2C_Drumheller%2C_Alberta.jpg" alt="Hoodoos — Drumheller Alberta" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 町から5分</span>
+            <span class="meta-badge">無料</span>
+            <span class="meta-badge">30〜60分</span>
+          </div>
+          <div class="spot-desc">何百万年もの風雨で削られた、キノコ型の不思議な岩柱群。SF映画のセットのような異星感があって写真映え抜群。夕暮れ時はオレンジ色に輝いて特に幻想的。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>無料・フォトスポット最高・アクセスも簡単</div>
+            <div class="cons"><b>✘ デメリット</b>滞在時間は短め・見どころが限られる</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Drumheller+Hoodoos+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">Wayne（廃坑の町）</span>
+          <span class="stars">★★★<span class="star-empty">★★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Rosedeer_Hotel_Wayne_1.jpg" alt="Wayne Alberta — ghost town" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 博物館から20分</span>
+            <span class="meta-badge">無料</span>
+          </div>
+          <div class="spot-desc">かつて炭鉱で栄えた住人数人の超小さな廃坑の町。橋を11個渡って辿り着く奥地にある「ラスト・チャンス・サルーン」は100年以上の歴史を持つバー。独特の雰囲気がある。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>独特の雰囲気・廃墟感・歴史的バーで一杯</div>
+            <div class="cons"><b>✘ デメリット</b>遠い・道が細い・見どころは限られる</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Wayne+Alberta+Canada" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Banff -->
+    <div class="subsec">🏔 バンフ国立公園周辺（Day 6 / 7月13日）</div>
+    <div class="notice info" style="margin-bottom:10px;">🎫 <strong>入場パスについて：</strong> バンフ国立公園は有料（$75.25/人 年間パス 或いは $22前後/日）。購入は <a href="https://www.pc.gc.ca/ja/pn-np/ab/banff" target="_blank">Parks Canada 公式（日本語あり）</a> から事前予約がスムーズ。</div>
+    <div class="spot-grid">
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">レイク・ルイーズ</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Lake_Louise_in_Banff_National_Park%2C_boat_view_2.jpg" alt="Lake Louise — Banff National Park" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 バンフから45分</span>
+            <span class="meta-badge">パス込み</span>
+            <span class="meta-badge">2〜3時間</span>
+          </div>
+          <div class="spot-desc">カナダドル20ドル紙幣にも描かれた「カナダの宝石」。エメラルドグリーンの湖面に氷河を抱く山が映り込む景色はまさに絶景中の絶景。実物を見たときの「うわ、本当にこの色なんだ」という感動は写真では伝わらない。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>カナダ観光の最高峰・写真映えNo.1・カヌー体験も可能</div>
+            <div class="cons"><b>✘ デメリット</b>夏は激混み・駐車場が朝から満車・カヌーは約$120/時と高め</div>
+          </div>
+          <div class="spot-links">
+            <a class="web-btn" href="https://www.banfflakelouise.com/ja/" target="_blank">🌐 公式観光サイト（日本語）</a>
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Lake+Louise+Alberta+Canada" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">モレーン湖</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Moraine_Lake_17092005.jpg" alt="Moraine Lake — Alberta" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 バンフから1時間</span>
+            <span class="meta-badge" style="background:var(--red-light);color:var(--red);">⚠ シャトルバス事前予約必須</span>
+          </div>
+          <div class="spot-desc">「カナダで最も美しい湖」と称される、透き通る群青色の湖。コントラストが異様なほど美しく、初めて見た人は思わず声を上げてしまうほど。ただし夏はマイカー乗り入れ不可でシャトルバス予約が必須。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>世界屈指の美しさ・ルイーズと合わせて最強コンビ</div>
+            <div class="cons"><b>✘ デメリット</b>シャトルバス予約が早期に完売・行けない可能性も（要確認）</div>
+          </div>
+          <div class="spot-links">
+            <a class="web-btn" href="https://www.banfflakelouise.com/ja/" target="_blank">🌐 公式サイト（日本語）</a>
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Moraine+Lake+Alberta+Canada" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">バンフ・ゴンドラ（サルファー山）</span>
+          <span class="stars">★★★★<span class="star-empty">★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Day267jsulphurmountain.JPG" alt="Banff Gondola — Sulphur Mountain" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 バンフ旧市街から5分</span>
+            <span class="meta-badge">約 $65/人</span>
+            <span class="meta-badge">1〜2時間</span>
+          </div>
+          <div class="spot-desc">ゴンドラで山頂（2,281m）まで一気に上昇。頂上からはバンフの街・弓川・ロッキー山脈の峰々が360度パノラマで広がる。晴れた日はどこまでも見渡せて最高。山頂レストランでコーヒー片手に絶景を楽しもう。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>楽に絶景へ到達できる・天気が良ければ最高</div>
+            <div class="cons"><b>✘ デメリット</b>値段高め・山頂は寒い場合あり（上着持参）</div>
+          </div>
+          <div class="spot-links">
+            <a class="web-btn" href="https://www.banffgondola.com/" target="_blank">🌐 公式サイト（英語）</a>
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Banff+Gondola+Sulphur+Mountain+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">ジョンストン渓谷ハイキング</span>
+          <span class="stars">★★★★<span class="star-empty">★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/JohnstonCanyonUpperFalls.jpg" alt="Johnston Canyon Upper Falls" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 バンフから20分</span>
+            <span class="meta-badge">パス込み・無料</span>
+            <span class="meta-badge">往復3〜5km</span>
+          </div>
+          <div class="spot-desc">吊り橋を渡りながら峡谷沿いを歩いて滝を目指すハイキングコース。「下の滝」は1時間で到達できる初心者向けルートで、エメラルドグリーンの渓流と轟音の滝は圧巻。7月は水量も豊富で迫力満点。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>無料・初心者OK・爽やかで涼しい・子どもも楽しめる</div>
+            <div class="cons"><b>✘ デメリット</b>夏は混雑・駐車場が満車になりやすい</div>
+          </div>
+          <div class="spot-links">
+            <a class="web-btn" href="https://www.pc.gc.ca/ja/pn-np/ab/banff" target="_blank">🌐 Parks Canada（日本語）</a>
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Johnston+Canyon+Banff+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">バーミリオン湖</span>
+          <span class="stars">★★★★<span class="star-empty">★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vermillion_Lakes%2C_Banff.jpg" alt="Vermilion Lakes — Banff" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 バンフ旧市街から5分</span>
+            <span class="meta-badge">無料</span>
+            <span class="meta-badge">夕方がベスト</span>
+          </div>
+          <div class="spot-desc">バンフ旧市街のすぐ隣にある3つの湖。湖面にロッキーの山々が映り込む風景は、夕暮れ時に特に美しい。観光客で溢れる市街地から5分の場所にこんな絶景があるとは信じられない。ドライブの途中に気軽に立ち寄れる。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>無料・アクセス抜群・夕焼けが最高</div>
+            <div class="cons"><b>✘ デメリット</b>夕方は蚊が多め（虫除け持参推奨）</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Vermilion+Lakes+Banff+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">フェアモント・バンフスプリングスホテル</span>
+          <span class="stars">★★★★<span class="star-empty">★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Banff_Spring_Hotel_Alberta_Kim_Payant_02.jpg" alt="Fairmont Banff Springs Hotel" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 バンフ旧市街から5分</span>
+            <span class="meta-badge">外観見学は無料</span>
+          </div>
+          <div class="spot-desc">カナダロッキーのシンボル的存在。1888年創業、森の中に建つゴシック城のような豪華ホテル。宿泊しなくてもロビーを見学したりレストランでお茶するだけでも十分価値がある。写真を撮りに来るだけでもOK。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>圧倒的な存在感・写真映え・バンフのアイコン</div>
+            <div class="cons"><b>✘ デメリット</b>ホテル内の飲食は超高額・宿泊は1泊数万円〜</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Fairmont+Banff+Springs+Hotel+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">キャンモア（Canmore）</span>
+          <span class="stars">★★★★<span class="star-empty">★</span></span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Canmore_from_Lady_MacDonald_Teahouse.jpg" alt="Canmore — Alberta" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 バンフから20分</span>
+            <span class="meta-badge">パス不要</span>
+            <span class="meta-badge">1〜2時間</span>
+          </div>
+          <div class="spot-desc">バンフより少し小さくてこなれた雰囲気の山岳リゾートタウン。クラフトビールのブルワリー・おしゃれなカフェ・ローカルなお土産屋が充実。観光客が若干少なくて、地元感を味わいたい人にぴったり。バンフとセットで回れる。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>バンフより空いている・国立公園パス不要・ローカル感</div>
+            <div class="cons"><b>✘ デメリット</b>バンフほどの絶景スポットはない</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Canmore+Alberta+Canada" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-hd">
+          <span class="spot-name">ボウ・バレー・パークウェイ（ドライブルート）</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Castle_Mountain_seen_from_Bow_Valley_Parkway_-_panoramio_%283892%29.jpg" alt="Bow Valley Parkway — Castle Mountain" loading="lazy"></div>
+          <div class="spot-meta">
+            <span class="meta-badge">🚗 約48km / 1時間</span>
+            <span class="meta-badge">パス込み</span>
+            <span class="meta-badge">ドライブのみ</span>
+          </div>
+          <div class="spot-desc">バンフとレイク・ルイーズの間を結ぶ絶景ドライブルート。混雑するトランスカナダハイウェイの代わりに使えて、しかも断然こちらの景色が美しい。野生動物（エルク・ムース・クマ）に遭遇する確率も高く、車窓からの眺めが素晴らしい。</div>
+          <div class="spot-pros-cons">
+            <div class="pros"><b>✔ いいところ</b>移動しながら絶景・野生動物に会える・ジョンストン渓谷も途中に</div>
+            <div class="cons"><b>✘ デメリット</b>日の出前後は動物が道路に出てきて危険（注意が必要）</div>
+          </div>
+          <div class="spot-links">
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Bow+Valley+Parkway+Banff+Alberta" target="_blank">📍 Googleマップ</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ━━━ PACKING ━━━ -->
+<div class="section">
+  <div class="sec-hd">🧳 持ち物リスト</div>
+  <div class="sec-body">
+    <ul class="chk-list">
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>パスポート（有効期限6ヶ月以上）</li>
+      <li class="chk-item"><input type="checkbox" checked><span class="chk-cat">書類</span>国際運転免許証（IDP）✅ 取得済み</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>eチケット控え・搭乗券</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>レンタカーバウチャー</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>Airbnb確認書（チェックインコード）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>クレジットカード（VISA/Mastercard・番号印字あり）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>スーツ・ネクタイ・革靴（結婚式 7/11用）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>カジノ・パーティ用の少し小綺麗な服</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>普段着（Tシャツ・パンツ 6日分）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>アウトドア用ジャケット（バンフ・ドラムヘラー用）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>歩きやすいスニーカー</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">手土産</span>レモンサワー缶 / 日本のお菓子（ポッキー・抹茶Kit Kat等）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">デジタル</span>eSIM設定済みスマートフォン</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">デジタル</span>モバイルバッテリー</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">デジタル</span>オフラインマップDL（Googleマップ / Maps.me）</li>
+      <li class="chk-item"><input type="checkbox" checked><span class="chk-cat">デジタル</span>変換プラグ — 不要（カナダはType A = 日本と同規格）✅</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>日焼け止め・リップクリーム（7月の日差しは強烈）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>サングラス・帽子</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>虫除けスプレー（ハイキング・湖畔用）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>常備薬・胃薬・鎮痛剤</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>現金（CAD）── 少額でOK。カードが主流。</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ━━━ NOTES ━━━ -->
+<div class="section">
+  <div class="sec-hd red-hd">⚠ 注意事項・現地マナー</div>
+  <div class="sec-body">
+    <div class="note-blk">
+      <div class="note-title">🚗 運転</div>
+      <ul>
+        <li>右側通行（日本と逆）。慣れるまでは特に左折・駐車場の出入り口に注意。</li>
+        <li>フリーウェイの制限速度は110km/h。スクールゾーン・住宅街は30km/h厳守。</li>
+        <li>赤信号でも一時停止後に右折可能（カナダ全域・ケベック州を除く）。</li>
+        <li>他のメンバーが運転する場合、レンタカー受け取り時に追加ドライバー登録が必要。</li>
+      </ul>
+    </div>
+    <div class="note-blk">
+      <div class="note-title">💳 お金・チップ</div>
+      <ul>
+        <li>レストランのチップは合計の15〜20%が目安（テーブルサービスの場合）。</li>
+        <li>カジノはチップ不要だが、飲み物サービスには$1〜2渡すのがマナー。</li>
+        <li>GST（消費税）5%が価格に別途加算される。表示価格より高くなるので注意。</li>
+        <li>クレジットカードが主流。現金は少額だけ持てば十分。</li>
+      </ul>
+    </div>
+    <div class="note-blk">
+      <div class="note-title">🏔 バンフ国立公園</div>
+      <ul>
+        <li>入場には Parks Canada のパスが必要（$22前後/日 or $75.25/人 年間パス）。</li>
+        <li>野生動物（ムース・エルク・クマ）に遭遇したら車内に留まり絶対に近づかない。</li>
+        <li>湖畔でのBBQ・直火は禁止エリア多数。ゴミは必ず持ち帰り。</li>
+        <li>モレーン湖はシャトルバスが必要（事前予約・売り切れ注意）。</li>
+      </ul>
+    </div>
+    <div class="note-blk">
+      <div class="note-title">📋 入国・税関</div>
+      <ul>
+        <li>ArriveCAN アプリによる事前申告は不要になったが、税関申告書は機内で記入。</li>
+        <li>肉類・果物・野菜の持ち込みは申告が必要（持ち込み不可の場合あり）。</li>
+        <li>アルコールの免税持ち込みは1人あたり1.14Lまで。超えた分は申告・課税。</li>
+      </ul>
+    </div>
+    <div class="note-blk">
+      <div class="note-title">🆘 緊急連絡先</div>
+      <ul>
+        <li>緊急（警察・消防・救急）: <strong>911</strong></li>
+        <li>Thrifty ロードサービス: +1-403-221-1806</li>
+        <li>在カルガリー日本総領事館: +1-403-294-0782</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ━━━ TODO ━━━ -->
+<div class="section">
+  <div class="sec-hd mid">☑ やること・未確定事項</div>
+  <div class="sec-body">
+    <div class="tbl-wrap"><table class="todo-tbl">
+      <tr><th>優先度</th><th>タスク</th><th>状態</th></tr>
+      <tr><td>🔴 必須</td><td>ロイヤル・ティレル博物館の事前予約（7/10用）</td><td><span class="badge-need">未</span></td></tr>
+      <tr><td>🔴 必須</td><td>健太郎と空港での合流場所・方法をLINEで確認</td><td><span class="badge-need">未</span></td></tr>
+      <tr><td>🟡 推奨</td><td>バンフ国立公園パス購入（Parks Canada）</td><td><span class="badge-todo">未</span></td></tr>
+      <tr><td>🟡 推奨</td><td>モレーン湖シャトルバスの事前予約</td><td><span class="badge-todo">未</span></td></tr>
+      <tr><td>🟡 推奨</td><td>カルガリー・スタンピード グランドスタンドチケット購入</td><td><span class="badge-todo">未</span></td></tr>
+      <tr><td>🟡 推奨</td><td>帰りのフライト出発時刻（14:50 vs 15:10）を確認</td><td><span class="badge-todo">未</span></td></tr>
+      <tr><td>🟢 余裕があれば</td><td>バンフゴンドラ事前チケット購入（当日より安い）</td><td><span class="badge-done">任意</span></td></tr>
+      <tr><td>🟢 余裕があれば</td><td>Grey Eagle Casino の営業時間・イベント確認</td><td><span class="badge-done">任意</span></td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="footer">🍁 カナダ旅行プラン 2026　／　7月8日〜14日　／　4名　／　Okotoks, Alberta</div>
+
+</div>
+</body>
+</html>
