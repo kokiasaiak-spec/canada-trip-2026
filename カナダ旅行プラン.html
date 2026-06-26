@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🍁 カナダ旅行 2026 — Calgary & Rockies</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 :root {
   --bg: #EFF3F8;
@@ -332,6 +334,19 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 }
 .subsec:first-child { margin-top: 0; }
 
+/* ━━━ BLOG CARDS ━━━ */
+.blog-card { background: var(--card); border-radius: 12px; border: 1px solid var(--border-light); padding: 14px 16px; margin-bottom: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.blog-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 20px; margin-bottom: 8px; letter-spacing: 0.3px; }
+.blog-tag-banff { background: var(--navy-xlight); color: var(--navy); }
+.blog-tag-drum { background: #F3E5D0; color: #7B3800; }
+.blog-title { font-weight: 700; font-size: 13.5px; color: var(--navy); margin-bottom: 5px; line-height: 1.4; }
+.blog-source { font-size: 11px; color: var(--text-light); margin-bottom: 8px; }
+.blog-quote { font-size: 12px; color: var(--text-mid); border-left: 3px solid var(--border); padding: 4px 10px; margin: 8px 0; font-style: italic; line-height: 1.65; background: var(--navy-faint); border-radius: 0 6px 6px 0; }
+.blog-facts { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0; }
+.blog-fact { font-size: 11px; background: var(--navy-faint); border-radius: 6px; padding: 3px 8px; color: var(--text-mid); }
+.blog-link { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 700; color: var(--navy-light); text-decoration: none; border: 1.5px solid var(--navy-light); border-radius: 8px; padding: 4px 12px; transition: background 0.15s; }
+.blog-link:hover { background: var(--navy-xlight); }
+
 /* ━━━ CHECKLIST ━━━ */
 .chk-list { list-style: none; }
 .chk-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border-light); font-size: 14px; }
@@ -355,8 +370,87 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 .badge-todo { background: var(--gold-light); color: var(--gold); border-radius: 4px; padding: 1px 7px; font-size: 11px; font-weight: 700; }
 .badge-need { background: var(--red-light); color: var(--red); border-radius: 4px; padding: 1px 7px; font-size: 11px; font-weight: 700; }
 
+/* ━━━ AREA HEADERS ━━━ */
+.area-hd {
+  display: flex; align-items: center; gap: 8px;
+  padding: 9px 14px; border-radius: 10px;
+  margin: 20px 0 10px; font-weight: 700; font-size: 13px; color: #fff;
+}
+.area-hd:first-child { margin-top: 4px; }
+.area-okotoks  { background: linear-gradient(90deg,#1A4D30,#2D7A45); }
+.area-calgary  { background: linear-gradient(90deg,#1B3A5C,#2A5A8C); }
+.area-drumheller { background: linear-gradient(90deg,#7B3800,#B05010); }
+.area-banff    { background: linear-gradient(90deg,#0D2B4A,#1B5E8C); }
+.area-waterton { background: linear-gradient(90deg,#2C5F2E,#4A8C50); }
+
+/* スポットカードへのエリア左ボーダー */
+.area-main { cursor: pointer; user-select: none; }
+.toggle-arrow {
+  margin-left: auto; flex-shrink: 0;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.38);
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+.toggle-arrow::after {
+  content: '';
+  display: block;
+  width: 6px; height: 6px;
+  border-right: 2px solid rgba(255,255,255,0.88);
+  border-bottom: 2px solid rgba(255,255,255,0.88);
+  transform: rotate(45deg);
+  margin-top: -3px;
+}
+.area-main.open .toggle-arrow { transform: rotate(180deg); }
+.area-okotoks  ~ .spot-card { border-left: 3px solid #2D7A45; }
+.area-calgary  ~ .spot-card { border-left: 3px solid #2A5A8C; }
+.area-drumheller ~ .spot-card { border-left: 3px solid #B05010; }
+.area-banff    ~ .spot-card { border-left: 3px solid #1B5E8C; }
+.area-waterton ~ .spot-card { border-left: 3px solid #4A8C50; }
+
+/* 飲食セクション */
+.dining-section { margin: 12px 0 4px; }
+.dining-hd { font-size: 12px; font-weight: 700; color: var(--text-mid); margin-bottom: 6px; padding: 4px 0; border-bottom: 1px solid var(--border-light); }
+.dining-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media(max-width:500px){ .dining-grid { grid-template-columns: 1fr; } }
+.dining-card { background: var(--navy-faint); border-radius: 8px; padding: 9px 11px; }
+.dining-name { font-weight: 700; font-size: 13px; color: var(--navy); margin-bottom: 2px; }
+.dining-desc { font-size: 11px; color: var(--text-mid); line-height: 1.5; }
+.dining-price { font-size: 11px; font-weight: 700; color: var(--gold); margin-top: 3px; }
+
 /* ━━━ FOOTER ━━━ */
 .footer { text-align: center; color: var(--text-light); font-size: 12px; padding: 20px 0 10px; border-top: 1px solid var(--border-light); margin-top: 20px; }
+
+/* ━━━ TABS ━━━ */
+.tab-nav {
+  display: flex;
+  gap: 6px;
+  margin: 14px 0 10px;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  flex: 1;
+  min-width: 70px;
+  padding: 10px 6px;
+  border: none;
+  border-radius: 10px;
+  background: var(--navy-xlight);
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  touch-action: manipulation;
+  transition: background 0.15s, color 0.15s;
+}
+.tab-btn.active {
+  background: var(--navy);
+  color: #fff;
+}
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
 </style>
 </head>
 <body>
@@ -402,6 +496,20 @@ tr:nth-child(even) td { background: var(--navy-faint); }
     <div class="sub">Airalo 購入済み</div>
   </div>
 </div>
+
+<!-- ━━━ TAB NAV ━━━ -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('schedule',this)">📅 プラン①</button>
+  <button class="tab-btn" onclick="switchTab('plan2',this)">📅 プラン②</button>
+  <button class="tab-btn" onclick="switchTab('spots',this)">🗺 スポット</button>
+  <button class="tab-btn" onclick="switchTab('info',this)">✈ 旅行情報</button>
+  <button class="tab-btn" onclick="switchTab('prep',this)">🧳 準備</button>
+  <button class="tab-btn" onclick="switchTab('english',this)">🗣 英語</button>
+  <button class="tab-btn" onclick="switchTab('reports',this)">📖 体験記</button>
+</nav>
+
+<!-- ━━━ TAB: 旅行情報 ━━━ -->
+<div class="tab-pane" id="tab-info">
 
 <!-- ━━━ FLIGHTS ━━━ -->
 <div class="section">
@@ -457,6 +565,11 @@ tr:nth-child(even) td { background: var(--navy-faint); }
   </div>
 </div>
 <div class="notice info">🗺 <strong>アクセス（空港→宿）:</strong> Highway 2 南下 → Okotoks 出口 → D'arcy Ranch Drive 右折 → Aster Link 左折（約45分）<br>入口：家の側面ドア → 階段を下りてスイートへ。駐車は裏口または路上OK。</div>
+
+</div><!-- /tab-info -->
+
+<!-- ━━━ TAB: スケジュール ━━━ -->
+<div class="tab-pane active" id="tab-schedule">
 
 <!-- ━━━ SCHEDULE ━━━ -->
 <div class="section">
@@ -515,13 +628,17 @@ tr:nth-child(even) td { background: var(--navy-faint); }
     <div class="day-card dc-4">
       <div class="day-hd">
         <span class="day-num">DAY 4</span>
-        <span class="day-title">結婚式 💍</span>
+        <span class="day-title">なつき結婚式 💍</span>
         <span class="day-date">7月11日（土）</span>
       </div>
       <div class="day-body">
-        <div class="day-item"><span class="day-time">終日</span><span>👔 <strong>結婚式</strong>（カルガリー周辺 / Okotoksから〜1時間圏内）4名で参加</span></div>
-        <div class="day-item"><span class="day-time">持参</span><span>スーツ・ネクタイ・革靴 ← 忘れずに！</span></div>
-        <div class="day-item"><span class="day-time">確認</span><span>式場・開始時刻・ドレスコードを事前に主催側へ確認</span></div>
+        <div class="day-item"><span class="day-time">午前</span><span>🏠 宿でゆっくり準備（式場はOkotoksから約25分 — 近い！）</span></div>
+        <div class="day-item"><span class="day-time">14:30</span><span>🚗 Sheppard Family Park へ出発 <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Sheppard+Family+Park+1201+5+Street+SE+High+River+Alberta" target="_blank">📍 地図</a> <a class="web-btn" href="https://www.theknot.com/us/mckenna-barlow-and-natski-sarayama-jul-2026" target="_blank">💍 招待状</a></span></div>
+        <div class="day-item"><span class="day-time">15:00</span><span>💒 <strong>挙式</strong> — McKenna &amp; なつき（Natski Sarayama）</span></div>
+        <div class="day-item"><span class="day-time">16:00</span><span>🥂 カクテルアワー</span></div>
+        <div class="day-item"><span class="day-time">17:00</span><span>🍽 披露宴スタート</span></div>
+        <div class="day-item"><span class="day-time">23:30</span><span>🎉 お開き → 宿へ帰宅（約25分）</span></div>
+        <div class="day-item alert-row"><span class="day-time">持参</span><span>👔 スーツ・ネクタイ・革靴 ← 忘れずに！</span></div>
       </div>
     </div>
 
@@ -648,13 +765,220 @@ tr:nth-child(even) td { background: var(--navy-faint); }
   </div>
 </div>
 
+</div><!-- /tab-schedule -->
+
+<!-- ━━━ TAB: プラン② ━━━ -->
+<div class="tab-pane" id="tab-plan2">
+
+<div class="section">
+  <div class="sec-hd" style="background:linear-gradient(90deg,#2C5F2E,#1B5E8C);">📅 プラン② — 先にバンフ / 帰りにドラムヘラー</div>
+  <div class="sec-body">
+    <div class="notice info" style="margin-top:0;">
+      <strong>このプランの特徴：</strong><br>
+      ✅ レイク・ルイーズ・モレーン湖を <strong>早朝・空いている時間</strong> に堪能<br>
+      ✅ 健太郎見送り後に <strong>ドラムヘラー</strong> を丸ごと1日楽しめる<br>
+      ✅ バンフ泊で <strong>朝の山を独占</strong><br>
+      ⚠ Day2 にバンフ追加宿泊が必要（Airbnb or ホテル 1泊）
+    </div>
+
+    <!-- Day 1 -->
+    <div class="day-card">
+      <div class="day-hd">
+        <span class="day-num">DAY 1</span>
+        <span class="day-title">到着 &amp; カジノ 🎰</span>
+        <span class="day-date">7月8日（水）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">12:40</span><span>✈ 3名 カルガリー空港 YYC 着（WS081）</span></div>
+        <div class="day-item"><span class="day-time">13:30</span><span>🚙 Thrifty レンタカー受け取り（ターミナル内カウンター） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Thrifty+Car+Rental+Calgary+International+Airport" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">〜16:00</span><span>🤠 カルガリー市内観光 or スタンピード（開催中！）/ 軽く食事</span></div>
+        <div class="day-item"><span class="day-time">16:00</span><span>🏠 Mountain View Retreat チェックイン（Okotoks） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=15+Aster+Link+Okotoks+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">夜</span><span>🎰 <strong>カジノ</strong> — Grey Eagle Resort &amp; Casino（宿から約35分） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Grey+Eagle+Resort+Casino+Calgary" target="_blank">📍 地図</a></span></div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card dc-2">
+      <div class="day-hd">
+        <span class="day-num">DAY 2</span>
+        <span class="day-title">バンフへ移動 &amp; 泊 🏔</span>
+        <span class="day-date">7月9日（木）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">午前</span><span>🚗 Okotoks 出発 → ボウ・バレー・パークウェイ経由でバンフへ（約1.5時間）<br><small style="color:var(--text-mid);">野生動物（エルク・カラマシカ）に出会えるルートでゆっくり移動</small></span></div>
+        <div class="day-item"><span class="day-time">昼</span><span>🌮 <strong>バンフ市街でランチ</strong> — Anejo（111 Banff Ave）/ Hankki（Korean BBQ） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Banff+Avenue+Banff+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">午後</span><span>🥾 <strong>ジョンストン渓谷ハイキング</strong>（下の滝まで片道2km・約40分） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Johnston+Canyon+Banff+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">夕方</span><span>🌅 <strong>バーミリオン湖</strong> — 夕焼けがロッキーに映える絶景ポイント <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Vermilion+Lakes+Banff+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">夜</span><span>🦌 <strong>The Bison</strong> or <strong>Fat Ox</strong> でディナー（要予約）<br><small style="color:var(--text-mid);">翌日の早起きに備えて 22:00 就寝目標</small></span></div>
+        <div class="day-item alert-row"><span class="day-time">宿泊</span><span>🏡 <strong>バンフ内 Airbnb or ホテル</strong>（要別途予約 — プラン①の宿は不使用）</span></div>
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-card dc-3">
+      <div class="day-hd">
+        <span class="day-num">DAY 3</span>
+        <span class="day-title">早朝バンフ 💎 → 健太郎 到着 🧳</span>
+        <span class="day-date">7月10日（金）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">5:00</span><span>⏰ 起床 — 早い者勝ちの朝！</span></div>
+        <div class="day-item"><span class="day-time">5:30</span><span>💎 <strong>レイク・ルイーズ</strong> 到着（早朝は車で直接駐車可・人ゼロ・鏡の湖面） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Lake+Louise+Alberta" target="_blank">📍 地図</a><br><small style="color:var(--text-mid);">8時を過ぎると一気に混雑。6時台はほぼ貸し切り状態！</small></span></div>
+        <div class="day-item"><span class="day-time">7:00</span><span>🌊 <strong>モレーン湖</strong> — 早朝なら車で上まで行ける可能性あり（7時以降は規制入る年も） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Moraine+Lake+Alberta" target="_blank">📍 地図</a><br><small style="color:var(--text-mid);">十峰の谷を朝靄の中で見る体験は一生ものの景色</small></span></div>
+        <div class="day-item"><span class="day-time">8:30</span><span>🛶 モレーン湖 <strong>カヌー</strong>（レンタル 30分 $25前後 / 人）— 混む前に楽しむ</span></div>
+        <div class="day-item alert-row"><span class="day-time">9:00</span><span>🚗 <strong>空港へ出発</strong>（Lake Louise → YYC 約2.5〜3時間）<br><small style="color:var(--text-mid);">夏の渋滞を考慮して余裕を持って出発</small></span></div>
+        <div class="day-item"><span class="day-time">12:00</span><span>🚗 カルガリー空港 YYC 着 → 国内外到着ロビーで待機</span></div>
+        <div class="day-item kent-row"><span class="day-time">12:40</span><span>🧳 <strong>健太郎 YYC 到着！</strong>（WS081）4名全員そろう</span></div>
+        <div class="day-item"><span class="day-time">13:30</span><span>🛒 T&amp;T スーパーマーケット or 17th Avenue SW でランチ &amp; 買い物 <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=17th+Avenue+SW+Calgary+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">夕方</span><span>🏠 Okotoks 宿に帰還・ゆっくり夕食</span></div>
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day-card dc-4">
+      <div class="day-hd">
+        <span class="day-num">DAY 4</span>
+        <span class="day-title">なつき結婚式 💍</span>
+        <span class="day-date">7月11日（土）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">午前</span><span>🏠 宿でゆっくり準備（式場はOkotoksから約25分 — 近い！）</span></div>
+        <div class="day-item"><span class="day-time">14:30</span><span>🚗 Sheppard Family Park へ出発 <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Sheppard+Family+Park+1201+5+Street+SE+High+River+Alberta" target="_blank">📍 地図</a> <a class="web-btn" href="https://www.theknot.com/us/mckenna-barlow-and-natski-sarayama-jul-2026" target="_blank">💍 招待状</a></span></div>
+        <div class="day-item"><span class="day-time">15:00</span><span>💒 <strong>挙式</strong> — McKenna &amp; なつき（Natski Sarayama）</span></div>
+        <div class="day-item"><span class="day-time">16:00</span><span>🥂 カクテルアワー</span></div>
+        <div class="day-item"><span class="day-time">17:00</span><span>🍽 披露宴スタート</span></div>
+        <div class="day-item"><span class="day-time">23:30</span><span>🎉 お開き → 宿へ帰宅（約25分）</span></div>
+        <div class="day-item alert-row"><span class="day-time">持参</span><span>👔 スーツ・ネクタイ・革靴 ← 忘れずに！</span></div>
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="day-card dc-5">
+      <div class="day-hd">
+        <span class="day-num">DAY 5</span>
+        <span class="day-title">なつきと遊ぶ 🤝</span>
+        <span class="day-date">7月12日（日）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">終日</span><span>🤝 なつきさんと合流（4名 + なつきさん）— 場所・内容は事前調整</span></div>
+        <div class="day-item"><span class="day-time">tip</span><span>🤠 <strong>スタンピード最終日！</strong>（〜7/13）一緒に行くのも最高の思い出に</span></div>
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="day-card dc-6">
+      <div class="day-hd">
+        <span class="day-num">DAY 6</span>
+        <span class="day-title">健太郎 帰国 ✈ → ドラムヘラー 🦕</span>
+        <span class="day-date">7月13日（月）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item kent-row"><span class="day-time">⚠ 注意</span><span><strong>健太郎 14:50 カルガリー発（国際線）</strong><br>国際線は <strong>3時間前チェックイン = 11:50締切</strong> → <strong>11:30 には空港到着</strong>したい</span></div>
+        <div class="day-item"><span class="day-time">10:30</span><span>🚗 Okotoks 出発 → カルガリー空港へ（約45分）</span></div>
+        <div class="day-item kent-row"><span class="day-time">11:20</span><span>🧳 <strong>健太郎 空港でお別れ</strong>（チェックイン・荷物預け）<br>✈ 14:50 WS080 カルガリー発 → 翌7/14（火）16:20 成田着</span></div>
+        <div class="day-item alert-row"><span class="day-time">12:00</span><span>🚗 <strong>3名 ドラムヘラーへ出発！</strong>（YYC → ドラムヘラー 約1時間45分）</span></div>
+        <div class="day-item"><span class="day-time">13:45</span><span>🦕 <strong>ロイヤル・ティレル博物館</strong>（夏季 21:00 閉館！）ゆっくり見放題 <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Royal+Tyrrell+Museum+Drumheller+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">16:00</span><span>🪨 <strong>Horseshoe Canyon</strong>（夕陽が赤く染まる時間帯に絶景） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Horseshoe+Canyon+Drumheller+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">17:00</span><span>🗿 <strong>ホードゥー</strong>（柱状奇岩群・夕陽の陰影で特に美しい） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Drumheller+Hoodoos+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">18:30</span><span>🍔 Bernie &amp; The Boys Bistro or Sam's Kitchen でディナー</span></div>
+        <div class="day-item"><span class="day-time">20:00</span><span>🚗 Okotoks 宿に帰還（ドラムヘラー → Okotoks 約2時間）— 最終夜は拠点でゆっくり</span></div>
+      </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="day-card dc-7">
+      <div class="day-hd">
+        <span class="day-num">DAY 7</span>
+        <span class="day-title">3名 帰国 ⚠ 時間厳守！</span>
+        <span class="day-date">7月14日（火）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">11:00</span><span>🏠 Mountain View Retreat チェックアウト（3名）</span></div>
+        <div class="day-item"><span class="day-time">〜12:00</span><span>🚗 カルガリー空港 YYC 到着（宿から約45分）</span></div>
+        <div class="day-item alert-row"><span class="day-time">⚠ 12:30</span><span><strong>Thrifty レンタカー返却 ← 実質締切！</strong></span></div>
+        <div class="day-item"><span class="day-time">12:50</span><span>チェックインカウンター締切（14:50発の2時間前）</span></div>
+        <div class="day-item"><span class="day-time">14:50</span><span>✈ WS080 カルガリー出発（3名）→ 翌7/15（水）16:20 成田T1 着</span></div>
+      </div>
+    </div>
+
+    <div class="notice info" style="margin-top:18px;">
+      💡 <strong>プラン① vs プラン② 比較</strong><br>
+      <table class="kv" style="margin-top:10px;">
+        <tr><th>プラン①</th><th>プラン②</th></tr>
+        <tr><td>Day2: ホームパーティ</td><td>Day2: バンフ移動・宿泊</td></tr>
+        <tr><td>Day3: ドラムヘラー + 健太郎到着</td><td>Day3: 早朝バンフ + 健太郎到着</td></tr>
+        <tr><td>Day6: バンフ（健太郎と早朝）</td><td>Day6: 健太郎見送り + ドラムヘラー</td></tr>
+        <tr><td>Day7: そのまま帰国</td><td>Day7: Okotoks発 → 帰国（同じ）</td></tr>
+      </table>
+      ⚠ プラン②は Day2 にバンフ追加宿泊（1泊）が必要です。
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /tab-plan2 -->
+
+<!-- ━━━ TAB: スポット ━━━ -->
+<div class="tab-pane" id="tab-spots">
+
+<!-- ━━━ MAP ━━━ -->
+<div class="section">
+  <div class="sec-hd mid">📍 スポットマップ — Okotoks 周辺</div>
+  <div class="sec-body" style="padding:10px;">
+    <div id="spots-map" style="height:340px;border-radius:10px;overflow:hidden;"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:12px;">
+      <span style="display:flex;align-items:center;gap:4px;"><span style="background:#E84040;width:14px;height:14px;border-radius:50%;display:inline-block;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.3);"></span> 宿泊地</span>
+      <span style="display:flex;align-items:center;gap:4px;"><span style="background:#1B3A5C;width:14px;height:14px;border-radius:50%;display:inline-block;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.3);"></span> 予定スポット</span>
+      <span style="display:flex;align-items:center;gap:4px;"><span style="background:#5A7A5A;width:14px;height:14px;border-radius:50%;display:inline-block;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.3);"></span> 候補地</span>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var map = window._spotsMap = L.map('spots-map', {scrollWheelZoom: false}).setView([50.6, -114.2], 7);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18, attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  function mk(lat, lng, emoji, label, color, time, desc) {
+    var icon = L.divIcon({
+      html: '<div style="background:'+color+';width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 2px 6px rgba(0,0,0,.35);border:2.5px solid #fff;">'+emoji+'</div>',
+      iconSize:[34,34], iconAnchor:[17,17], className:''
+    });
+    var html = '<b style="font-size:13px;">'+label+'</b>';
+    if (time) html += '<br><span style="font-size:11px;color:#777;display:block;margin-top:3px;">🚗 宿から約 '+time+'</span>';
+    if (desc) html += '<span style="font-size:11px;color:#444;line-height:1.5;display:block;margin-top:4px;">'+desc+'</span>';
+    L.marker([lat,lng],{icon:icon}).bindPopup(html,{maxWidth:210}).addTo(map);
+  }
+
+  // 宿泊地
+  mk(50.7255,-113.9750,'🏠','🏠 宿泊地 — Okotoks（拠点）','#E84040');
+
+  // 予定スポット
+  mk(51.0447,-114.0719,'🏙','カルガリー','#1B3A5C','45分','グルメ・観光・ナイトライフの拠点都市。スタンピード開催中！');
+  mk(51.4634,-112.7193,'🦕','ドラムヘラー','#1B3A5C','1時間50分','バッドランドと恐竜の化石で有名な渓谷の町');
+  mk(51.4834,-112.7400,'🔬','ロイヤル・ティレル博物館','#1B3A5C','1時間50分','世界最大級の恐竜博物館。夏季21時閉館。事前予約推奨');
+  mk(51.5833,-112.7167,'🪨','Horseshoe Canyon','#1B3A5C','1時間45分','バッドランドの絶景峡谷。無料。夕陽が特に美しい');
+  mk(51.4530,-112.7430,'🗿','ホードゥー','#1B3A5C','1時間50分','柱状奇岩群。無料。夕暮れ時がフォトスポット');
+  mk(51.1784,-115.5708,'🏔','バンフ','#1B3A5C','1時間30分','ロッキー山脈の観光拠点。ゴンドラ・温泉・ショッピング');
+  mk(51.4254,-116.1773,'💎','レイク・ルイーズ','#1B3A5C','1時間45分','エメラルドグリーンの湖と氷河。早朝6時台が駐車・混雑ともに狙い目');
+  mk(51.3217,-116.1860,'🌊','モレーン湖','#1B3A5C','2時間','十峰の谷に囲まれた絶景湖。カヌー体験あり（早朝推奨）');
+  mk(51.0890,-115.3467,'🏘','キャンモア','#1B3A5C','1時間10分','バンフ手前の静かな山岳の街。混雑少なめの穴場');
+  mk(51.0444,-114.0631,'🗼','カルガリータワー','#1B3A5C','50分','カルガリーのシンボル。190m展望台・ガラス床スリル体験');
+
+  // 候補地
+  mk(50.9333,-115.0167,'🌲','カナナスキス','#5A7A5A','1時間','バンフの穴場。Grassi Lakesハイキングが人気。駐車$15のみ');
+  mk(49.7117,-113.6419,'🦬','ヘッドスマッシュドイン','#5A7A5A','2時間','ユネスコ世界遺産。先住民バッファロー狩りの史跡。入場無料');
+  mk(49.0504,-113.9083,'🏞','ウォータートン湖','#5A7A5A','2時間30分','ユネスコ世界遺産。山・湖・草原が交わる絶景国立公園');
+})();
+</script>
+
 <!-- ━━━ SPOTS ━━━ -->
 <div class="section">
   <div class="sec-hd mid">🗺 おすすめ観光スポット・アクティビティ</div>
   <div class="sec-body">
 
-    <!-- Okotoks -->
-    <div class="subsec">🏘 Okotoks 周辺（拠点から近い）</div>
+    <div class="area-hd area-okotoks area-main">🏠 宿泊地周辺 — Okotoks &amp; 近郊</div>
     <div class="spot-grid">
 
       <div class="spot-card">
@@ -686,7 +1010,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
           <span class="stars">★★★★<span class="star-empty">★</span></span>
         </div>
         <div class="spot-body">
-          <div class="spot-photo no-photo" style="background:linear-gradient(150deg,#1A4D30,#2D7A45);">🌿<div class="spot-photo-lbl">Sheep River Provincial Park</div></div>
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Sheep_River_Falls%2C_Alberta.jpg" alt="Sheep River Falls, Alberta" loading="lazy"></div>
           <div class="spot-meta">
             <span class="meta-badge">🚗 宿から20分</span>
             <span class="meta-badge">無料</span>
@@ -706,8 +1030,36 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 
     </div>
 
-    <!-- Calgary -->
-    <div class="subsec">🏙 カルガリー市内（宿から40〜50分）</div>
+    <!-- Okotoks Dining -->
+    <div class="area-hd area-okotoks" style="margin-top:14px;">🍽 Okotoks の食事スポット</div>
+    <div class="dining-grid">
+      <div class="dining-card">
+        <div class="dining-name">🥐 French 50 Bakery + Artisan Pizza</div>
+        <div class="dining-desc">Elma St の歴史的建物。自家製パン・スーフレ・アルティザンピザ。ランチに最適</div>
+        <div class="dining-price">$ ランチ向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=French+50+Bakery+Okotoks+Alberta" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🌿 The Saskatoon Farm Cafe</div>
+        <div class="dining-desc">Hwy 2A沿いの農場直営カフェ。季節のファームトゥテーブル料理・自家製ベイクド品</div>
+        <div class="dining-price">$$ ランチ向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="web-btn" href="https://www.saskatoonfarm.com" target="_blank">🌐 公式</a><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Saskatoon+Farm+Cafe+Okotoks+Alberta" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🦆 Heartland Cafe &amp; Restaurant</div>
+        <div class="dining-desc">元教会の建物で欧風創作料理。カナダTop100ロマンチックレストラン4回受賞</div>
+        <div class="dining-price">$$-$$$ ディナー向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Heartland+Cafe+Restaurant+Okotoks+Alberta" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🍕 Amedeo's Italian Bistro</div>
+        <div class="dining-desc">シェフAmedeoの家族直伝イタリア料理。パスタ・リゾット・正統派イタリアン</div>
+        <div class="dining-price">$$-$$$ ディナー向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Amedeo+Italian+Bistro+Okotoks+Alberta" target="_blank">📍 地図</a></div>
+      </div>
+    </div>
+
+    <div class="area-hd area-calgary area-main">🏙 カルガリー — 宿から約40〜50分</div>
     <div class="spot-grid">
 
       <div class="spot-card">
@@ -762,7 +1114,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
           <span class="stars">★★★★<span class="star-empty">★</span></span>
         </div>
         <div class="spot-body">
-          <div class="spot-photo no-photo" style="background:linear-gradient(150deg,#1A2040,#3D2B5E);">🍺<div class="spot-photo-lbl">17th Avenue SW</div></div>
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/17th_Avenue_SW%2C_Calgary_%287853825600%29.jpg" alt="17th Avenue SW, Calgary" loading="lazy"></div>
           <div class="spot-meta">
             <span class="meta-badge">🚗 宿から45分</span>
             <span class="meta-badge">無料（飲食代のみ）</span>
@@ -808,7 +1160,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
           <span class="stars">★★★★★</span>
         </div>
         <div class="spot-body">
-          <div class="spot-photo no-photo" style="background:linear-gradient(150deg,#1A4D30,#2874A6);">🛒<div class="spot-photo-lbl">T&amp;T Supermarket</div></div>
+          <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/T%26T_Supermarket.jpg" alt="T&T Supermarket" loading="lazy"></div>
           <div class="spot-meta">
             <span class="meta-badge">🚗 市内数店舗</span>
             <span class="meta-badge">必須立ち寄り</span>
@@ -826,8 +1178,36 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 
     </div>
 
-    <!-- Drumheller -->
-    <div class="subsec">🦕 ドラムヘラー周辺（Day 3 / 7月10日）</div>
+    <!-- Calgary Dining -->
+    <div class="area-hd area-calgary" style="margin-top:14px;">🍽 カルガリーの食事スポット（17th Ave 中心）</div>
+    <div class="dining-grid">
+      <div class="dining-card">
+        <div class="dining-name">🍔 Ship &amp; Anchor Pub</div>
+        <div class="dining-desc">534 17th Ave SW。カルガリー定番パブ。伝説の「Ship Burger」と最高のテラス席</div>
+        <div class="dining-price">$ ランチ向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="web-btn" href="https://www.shipandanchor.com" target="_blank">🌐 公式</a><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Ship+Anchor+Pub+17th+Avenue+Calgary" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🍕 Una Pizza + Wine</div>
+        <div class="dining-desc">618 17th Ave SW。薪窯ナポリピザとワインが自慢。2012年創業のカルガリー人気店</div>
+        <div class="dining-price">$$ ランチ・ディナー</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="web-btn" href="https://www.unarestaurant.ca" target="_blank">🌐 公式</a><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Una+Pizza+Wine+17th+Avenue+Calgary" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🥩 Model Milk</div>
+        <div class="dining-desc">308 17th Ave SW。歴史的乳業施設を改装。カナダ産食材の創作小皿料理。活気ある雰囲気</div>
+        <div class="dining-price">$$$ ディナー向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="web-btn" href="https://www.modelmilk.ca" target="_blank">🌐 公式</a><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Model+Milk+Restaurant+Calgary" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🍛 Calcutta Cricket Club</div>
+        <div class="dining-desc">340 17th Ave SW。上質なインド料理とクリエイティブカクテル。賑やかな店内</div>
+        <div class="dining-price">$$ ディナー向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Calcutta+Cricket+Club+Calgary" target="_blank">📍 地図</a></div>
+      </div>
+    </div>
+
+    <div class="area-hd area-drumheller area-main">🦕 ドラムヘラーエリア — Day 3（7月10日） / 宿から約2時間</div>
     <div class="spot-grid">
 
       <div class="spot-card">
@@ -925,8 +1305,37 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 
     </div>
 
-    <!-- Banff -->
-    <div class="subsec">🏔 バンフ国立公園周辺（Day 6 / 7月13日）</div>
+    <!-- Drumheller Dining -->
+    <div class="area-hd area-drumheller" style="margin-top:14px;">🍽 ドラムヘラーの食事スポット</div>
+    <div class="dining-grid">
+      <div class="dining-card">
+        <div class="dining-name">🦕 The Old Grouch</div>
+        <div class="dining-desc">87 Bridge St。自家製スープと名物「Grouch-O-Saurus Burger」。地元人気の素朴な食堂</div>
+        <div class="dining-price">$ ランチ向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=The+Old+Grouch+87+Bridge+Street+Drumheller" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🥞 WHIFS Flapjack House</div>
+        <div class="dining-desc">801 N Dinosaur Trail。ふわふわパンケーキで有名。天井を走るモデル鉄道が名物</div>
+        <div class="dining-price">$ ランチ・ブランチ</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=WHIFS+Flapjack+House+Drumheller+Alberta" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🏆 Bernie &amp; The Boys Bistro</div>
+        <div class="dining-desc">Food Network「You Gotta Eat Here」出演。グルメバーガーとミルクシェイクが絶品</div>
+        <div class="dining-price">$$ ランチ・ディナー</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Bernie+Boys+Bistro+Drumheller" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🍛 Sam's Kitchen</div>
+        <div class="dining-desc">1220 Newcastle Trail。バッドランズ随一のインド料理。バターチキン・自家製ナアン</div>
+        <div class="dining-price">$$ ディナー向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Sam%27s+Kitchen+Drumheller+Alberta" target="_blank">📍 地図</a></div>
+      </div>
+    </div>
+    <div class="notice" style="font-size:11px;color:var(--text-mid);margin:6px 0 12px;padding:8px 12px;background:var(--navy-faint);border-radius:8px;">⚠️ ドラムヘラーは飲食店が少なく夏季はどこも混みます。できれば予約を。</div>
+
+    <div class="area-hd area-banff area-main">🏔 バンフエリア — Day 6（7月13日） / 宿から約1.5時間</div>
     <div class="notice info" style="margin-bottom:10px;">🎫 <strong>入場パスについて：</strong> バンフ国立公園は有料（$75.25/人 年間パス 或いは $22前後/日）。購入は <a href="https://www.pc.gc.ca/ja/pn-np/ab/banff" target="_blank">Parks Canada 公式（日本語あり）</a> から事前予約がスムーズ。</div>
     <div class="spot-grid">
 
@@ -1117,8 +1526,244 @@ tr:nth-child(even) td { background: var(--navy-faint); }
       </div>
 
     </div>
+
+    <!-- Banff Dining -->
+    <div class="area-hd area-banff" style="margin-top:14px;">🍽 バンフの食事スポット</div>
+    <div class="dining-grid">
+      <div class="dining-card">
+        <div class="dining-name">🌮 Anejo</div>
+        <div class="dining-desc">111 Banff Ave。本格メキシカンタコス・マルガリータ。バンフAveで一番のカジュアルランチ</div>
+        <div class="dining-price">$$ ランチ向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Anejo+Restaurant+111+Banff+Avenue" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🍱 Hankki</div>
+        <div class="dining-desc">バンフ内。韓国BBQとストリートフード。バンフで最もお手頃な食事の一つ</div>
+        <div class="dining-price">$ ランチ向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Hankki+Korean+Banff+Alberta" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🦌 The Bison</div>
+        <div class="dining-desc">211 Bear St。地産食材のカナダ料理。名物バイソン・トマホーク。TripAdvisor Top10</div>
+        <div class="dining-price">$$$ ディナー向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="web-btn" href="https://www.thebison.ca" target="_blank">🌐 公式</a><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=The+Bison+Restaurant+211+Bear+Street+Banff" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🍝 Fat Ox</div>
+        <div class="dining-desc">415 Banff Ave。アルパインイタリアン。全粒ロブスターリゾット・バッラータ。山岳モダン料理</div>
+        <div class="dining-price">$$$ ディナー向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Fat+Ox+Restaurant+415+Banff+Avenue" target="_blank">📍 地図</a></div>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- ━━━ CANDIDATE SPOTS ━━━ -->
+<div class="section">
+  <div class="sec-hd" style="background:linear-gradient(90deg,#2C5F2E,#1B3A5C);">🗺 候補地（日程に余裕があれば）</div>
+  <div class="sec-body">
+    <div class="notice info" style="margin-top:0;">現行プランには組み込まれていないが、Okotoksから3時間圏内で行けるスポット。日程変更・次回旅行の参考に。</div>
+    <div class="area-hd area-waterton area-main" style="margin-top:12px;">🏔 ウォータートン湖エリア &amp; 周辺 — 宿から約2〜2.5時間南</div>
+    <div class="spot-card" style="margin-top:10px;">
+      <div class="spot-hd">
+        <span class="spot-name">ウォータートン湖国立公園</span>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="spot-body">
+        <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Waterton_Townsite_and_Upper_Waterton_Lake.jpg" alt="Waterton Lakes National Park" loading="lazy"></div>
+        <div class="spot-meta">
+          <span class="meta-badge">🚗 Okotoksから約2.5時間南</span>
+          <span class="meta-badge">🆓 入園無料（〜9/7）</span>
+          <span class="meta-badge">予約不要</span>
+          <span class="meta-badge">ユネスコ世界遺産</span>
+        </div>
+        <div class="spot-desc">大草原がそのまま山脈にぶつかる、アルバータ州の秘境。「草原と山が出会う場所」として知られ、バンフとは全く異なる景観が広がる。観光客が少なく静かで、野生動物（クマ・エルク・プロングホーン）に出会いやすい。アメリカのグレイシャー国立公園と合わせた国際平和公園はユネスコ世界遺産。</div>
+        <div class="spot-pros-cons">
+          <div class="pros"><b>✔ いいところ</b>予約一切不要・入園無料（夏季）・バンフより空いてる・景色が唯一無二・Prince of Wales Hotelの展望が絶景</div>
+          <div class="cons"><b>✘ デメリット</b>Okotoksから往復5時間の移動・現行日程に空きがない・バンフと真逆方向</div>
+        </div>
+        <div class="spot-links">
+          <a class="web-btn" href="https://parks.canada.ca/pn-np/ab/waterton" target="_blank">🌐 公式サイト</a>
+          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Waterton+Lakes+National+Park+Alberta" target="_blank">📍 Googleマップ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="spot-card" style="margin-top:10px;">
+      <div class="spot-hd">
+        <span class="spot-name">カナナスキス（Kananaskis Country）</span>
+        <span class="stars">★★★★<span class="star-empty">★</span></span>
+      </div>
+      <div class="spot-body">
+        <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Grassi_Lakes_Canmore_Alberta_%2811016558184%29.jpg" alt="Grassi Lakes, Kananaskis / Canmore area" loading="lazy"></div>
+        <div class="spot-meta">
+          <span class="meta-badge">🚗 Okotoksから約1時間西</span>
+          <span class="meta-badge">駐車料 $15/台のみ</span>
+          <span class="meta-badge">予約不要</span>
+        </div>
+        <div class="spot-desc">「バンフの裏側」とも呼ばれる巨大な山岳エリア。景色はバンフ並みなのに観光客が圧倒的に少なく静か。Grassi Lakes（ターコイズの湖）・Troll Falls（滝ハイキング）・Kananaskis Village（レストラン・スパ）など見どころが凝縮。バンフへ向かう途中に立ち寄れる距離感も◎。</div>
+        <div class="spot-pros-cons">
+          <div class="pros"><b>✔ いいところ</b>バンフより空いてる・国立公園パス不要・駐車料のみ・バンフとのセット訪問も可能</div>
+          <div class="cons"><b>✘ デメリット</b>バンフほどの知名度はなく情報が少なめ・現行日程に空きがない</div>
+        </div>
+        <div class="spot-links">
+          <a class="web-btn" href="https://kananaskis.com" target="_blank">🌐 公式サイト</a>
+          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Kananaskis+Country+Alberta" target="_blank">📍 Googleマップ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="spot-card" style="margin-top:10px;">
+      <div class="spot-hd">
+        <span class="spot-name">ヘッドスマッシュドイン・バッファロージャンプ</span>
+        <span class="stars">★★★★<span class="star-empty">★</span></span>
+      </div>
+      <div class="spot-body">
+        <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Head-Smashed-In_Buffalo_Jump.jpg" alt="Head-Smashed-In Buffalo Jump" loading="lazy"></div>
+        <div class="spot-meta">
+          <span class="meta-badge">🚗 Okotoksから約1.5時間南</span>
+          <span class="meta-badge">🆓 入園無料（〜9/7）</span>
+          <span class="meta-badge">ユネスコ世界遺産</span>
+          <span class="meta-badge">ウォータートンと同方向</span>
+        </div>
+        <div class="spot-desc">約6,000年前から先住民がバッファローの群れを崖の上へ追い込んで狩りをしていた史跡。崖の下には今も骨の地層が積み重なっている。大草原を見渡す崖の上に立つと、当時の壮大なスケールが肌で伝わってくる。充実したインタープリテーションセンターがあり、先住民の文化・歴史を深く理解できる。ウォータートン湖と同じ南方向にあるため、2ヶ所をまとめて1日で回ることも可能。</div>
+        <div class="spot-pros-cons">
+          <div class="pros"><b>✔ いいところ</b>他のスポットと全然違う体験・ユネスコ遺産・入園無料・ウォータートンと組み合わせOK・観光客が少ない</div>
+          <div class="cons"><b>✘ デメリット</b>「知って感動する」タイプで景観的なインパクトはやや控えめ・現行日程に空きがない</div>
+        </div>
+        <div class="spot-links">
+          <a class="web-btn" href="https://parks.canada.ca/lhn-nhs/ab/headsmashed" target="_blank">🌐 公式サイト</a>
+          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Head-Smashed-In+Buffalo+Jump+Alberta" target="_blank">📍 Googleマップ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Waterton Dining -->
+    <div class="area-hd area-waterton" style="margin-top:14px;">🍽 ウォータートン湖の食事スポット</div>
+    <div class="dining-grid">
+      <div class="dining-card">
+        <div class="dining-name">🍺 Thirsty Bear Kitchen &amp; Bar</div>
+        <div class="dining-desc">111 Waterton Ave。湖が見えるカジュアルなガストロパブ。ハイキング後の食事にぴったり</div>
+        <div class="dining-price">$$ ランチ向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Thirsty+Bear+Kitchen+Bar+Waterton" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🌮 The Taco Bar</div>
+        <div class="dining-desc">398 Wind Flower Ave。毎日手作りタコス。ウォータートンで最もリーズナブルな選択肢</div>
+        <div class="dining-price">$ ランチ向き</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Taco+Bar+Waterton+Lakes" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🥩 Lakeside Chophouse</div>
+        <div class="dining-desc">Bayshore Inn。湖とVimy Mountain一望。アルバータ牛32日熟成。絶景ディナー</div>
+        <div class="dining-price">$$$$ ディナー向き・要予約</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="web-btn" href="https://www.bayshoreinn.com" target="_blank">🌐 公式</a><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Bayshore+Inn+Lakeside+Chophouse+Waterton" target="_blank">📍 地図</a></div>
+      </div>
+      <div class="dining-card">
+        <div class="dining-name">🏰 Royal Stewart Dining Room</div>
+        <div class="dining-desc">Prince of Wales Hotel。歴史的ホテルのダイニング。アフタヌーンティー12〜16時も人気</div>
+        <div class="dining-price">$$$$ ランチ・ディナー・要予約</div>
+        <div class="spot-links" style="margin-top:6px;"><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Prince+of+Wales+Hotel+Waterton" target="_blank">📍 地図</a></div>
+      </div>
+    </div>
+    <div class="notice" style="font-size:11px;color:var(--text-mid);margin:6px 0 0;padding:8px 12px;background:var(--navy-faint);border-radius:8px;">⚠️ ウォータートンは飲食店が極めて少なく、夏季（5〜10月）のみ営業のお店がほとんど。Lakeside ChophouseとRoyal Stewartは要予約。</div>
+
+  </div>
+</div>
+
+<!-- ━━━ COUPLE RECS ━━━ -->
+<div class="section">
+  <div class="sec-hd area-main" style="background:linear-gradient(90deg,#7B3B8C,#4A6741);">💍 新郎新婦（なつき &amp; McKenna）のおすすめ</div>
+  <div class="sec-body">
+    <div class="notice info" style="margin-top:0;">結婚式の招待サイトで紹介されているスポット。現地をよく知るふたりのおすすめです。<a class="web-btn" href="https://www.theknot.com/us/mckenna-barlow-and-natski-sarayama-jul-2026/things-to-do" target="_blank" style="margin-left:8px;">🌐 招待サイトで見る</a></div>
+
+    <div class="two-col" style="margin-top:14px;">
+
+      <div>
+        <div style="font-weight:700;color:var(--navy);margin-bottom:8px;font-size:13px;">📍 観光・アクティビティ</div>
+
+        <div class="spot-card">
+          <div class="spot-hd">
+            <span class="spot-name">Stephen Avenue Walk</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Stephen_Avenue_Mall.jpg/1280px-Stephen_Avenue_Mall.jpg" alt="Stephen Avenue Walk Calgary" loading="lazy"></div>
+            <div class="spot-meta">
+              <span class="meta-badge">📍 カルガリー市内</span>
+              <span class="meta-badge">宿から45分</span>
+            </div>
+            <div class="spot-desc">カルガリーのメインストリート。レストラン・テラス席・バー・ショップが集まる歩行者天国。スタンピード期間中は特に賑わう。ランチ・ディナー・ナイトライフに最適。</div>
+            <div class="spot-links">
+              <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Stephen+Avenue+Walk+Calgary+Alberta" target="_blank">📍 Googleマップ</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="spot-card" style="margin-top:10px;">
+          <div class="spot-hd">
+            <span class="spot-name">Lazy Day Raft Rentals</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-photo no-photo" style="background:linear-gradient(150deg,#1A4D6A,#2874A6);">🛶<div class="spot-photo-lbl">Bow River Rafting — カルガリー市内を流れる川下り</div></div>
+            <div class="spot-meta">
+              <span class="meta-badge">📍 720 3 St NW, Calgary</span>
+              <span class="meta-badge">宿から45分</span>
+            </div>
+            <div class="spot-desc">カルガリー市内を流れるボウ川をラフトで下る人気アクティビティ。街の中心部を川から眺める特別な体験。夏の晴れた日に最高。</div>
+            <div class="spot-links">
+              <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Lazy+Day+Raft+Rentals+Calgary" target="_blank">📍 Googleマップ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-weight:700;color:var(--navy);margin-bottom:8px;font-size:13px;">🍽 グルメ・カフェ</div>
+
+        <div class="spot-card">
+          <div class="spot-hd">
+            <span class="spot-name">Rocky Mountain Bagel Company</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-photo no-photo" style="background:linear-gradient(150deg,#5C3A1A,#A0703A);">🥯<div class="spot-photo-lbl">Rocky Mountain Bagel Company — Canmore の名物ベーグル</div></div>
+            <div class="spot-meta">
+              <span class="meta-badge">📍 Canmore</span>
+              <span class="meta-badge">バンフの手前20分</span>
+            </div>
+            <div class="spot-desc">キャンモアの人気ベーグル専門店。山の空気を吸いながらのモーニングに最高。バンフへ向かう途中に立ち寄れる。新郎新婦のお気に入り。</div>
+            <div class="spot-links">
+              <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Rocky+Mountain+Bagel+Company+Canmore+Alberta" target="_blank">📍 Googleマップ</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="spot-card" style="margin-top:10px;">
+          <div class="spot-hd">
+            <span class="spot-name">Heritage Inn Hotel &amp; Bar（High River）</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-photo no-photo" style="background:linear-gradient(150deg,#2C2C2C,#4A3A28);">🍺<div class="spot-photo-lbl">Heritage Inn — 式場そばのホテルバー</div></div>
+            <div class="spot-meta">
+              <span class="meta-badge">📍 1104 11 Ave SE, High River</span>
+              <span class="meta-badge">式場から5分</span>
+            </div>
+            <div class="spot-desc">式場Sheppard Family Parkから車で5分のホテル。バー併設で式前後の一杯に便利。High River市内で数少ない飲食施設のひとつ。</div>
+            <div class="spot-links">
+              <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Heritage+Inn+Hotel+High+River+Alberta" target="_blank">📍 Googleマップ</a>
+              <a class="web-btn" href="https://heritageinn.net/locations/high-river-ab/home" target="_blank">🌐 公式サイト</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div><!-- /tab-spots -->
+
+<!-- ━━━ TAB: 準備 ━━━ -->
+<div class="tab-pane" id="tab-prep">
 
 <!-- ━━━ PACKING ━━━ -->
 <div class="section">
@@ -1218,8 +1863,269 @@ tr:nth-child(even) td { background: var(--navy-faint); }
   </div>
 </div>
 
+</div><!-- /tab-prep -->
+
+<!-- ━━━ TAB: 英語フレーズ ━━━ -->
+<div class="tab-pane" id="tab-english">
+<div class="section">
+  <div class="sec-hd">🗣 旅行で使える英語フレーズ集</div>
+  <div class="sec-body">
+
+    <div class="notice info" style="margin-top:0;">カナダは英語圏。難しい英語は不要ですが、これだけ知っておくと安心です。</div>
+
+    <!-- レストラン -->
+    <div class="area-hd area-calgary" style="margin-top:14px;">🍽 レストラン・カフェ</div>
+    <table class="kv" style="margin-bottom:0;">
+      <tr><th>席をもらえますか？</th><td>Table for four, please.</td></tr>
+      <tr><th>メニューをください</th><td>Could I get a menu, please?</td></tr>
+      <tr><th>これをください（指差し）</th><td>I'll have this one, please.</td></tr>
+      <tr><th>おすすめは何ですか？</th><td>What do you recommend?</td></tr>
+      <tr><th>アレルギーがあります</th><td>I have a [nut / dairy] allergy.</td></tr>
+      <tr><th>お会計をください</th><td>Can I get the check, please?</td></tr>
+      <tr><th>一緒に払います</th><td>Together, please.</td></tr>
+      <tr><th>別々に払います</th><td>Separate checks, please.</td></tr>
+      <tr><th>とても美味しかったです</th><td>It was delicious. Thank you!</td></tr>
+    </table>
+
+    <!-- 観光地・国立公園 -->
+    <div class="area-hd area-banff" style="margin-top:18px;">🏔 観光地・国立公園</div>
+    <table class="kv" style="margin-bottom:0;">
+      <tr><th>入場料はいくらですか？</th><td>How much is the admission?</td></tr>
+      <tr><th>〜はどこですか？</th><td>Where is the [trailhead / viewpoint]?</td></tr>
+      <tr><th>写真を撮ってもらえますか？</th><td>Could you take a photo of us?</td></tr>
+      <tr><th>一緒に写真いいですか？</th><td>Could we get a photo together?</td></tr>
+      <tr><th>ハイキングコースはどれくらいですか？</th><td>How long is the hiking trail?</td></tr>
+      <tr><th>難易度は？</th><td>Is it easy / moderate / difficult?</td></tr>
+      <tr><th>クマがいますか？</th><td>Are there bears in this area?</td></tr>
+      <tr><th>シャトルはどこから乗れますか？</th><td>Where can I catch the shuttle bus?</td></tr>
+      <tr><th>パスはどこで買えますか？</th><td>Where can I buy a park pass?</td></tr>
+    </table>
+
+    <!-- レンタカー・ドライブ -->
+    <div class="area-hd area-drumheller" style="margin-top:18px;">🚗 レンタカー・ドライブ</div>
+    <table class="kv" style="margin-bottom:0;">
+      <tr><th>車を借りに来ました</th><td>I'm here to pick up my rental car.</td></tr>
+      <tr><th>予約名は〜です</th><td>My reservation is under [name].</td></tr>
+      <tr><th>追加保険は不要です</th><td>No additional insurance, thank you.</td></tr>
+      <tr><th>ガソリンはどこで入れますか？</th><td>Where is the nearest gas station?</td></tr>
+      <tr><th>返却はどこですか？</th><td>Where should I return the car?</td></tr>
+      <tr><th>道に迷いました</th><td>I'm lost. Can you help me?</td></tr>
+      <tr><th>〜へはどう行けばいいですか？</th><td>How do I get to [destination]?</td></tr>
+      <tr><th>駐車場はありますか？</th><td>Is there a parking lot nearby?</td></tr>
+    </table>
+
+    <!-- ショッピング -->
+    <div class="area-hd area-okotoks" style="margin-top:18px;">🛍 ショッピング</div>
+    <table class="kv" style="margin-bottom:0;">
+      <tr><th>これはいくらですか？</th><td>How much is this?</td></tr>
+      <tr><th>試着できますか？</th><td>Can I try this on?</td></tr>
+      <tr><th>もう少し安くなりますか？</th><td>Is there any discount available?</td></tr>
+      <tr><th>袋はいりますか？</th><td>— （店員から聞かれます）<br>"Yes please." / "No thank you."</td></tr>
+      <tr><th>カードで払えますか？</th><td>Do you accept credit cards?</td></tr>
+      <tr><th>日本に送れますか？</th><td>Can you ship this to Japan?</td></tr>
+      <tr><th>免税手続きはありますか？</th><td>Is there a tax refund available?</td></tr>
+    </table>
+
+    <!-- ホテル・宿泊 -->
+    <div class="area-hd area-calgary" style="margin-top:18px;">🏠 宿泊・チェックイン</div>
+    <table class="kv" style="margin-bottom:0;">
+      <tr><th>チェックインをしたいです</th><td>I'd like to check in, please.</td></tr>
+      <tr><th>〜名でチェックインしました</th><td>I have a reservation under [name].</td></tr>
+      <tr><th>Wi-Fiのパスワードは？</th><td>What's the Wi-Fi password?</td></tr>
+      <tr><th>タオルを追加してください</th><td>Could I get extra towels, please?</td></tr>
+      <tr><th>チェックアウトは何時ですか？</th><td>What time is checkout?</td></tr>
+    </table>
+
+    <!-- 緊急・トラブル -->
+    <div class="area-hd" style="background:linear-gradient(90deg,#6B2020,#A03030);margin-top:18px;">🚨 緊急・トラブル</div>
+    <table class="kv" style="margin-bottom:0;">
+      <tr><th>助けてください！</th><td><strong>Help!</strong></td></tr>
+      <tr><th>救急車を呼んでください</th><td>Please call an ambulance!</td></tr>
+      <tr><th>警察を呼んでください</th><td>Please call the police!</td></tr>
+      <tr><th>財布を盗まれました</th><td>My wallet was stolen.</td></tr>
+      <tr><th>体調が悪いです</th><td>I don't feel well.</td></tr>
+      <tr><th>病院はどこですか？</th><td>Where is the nearest hospital?</td></tr>
+      <tr><th>日本語を話せる人はいますか？</th><td>Is there anyone who speaks Japanese?</td></tr>
+      <tr><th>緊急電話番号</th><td><strong>911</strong>（警察・救急・消防）</td></tr>
+      <tr><th>在カナダ日本大使館</th><td>+1-613-241-8541（Ottawa）</td></tr>
+    </table>
+
+    <!-- チップ -->
+    <div class="area-hd area-banff" style="margin-top:18px;">💵 チップのポイント</div>
+    <div class="notice info" style="margin-top:0;margin-bottom:0;">
+      カナダはチップ文化あり。以下が目安：<br>
+      🍽 レストラン：<strong>15〜20%</strong>（請求額の）<br>
+      🚕 タクシー・Uber：<strong>10〜15%</strong><br>
+      🏨 ホテル荷物運び：<strong>$1〜2/個</strong><br>
+      ☕ カフェ・テイクアウト：<strong>任意（小銭程度でOK）</strong><br><br>
+      端末にチップ選択画面が出たら「Custom」で金額入力 or「No tip」を選べます。
+    </div>
+
+  </div>
+</div>
+</div><!-- /tab-english -->
+
+<!-- ━━━ TAB: 体験記 ━━━ -->
+<div class="tab-pane" id="tab-reports">
+
+<div class="section">
+  <div class="sec-hd mid">🏔 バンフ・早朝観光 体験記</div>
+  <div class="sec-body">
+    <div class="notice info" style="margin-top:0;">同じ7月にカナダ・アルバータを旅した日本人ブロガーの体験記まとめ。早朝の重要性と混雑のリアルが参考になります。</div>
+
+    <div class="blog-card">
+      <span class="blog-tag blog-tag-banff">🏔 バンフ 早朝</span>
+      <div class="blog-title">モレーン湖 早朝編 — バンフ＆グレーシャー国立公園レンタカーの旅</div>
+      <div class="blog-source">フォートラベル / Exclevelanderさん</div>
+      <div class="blog-quote">「虹がかかったモレーン湖を眺めることができた。カヌーは9時から営業開始なので、この写真を撮るには9時までに来ることをお勧めします」</div>
+      <div class="blog-facts">
+        <span class="blog-fact">⏰ 5時起床 → 7時バス → 8:30着</span>
+        <span class="blog-fact">🛶 カヌーは9時〜</span>
+        <span class="blog-fact">🌈 早朝は虹や朝靄も</span>
+      </div>
+      <a class="blog-link" href="https://4travel.jp/travelogue/11855101" target="_blank">📖 ブログを読む →</a>
+    </div>
+
+    <div class="blog-card">
+      <span class="blog-tag blog-tag-banff">🏔 バンフ 早朝ツアー</span>
+      <div class="blog-title">バンフ編 #2 絶景に息を呑む — 旅する世界遺産マイスター</div>
+      <div class="blog-source">note / マサムネさん</div>
+      <div class="blog-quote">「水の反射・日の出・雲海という朝から絶景フルコース。朝4時から何も食べていないのに、空腹を忘れるほどの景色だった」</div>
+      <div class="blog-facts">
+        <span class="blog-fact">⏰ 4:45集合の早朝ツアー</span>
+        <span class="blog-fact">💸 約CA$115/人</span>
+        <span class="blog-fact">🌅 日の出 + 雲海 + 水の反射</span>
+      </div>
+      <a class="blog-link" href="https://note.com/masamune_kwsk/n/n62013b09f048" target="_blank">📖 ブログを読む →</a>
+    </div>
+
+    <div class="blog-card">
+      <span class="blog-tag blog-tag-banff">🏔 バンフ 2024年版</span>
+      <div class="blog-title">2024年 バンフの二大観光スポット レイクルイーズとモレーン湖</div>
+      <div class="blog-source">shio-blog.net</div>
+      <div class="blog-quote">「午前中のうちに駐車場が満車になる。待機スペースもなく、レンタカーで行くのは現実的でない。私が一番好きな湖です」</div>
+      <div class="blog-facts">
+        <span class="blog-fact">🚫 モレーン湖は一般車両乗り入れ禁止</span>
+        <span class="blog-fact">🅿 7〜11時が特に混む</span>
+        <span class="blog-fact">🚌 Park &amp; Rideシャトルが基本</span>
+      </div>
+      <a class="blog-link" href="https://shio-blog.net/lakelouise-morainlake/" target="_blank">📖 ブログを読む →</a>
+    </div>
+
+    <div class="blog-card">
+      <span class="blog-tag blog-tag-banff">🏔 バンフ カヌー</span>
+      <div class="blog-title">バンフ夏旅 #4 モレーン湖でカヌー＆鏡張りレイクルイーズ</div>
+      <div class="blog-source">はてなブログ / San Joseさん（カナダ在住）</div>
+      <div class="blog-quote">「神秘的な色の湖に浮いている高揚感。岩山に近づくと迫力が段違い。波のない穏やかな湖なので酔いやすい人でも平気でした」</div>
+      <div class="blog-facts">
+        <span class="blog-fact">🛶 カヌー CA$140/艘・時間</span>
+        <span class="blog-fact">👶 赤ちゃん（9kg↑）も乗船可</span>
+        <span class="blog-fact">🌊 波なし・穏やか</span>
+      </div>
+      <a class="blog-link" href="https://3josememo.hatenablog.com/entry/2023/08/07/172728" target="_blank">📖 ブログを読む →</a>
+    </div>
+
+    <div class="blog-card">
+      <span class="blog-tag blog-tag-banff">🏔 バンフ 混雑情報</span>
+      <div class="blog-title">バンフ2泊3日旅行記 — モレーン湖＆レイクルイーズ</div>
+      <div class="blog-source">note / momijiさん（ワーホリ中・トロント在住）</div>
+      <div class="blog-quote">「展望台（Rock Pile）は10分ほど階段を登るだけで湖の見え方が全然違う。絶対登った方がいい。朝早くから人が結構いて、駐車場もすぐ満車になる」</div>
+      <div class="blog-facts">
+        <span class="blog-fact">🪨 Rock Pile展望台必須</span>
+        <span class="blog-fact">🚌 ツアー参加で駐車場問題を回避</span>
+        <span class="blog-fact">💰 総予算 CA$1,600（フライト込み）</span>
+      </div>
+      <a class="blog-link" href="https://note.com/momiji_life/n/n31183ecd7910" target="_blank">📖 ブログを読む →</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-hd" style="background:linear-gradient(90deg,#7B3800,#B05010);">🦕 ドラムヘラー体験記</div>
+  <div class="sec-body">
+
+    <div class="blog-card">
+      <span class="blog-tag blog-tag-drum">🦕 ドラムヘラー 在住者視点</span>
+      <div class="blog-title">カナダ在住者が語る — ドラムヘラー穴場観光</div>
+      <div class="blog-source">note / SKさん（カルガリー在住🇨🇦）</div>
+      <div class="blog-quote">「想像以上に疲れた（急斜面・砂地）。でも日本では絶対に見られない景色。全く雰囲気が違うドラムヘラーにぜひ足を運んでほしい」</div>
+      <div class="blog-facts">
+        <span class="blog-fact">🚗 カルガリーから1時間30分</span>
+        <span class="blog-fact">🗿 Hoodoos（ホードゥー）が圧巻</span>
+        <span class="blog-fact">⚠ 急斜面あり・歩きやすい靴必須</span>
+      </div>
+      <a class="blog-link" href="https://note.com/sk_yyc/n/n025bac22e409" target="_blank">📖 ブログを読む →</a>
+    </div>
+
+    <div class="blog-card">
+      <span class="blog-tag blog-tag-drum">🦕 ドラムヘラー ファミリー</span>
+      <div class="blog-title">レンタカーでドラムヘラーへ — 子連れ旅行記</div>
+      <div class="blog-source">フォートラベル / mayuさん（子ども3人連れ）</div>
+      <div class="blog-quote">「恐竜の中に入って登れる！岩登りに子どもたち大興奮。思っていたよりずっと楽しめました。7歳・4歳・2歳でも全然OK」</div>
+      <div class="blog-facts">
+        <span class="blog-fact">🚗 カルガリーから1時間30分</span>
+        <span class="blog-fact">🦕 ティレル博物館・ホードゥー</span>
+        <span class="blog-fact">🍱 館内で持ち込みランチOK</span>
+        <span class="blog-fact">🏁 18:30ダウンタウン着（1日コース）</span>
+      </div>
+      <a class="blog-link" href="https://4travel.jp/travelogue/11924251" target="_blank">📖 ブログを読む →</a>
+    </div>
+
+    <div class="notice warn" style="margin-bottom:0;">
+      💡 <strong>体験記から学ぶ重要ポイント</strong><br>
+      🏔 <strong>バンフ早朝</strong>：6時台までに現地着が理想。8時以降は一気に混雑。ツアー参加で駐車場問題をスキップ可<br>
+      🛶 <strong>カヌー</strong>：9時〜営業、CA$140前後/艘・時間。早朝着いたら並んでおくと吉<br>
+      🗿 <strong>ホードゥー</strong>：急斜面あり。サンダル・ヒールは危険。運動靴必須<br>
+      🦕 <strong>ドラムヘラー</strong>：1日で回りきれる。カルガリーから2時間以内
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /tab-reports -->
+
 <div class="footer">🍁 カナダ旅行プラン 2026　／　7月8日〜14日　／　4名　／　Okotoks, Alberta</div>
 
 </div>
+
+<script>
+// Area accordion — default collapsed
+(function(){
+  document.querySelectorAll('.area-main').forEach(function(hd) {
+    var arrow = document.createElement('span');
+    arrow.className = 'toggle-arrow';
+    hd.appendChild(arrow);
+
+    var siblings = [];
+    var el = hd.nextElementSibling;
+    while (el && !el.classList.contains('area-main') && !el.classList.contains('sec-hd')) {
+      siblings.push(el);
+      el = el.nextElementSibling;
+    }
+
+    // Start collapsed
+    siblings.forEach(function(s) { s.style.display = 'none'; });
+    var open = false;
+
+    hd.addEventListener('click', function() {
+      open = !open;
+      siblings.forEach(function(s) { s.style.display = open ? '' : 'none'; });
+      hd.classList.toggle('open', open);
+    });
+  });
+})();
+
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-pane').forEach(function(el){ el.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(el){ el.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: btn.closest('.tab-nav').offsetTop - 12, behavior: 'smooth' });
+  if (id === 'spots' && window._spotsMap) {
+    setTimeout(function(){ window._spotsMap.invalidateSize(); }, 50);
+  }
+}
+</script>
 </body>
 </html>
