@@ -1433,9 +1433,11 @@ tr:nth-child(even) td { background: var(--navy-faint); }
             <div class="cons"><b>✘ デメリット</b>シャトルバス予約が早期に完売・行けない可能性も（要確認）</div>
           </div>
           <div class="spot-links">
-            <a class="web-btn" href="https://www.banfflakelouise.com/ja/" target="_blank">🌐 公式サイト（日本語）</a>
-            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Moraine+Lake+Alberta+Canada" target="_blank">📍 Googleマップ</a>
+            <a class="web-btn" style="background:#E05A00;border-color:#E05A00;" href="https://reservation.pc.gc.ca/" target="_blank">🚌 シャトル予約（Parks Canada）</a>
+            <a class="web-btn" href="https://www.banfflakelouise.com/ja/" target="_blank">🌐 公式（日本語）</a>
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Moraine+Lake+Alberta+Canada" target="_blank">📍 地図</a>
           </div>
+          <div class="notice alert" style="margin:8px 0 0;font-size:10.5px;">⚠️ シャトルは数ヶ月前に完売することがある。予約は早めに。</div>
         </div>
       </div>
 
@@ -1817,6 +1819,101 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 
 <!-- ━━━ TAB: 準備 ━━━ -->
 <div class="tab-pane" id="tab-prep">
+
+<!-- ━━━ WEATHER ━━━ -->
+<div class="section">
+  <div class="sec-hd" style="background:linear-gradient(90deg,#1B6A8C,#1B3A5C);">🌡 7月の気温と服装ガイド（7/8〜14）</div>
+  <div class="sec-body">
+
+    <!-- エリア別気温カード -->
+    <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:8px;">📍 エリア別 日中・朝晩の気温</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;">
+
+      <div style="background:#F0F6FF;border-radius:10px;padding:10px 12px;border-top:3px solid #1B3A5C;">
+        <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px;">🏙 Calgary / Okotoks</div>
+        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
+          日中: <strong>24〜27°C</strong><br>
+          朝晩: <strong>11〜13°C</strong><br>
+          <span style="font-size:10px;">快晴が多い・湿気は少ない</span>
+        </div>
+      </div>
+
+      <div style="background:#FFF5EB;border-radius:10px;padding:10px 12px;border-top:3px solid #B85000;">
+        <div style="font-size:12px;font-weight:700;color:#7B3800;margin-bottom:4px;">🦕 ドラムヘラー</div>
+        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
+          日中: <strong>28〜33°C</strong><br>
+          朝晩: <strong>12〜15°C</strong><br>
+          <span style="font-size:10px;">砂漠性気候・炎天下注意</span>
+        </div>
+      </div>
+
+      <div style="background:#EBF5FF;border-radius:10px;padding:10px 12px;border-top:3px solid #2B6CB0;">
+        <div style="font-size:12px;font-weight:700;color:#1B4D8A;margin-bottom:4px;">🏔 バンフ市街（1,383m）</div>
+        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
+          日中: <strong>20〜23°C</strong><br>
+          朝晩: <strong>7〜9°C</strong><br>
+          <span style="font-size:10px;">午後は雷雨リスクあり</span>
+        </div>
+      </div>
+
+      <div style="background:#E8F0FF;border-radius:10px;padding:10px 12px;border-top:3px solid #4A90D9;">
+        <div style="font-size:12px;font-weight:700;color:#1B3A5C;margin-bottom:4px;">💎 Lake Louise（1,731m）</div>
+        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
+          日中: <strong>17〜20°C</strong><br>
+          早朝5-7時: <strong>4〜8°C</strong><br>
+          <span style="font-size:10px;">早朝は真冬並みの体感も</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 服装ガイド -->
+    <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:8px;">👕 シーン別 服装目安</div>
+    <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border-light);margin-bottom:14px;">
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+        <thead>
+          <tr style="background:var(--navy);color:#fff;">
+            <th style="padding:7px 10px;text-align:left;width:38%;">シーン</th>
+            <th style="padding:7px 10px;text-align:left;">服装</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border-light);">
+            <td style="padding:7px 10px;color:var(--text-mid);">🌅 早朝バンフ・ルイーズ</td>
+            <td style="padding:7px 10px;">フリース or 薄手ダウン ＋ ウィンドブレーカー（防水）必須。長袖・長ズボン推奨</td>
+          </tr>
+          <tr style="background:var(--navy-faint);border-bottom:1px solid var(--border-light);">
+            <td style="padding:7px 10px;color:var(--text-mid);">☀️ 日中 Calgary / Okotoks</td>
+            <td style="padding:7px 10px;">Tシャツ ＋ ショートパンツでOK。夜は1枚羽織ると◎</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-light);">
+            <td style="padding:7px 10px;color:var(--text-mid);">🦕 ドラムヘラー（D3）</td>
+            <td style="padding:7px 10px;">軽装でOKだが<strong>帽子・日焼け止め必須</strong>。日差しが強烈。水2L以上を携行</td>
+          </tr>
+          <tr style="background:var(--navy-faint);border-bottom:1px solid var(--border-light);">
+            <td style="padding:7px 10px;color:var(--text-mid);">💍 結婚式（D4）</td>
+            <td style="padding:7px 10px;">スーツ・ネクタイ・革靴。式場は屋外の可能性あり → 日差し対策を</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-light);">
+            <td style="padding:7px 10px;color:var(--text-mid);">🎰 カジノ（D1夜）</td>
+            <td style="padding:7px 10px;">カジュアルOK（ジーンズ・スニーカー可）。空調が効いてるので1枚羽織ると◎</td>
+          </tr>
+          <tr>
+            <td style="padding:7px 10px;color:var(--text-mid);">🌧 雨・雷雨対策（全日）</td>
+            <td style="padding:7px 10px;">軽量<strong>レインジャケット</strong>を1枚バックパックに常備。山の午後は急変する</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 必携アイテム -->
+    <div class="notice info" style="font-size:11.5px;">
+      🎒 <strong>バンフ早朝アタック必携セット：</strong>
+      フリース or 薄手ダウン / 防水ウィンドブレーカー / 手袋（薄手） / ニット帽（念のため） / 水 / 日焼け止め
+    </div>
+
+  </div>
+</div>
 
 <!-- ━━━ PACKING ━━━ -->
 <div class="section">
