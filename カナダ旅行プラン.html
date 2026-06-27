@@ -500,7 +500,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 <!-- ━━━ TAB NAV ━━━ -->
 <nav class="tab-nav">
   <button class="tab-btn active" onclick="switchTab('schedule',this)">📅 ①叩き台</button>
-  <button class="tab-btn" onclick="switchTab('plan2',this)">📅 ②置き去り</button>
+  <button class="tab-btn" onclick="switchTab('plan2',this)" style="opacity:0.35;text-decoration:line-through;">📅 ②置き去り</button>
   <button class="tab-btn" onclick="switchTab('plan3',this)">📅 ③同乗</button>
   <button class="tab-btn" onclick="switchTab('meeting',this)">📋 会議</button>
   <button class="tab-btn" onclick="switchTab('spots',this)">🗺 スポット</button>
@@ -824,7 +824,8 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 <!-- ━━━ TAB: プラン② ━━━ -->
 <div class="tab-pane" id="tab-plan2">
 
-<div class="section">
+<div style="background:#8B2020;color:#fff;padding:11px 16px;font-size:13px;font-weight:800;text-align:center;letter-spacing:1px;">🚫 このプランはボツになりました</div>
+<div class="section" style="filter:grayscale(1);opacity:0.45;">
   <div class="sec-hd" style="background:linear-gradient(90deg,#2C5F2E,#1B5E8C);">📅 プラン② 健太郎 置き去りver — 先にバンフ / 帰りにドラムヘラー</div>
   <div class="sec-body">
     <!-- ▼ 3プラン比較 ▼ -->
