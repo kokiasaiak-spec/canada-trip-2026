@@ -501,6 +501,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 <nav class="tab-nav">
   <button class="tab-btn active" onclick="switchTab('schedule',this)">📅 プラン①</button>
   <button class="tab-btn" onclick="switchTab('plan2',this)">📅 プラン②</button>
+  <button class="tab-btn" onclick="switchTab('plan3',this)">📅 プラン③</button>
   <button class="tab-btn" onclick="switchTab('spots',this)">🗺 スポット</button>
   <button class="tab-btn" onclick="switchTab('info',this)">✈ 旅行情報</button>
   <button class="tab-btn" onclick="switchTab('prep',this)">🧳 準備</button>
@@ -917,6 +918,182 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 </div>
 
 </div><!-- /tab-plan2 -->
+
+<!-- ━━━ TAB: プラン③ ━━━ -->
+<div class="tab-pane" id="tab-plan3">
+
+<div class="section">
+  <div class="sec-hd" style="background:linear-gradient(90deg,#1B3A5C,#7B3800);">📅 プラン③ — 健太郎がバンフもドラムヘラーも両方楽しめる</div>
+  <div class="sec-body">
+    <div class="notice info" style="margin-top:0;">
+      <strong>このプランの特徴：</strong><br>
+      ✅ <strong>健太郎がバンフもドラムヘラーも両方</strong> 楽しめる！<br>
+      ✅ Day2はホームパーティに参加できる（プラン①と同じ）<br>
+      ✅ 全員で <strong>早朝バンフ</strong> — 人のいない絶景を独占<br>
+      ⚠ Day3は長い1日（空港送迎 + ドラムヘラー弾丸 → Okotoks 帰還 〜22時）<br>
+      ⚠ Day5にバンフ追加宿泊が必要（1泊 — 別途 Airbnb / ホテル要手配）<br>
+      ⚠ 健太郎の <strong>Banff Airporter</strong> を事前予約のこと（CA$70前後/人）
+    </div>
+
+    <!-- Day 1 -->
+    <div class="day-card">
+      <div class="day-hd">
+        <span class="day-num">DAY 1</span>
+        <span class="day-title">到着 &amp; カジノ 🎰</span>
+        <span class="day-date">7月8日（水）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">12:40</span><span>✈ 3名 カルガリー空港 YYC 着（WS081）</span></div>
+        <div class="day-item"><span class="day-time">13:30</span><span>🚙 Thrifty レンタカー受け取り（ターミナル内カウンター） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Thrifty+Car+Rental+Calgary+International+Airport" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">〜16:00</span><span>🤠 カルガリー市内観光 or スタンピード（開催中！）/ 軽く食事</span></div>
+        <div class="day-item"><span class="day-time">16:00</span><span>🏠 Mountain View Retreat チェックイン（Okotoks） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=15+Aster+Link+Okotoks+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">夜</span><span>🎰 <strong>カジノ</strong> — Grey Eagle Resort &amp; Casino（宿から約35分） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Grey+Eagle+Resort+Casino+Calgary" target="_blank">📍 地図</a></span></div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card dc-2">
+      <div class="day-hd">
+        <span class="day-num">DAY 2</span>
+        <span class="day-title">ホームパーティ 🏠🎉</span>
+        <span class="day-date">7月9日（木）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">午前</span><span>🛒 T&amp;T スーパーマーケット（アジア系食材調達） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=T%26T+Supermarket+Calgary+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">午後</span><span>🏠 <strong>ホームパーティ！</strong>（なつき宅） — 食事・ゲーム・カナダ土産披露</span></div>
+        <div class="day-item"><span class="day-time">夜（任意）</span><span>🤠 スタンピード夜の部（〜22:00）</span></div>
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-card dc-3">
+      <div class="day-hd">
+        <span class="day-num">DAY 3</span>
+        <span class="day-title">健太郎 到着 🧳 → 弾丸ドラムヘラー 🦕</span>
+        <span class="day-date">7月10日（金）</span>
+      </div>
+      <div class="day-body">
+        <div class="notice warn" style="margin:0 0 10px;"><strong>⚠ 弾丸スケジュール！</strong> 3名は健太郎の入国を待ってターミナルで合流。夏は22時でも薄明るいのでドラムヘラーを存分に楽しめる。</div>
+        <div class="day-item"><span class="day-time">午前</span><span>🏠 Okotoks でのんびり準備（早起き不要の貴重な朝）</span></div>
+        <div class="day-item"><span class="day-time">12:00</span><span>🚗 3名 Okotoks 出発 → カルガリー空港 YYC へ（約45分）</span></div>
+        <div class="day-item kent-row"><span class="day-time">12:40</span><span>🧳 <strong>健太郎 YYC 到着！</strong>（WS081）— 3名は到着ロビーで待機</span></div>
+        <div class="day-item"><span class="day-time">〜13:30</span><span>⏳ 入国審査・バゲージクレーム終了（目安 60〜90分）</span></div>
+        <div class="day-item"><span class="day-time">13:30</span><span>🚗 <strong>4名そろってドラムヘラーへ出発！</strong>（YYC → ドラムヘラー 約1.5時間） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Drumheller+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">15:00</span><span>🦕 <strong>ロイヤル・ティレル博物館</strong>（夏季 21:00 閉館！ゆっくり2時間） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Royal+Tyrrell+Museum+Drumheller+Alberta" target="_blank">📍 地図</a><br><small style="color:var(--text-mid);">世界最大級の恐竜博物館 — 事前チケット予約推奨</small></span></div>
+        <div class="day-item"><span class="day-time">17:00</span><span>🪨 <strong>Horseshoe Canyon</strong>（夕陽が赤く染まる絶景） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Horseshoe+Canyon+Drumheller+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">18:00</span><span>🗿 <strong>ホードゥー</strong>（夕暮れの逆光で幻想的） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Drumheller+Hoodoos+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">18:30</span><span>🍔 ディナー（Bernie &amp; The Boys Bistro or Sam's Kitchen） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Bernie+and+the+Boys+Bistro+Drumheller" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">20:00</span><span>🚗 Okotoks へ出発（ドラムヘラー → Okotoks 約2時間）</span></div>
+        <div class="day-item"><span class="day-time">22:00</span><span>🏠 Okotoks 宿 到着（夏は22時でもまだ薄明るい！）</span></div>
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day-card dc-4">
+      <div class="day-hd">
+        <span class="day-num">DAY 4</span>
+        <span class="day-title">なつき結婚式 💍</span>
+        <span class="day-date">7月11日（土）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">午前</span><span>🏠 宿でゆっくり準備（式場はOkotoksから約25分 — 近い！）</span></div>
+        <div class="day-item"><span class="day-time">14:30</span><span>🚗 Sheppard Family Park へ出発 <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Sheppard+Family+Park+1201+5+Street+SE+High+River+Alberta" target="_blank">📍 地図</a> <a class="web-btn" href="https://www.theknot.com/us/mckenna-barlow-and-natski-sarayama-jul-2026" target="_blank">💍 招待状</a></span></div>
+        <div class="day-item"><span class="day-time">15:00</span><span>💒 <strong>挙式</strong> — McKenna &amp; なつき（Natski Sarayama）</span></div>
+        <div class="day-item"><span class="day-time">16:00</span><span>🥂 カクテルアワー</span></div>
+        <div class="day-item"><span class="day-time">17:00</span><span>🍽 披露宴スタート</span></div>
+        <div class="day-item"><span class="day-time">23:30</span><span>🎉 お開き → 宿へ帰宅（約25分）</span></div>
+        <div class="day-item alert-row"><span class="day-time">持参</span><span>👔 スーツ・ネクタイ・革靴 ← 忘れずに！</span></div>
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="day-card dc-5">
+      <div class="day-hd">
+        <span class="day-num">DAY 5</span>
+        <span class="day-title">なつきと遊ぶ 🤝 → バンフへ移動・宿泊 🏔</span>
+        <span class="day-date">7月12日（日）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">午前〜昼</span><span>🤝 なつきさんと合流（4名 + なつきさん）— 場所・内容は事前調整</span></div>
+        <div class="day-item"><span class="day-time">tip</span><span>🤠 <strong>スタンピード最終日！</strong>（〜7/13）一緒に行くのも最高の思い出に</span></div>
+        <div class="day-item"><span class="day-time">17:00</span><span>🚗 Okotoks 出発 → バンフへ（約1.5時間）<br><small style="color:var(--text-mid);">翌朝 5:00 起きに備えて夕方出発</small></span></div>
+        <div class="day-item"><span class="day-time">19:00</span><span>🏡 バンフ チェックイン <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Banff+Alberta+Airbnb+Hotel" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">19:30</span><span>🍽 バンフでディナー — <strong>The Bison</strong>（211 Bear St）/ <strong>Anejo</strong>（111 Banff Ave）要予約 <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=The+Bison+Banff+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">22:00</span><span>💤 翌朝 5:00 起きに備えて早めに就寝！</span></div>
+        <div class="day-item alert-row"><span class="day-time">宿泊</span><span>🏡 <strong>バンフ内 Airbnb or ホテル</strong>（要別途予約 1泊 — プラン①の Okotoks 宿は不使用）</span></div>
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="day-card dc-6">
+      <div class="day-hd">
+        <span class="day-num">DAY 6</span>
+        <span class="day-title">早朝バンフアタック 🏔 → 健太郎バスで空港 ✈</span>
+        <span class="day-date">7月13日（月）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">05:00</span><span>⏰ 起床 — 早い者勝ちの朝！</span></div>
+        <div class="day-item"><span class="day-time">05:30</span><span>💎 <strong>レイク・ルイーズ</strong> 到着（早朝は車で直接駐車可・人ゼロ・鏡の湖面） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Lake+Louise+Alberta" target="_blank">📍 地図</a><br><small style="color:var(--text-mid);">8時を過ぎると一気に混雑。6時台はほぼ貸し切り状態！</small></span></div>
+        <div class="day-item"><span class="day-time">07:00</span><span>🌊 <strong>モレーン湖</strong>（早朝なら車で上まで行ける可能性あり・十峰の絶景朝靄） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Moraine+Lake+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">08:30</span><span>🛶 モレーン湖 <strong>カヌー</strong>（レンタル / 9時頃開始・CA$140前後/艘）</span></div>
+        <div class="day-item kent-row"><span class="day-time">09:15</span><span>🚌 <strong>健太郎 → Banff Airporter 乗車</strong>（Lake Louise バス停 or バンフ Brewster ターミナル）<br>YYC 到着目安 <strong>11:30〜12:00</strong> ← WestJet 国際線チェックイン締切 <strong>12:50</strong>（14:50発の2時間前）✓<br><small style="color:var(--text-mid);">事前に banffairporter.com で時刻確認・座席予約推奨（CA$70前後/人）</small></span></div>
+        <div class="day-item kent-row"><span class="day-time">14:50</span><span>✈ <strong>健太郎 WS080 カルガリー発</strong> → 翌7/14（火）16:20 成田T1 着</span></div>
+        <div class="day-item alert-row"><span class="day-time">〜 3名続行 〜</span><span>ここから残り3名はバンフを引き続き満喫！</span></div>
+        <div class="day-item"><span class="day-time">09:30</span><span>🥾 <strong>ジョンストン渓谷ハイキング</strong>（下の滝まで片道2km・夏は朝がベスト） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Johnston+Canyon+Banff+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">11:00</span><span>🚡 <strong>バンフ・ゴンドラ</strong>（サルファー山 山頂パノラマ・360°絶景） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Banff+Gondola+Sulphur+Mountain" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">13:00</span><span>🍽 バンフ市街でランチ（Anejo / Hankki Korean BBQ） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Banff+Avenue+Banff+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">14:00</span><span>🌅 <strong>バーミリオン湖</strong>（フォトスポット）+ バンフ Ave ショッピング・お土産 <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Vermilion+Lakes+Banff+Alberta" target="_blank">📍 地図</a></span></div>
+        <div class="day-item"><span class="day-time">16:30</span><span>🚗 Okotoks へ帰還（約1.5時間）</span></div>
+        <div class="day-item"><span class="day-time">18:00</span><span>🏠 <strong>最終夜</strong> Okotoks 宿</span></div>
+      </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="day-card dc-7">
+      <div class="day-hd">
+        <span class="day-num">DAY 7</span>
+        <span class="day-title">3名 帰国 ⚠ 時間厳守！</span>
+        <span class="day-date">7月14日（火）</span>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><span class="day-time">11:00</span><span>🏠 Mountain View Retreat チェックアウト（3名）</span></div>
+        <div class="day-item"><span class="day-time">〜12:00</span><span>🚗 カルガリー空港 YYC 到着（宿から約45分）</span></div>
+        <div class="day-item alert-row"><span class="day-time">⚠ 12:30</span><span><strong>Thrifty レンタカー返却 ← ここが実質の締切！</strong></span></div>
+        <div class="day-item"><span class="day-time">12:50</span><span>チェックインカウンター締切（14:50発の2時間前）</span></div>
+        <div class="day-item"><span class="day-time">14:50</span><span>✈ WS080 カルガリー出発（3名）→ 翌7/15（水）16:20 成田T1 着</span></div>
+      </div>
+    </div>
+
+    <!-- 3プラン比較 -->
+    <div class="notice info" style="margin-top:18px;">
+      <strong>📊 3プラン 比較</strong>
+      <table style="width:100%;border-collapse:collapse;margin-top:10px;font-size:11px;">
+        <thead>
+          <tr style="background:var(--navy-faint);">
+            <th style="text-align:left;padding:5px 7px;border-bottom:1px solid var(--border);"></th>
+            <th style="padding:5px 7px;border-bottom:1px solid var(--border);text-align:center;">プラン①</th>
+            <th style="padding:5px 7px;border-bottom:1px solid var(--border);text-align:center;">プラン②</th>
+            <th style="padding:5px 7px;border-bottom:1px solid var(--border);text-align:center;background:rgba(27,58,92,0.08);">プラン③</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);">Day2</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;">ホームパーティ</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;">バンフ移動・宿泊</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-weight:700;">ホームパーティ</td></tr>
+          <tr><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);">Day3</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-size:10.5px;">ドラムヘラー<br>（健太郎別行動）</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-size:10.5px;">早朝バンフ<br>→ 健太郎到着</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-weight:700;font-size:10.5px;">健太郎到着<br>→ 弾丸ドラム</td></tr>
+          <tr><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);">Day5</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-size:10.5px;">なつきと遊ぶ</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-size:10.5px;">なつきと遊ぶ</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-weight:700;font-size:10.5px;">なつきと遊ぶ<br>→ バンフ宿泊</td></tr>
+          <tr><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);">Day6</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-size:10.5px;">バンフ（車）<br>健太郎見送り</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-size:10.5px;">健太郎見送り<br>→ ドラムヘラー</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-weight:700;font-size:10.5px;">全員早朝バンフ<br>健太郎バスで空港</td></tr>
+          <tr><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);">健太郎ドラム</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;">✅</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;">❌</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-weight:700;">✅</td></tr>
+          <tr><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);">健太郎バンフ</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-size:10.5px;">✅<br>（急ぎ足）</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;">❌</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-weight:700;font-size:10.5px;">✅<br>（早朝ゆっくり）</td></tr>
+          <tr><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);">早朝バンフ</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;">❌</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;">✅</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-weight:700;">✅</td></tr>
+          <tr><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);">追加宿泊</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;">なし</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;">バンフ1泊</td><td style="padding:4px 7px;border-bottom:1px solid var(--border-light);text-align:center;font-weight:700;">バンフ1泊</td></tr>
+          <tr><td style="padding:4px 7px;">Day2 パーティ</td><td style="padding:4px 7px;text-align:center;">✅</td><td style="padding:4px 7px;text-align:center;">❌</td><td style="padding:4px 7px;text-align:center;font-weight:700;">✅</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /tab-plan3 -->
 
 <!-- ━━━ TAB: スポット ━━━ -->
 <div class="tab-pane" id="tab-spots">
