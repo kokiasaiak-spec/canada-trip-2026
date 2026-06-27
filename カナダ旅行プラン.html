@@ -502,6 +502,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
   <button class="tab-btn active" onclick="switchTab('schedule',this)">📅 ①叩き台</button>
   <button class="tab-btn" onclick="switchTab('plan2',this)">📅 ②置き去り</button>
   <button class="tab-btn" onclick="switchTab('plan3',this)">📅 ③同乗</button>
+  <button class="tab-btn" onclick="switchTab('meeting',this)">📋 会議</button>
   <button class="tab-btn" onclick="switchTab('spots',this)">🗺 スポット</button>
   <button class="tab-btn" onclick="switchTab('info',this)">✈ 旅行情報</button>
   <button class="tab-btn" onclick="switchTab('prep',this)">🧳 準備</button>
@@ -1208,6 +1209,243 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 </div>
 
 </div><!-- /tab-plan3 -->
+
+<!-- ━━━ TAB: 会議 ━━━ -->
+<div class="tab-pane" id="tab-meeting">
+<div class="section">
+  <div class="sec-hd" style="background:linear-gradient(90deg,#1B3A5C,#2C5F2E);">📋 今日の会議で決めること</div>
+  <div class="sec-body">
+
+    <div class="notice ok" style="margin-top:0;margin-bottom:16px;">
+      早朝バンフアタックは<strong>確定事項</strong>。みんなで決めることは以下 <strong>2点だけ</strong>。
+    </div>
+
+    <!-- 2論点 -->
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:14px;background:var(--navy);color:#fff;border-radius:10px;padding:13px 16px;">
+        <span style="font-size:24px;font-weight:900;opacity:0.4;min-width:28px;text-align:center;">①</span>
+        <span style="font-size:13px;font-weight:700;line-height:1.45;">バンフ泊 → 早朝5時発 か<br>Okotoks から深夜3時半発か</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;background:var(--navy);color:#fff;border-radius:10px;padding:13px 16px;">
+        <span style="font-size:24px;font-weight:900;opacity:0.4;min-width:28px;text-align:center;">②</span>
+        <span style="font-size:13px;font-weight:700;line-height:1.45;">泊まる場合 — いつ・どこに泊まるか</span>
+      </div>
+    </div>
+
+    <!-- ══════════ 論点① ══════════ -->
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+      <span style="background:var(--navy);color:#fff;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">①</span>
+      <span style="font-size:12px;font-weight:700;color:var(--navy);">泊まる？ 深夜出発？</span>
+    </div>
+
+    <!-- Root① -->
+    <div style="background:linear-gradient(90deg,#1B3A5C,#2C4A7A);color:#fff;border-radius:10px;padding:11px 16px;font-size:13px;font-weight:800;text-align:center;">
+      🏔 早朝バンフアタック（決定）
+    </div>
+    <div style="display:flex;justify-content:center;"><div style="width:2px;height:14px;background:#4A7BAB;"></div></div>
+
+    <!-- 論点①ブランチ -->
+    <div style="position:relative;border-left:2px solid #4A7BAB;margin-left:18px;padding-left:18px;margin-bottom:22px;">
+
+      <!-- A. 深夜出発 -->
+      <div style="position:relative;margin-top:10px;margin-bottom:14px;">
+        <div style="position:absolute;left:-19px;top:21px;width:19px;height:2px;background:#4A7BAB;"></div>
+        <div style="border:1.5px solid #8AAAC5;border-radius:10px;overflow:hidden;">
+          <div style="background:#E8F2FB;padding:9px 14px;">
+            <span style="font-size:12.5px;font-weight:800;color:var(--navy);">A. Okotoks から深夜出発</span>
+            <span style="font-size:10px;color:var(--text-light);margin-left:6px;">（3:30〜4:00 発）</span>
+          </div>
+          <div style="padding:10px 14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div>
+              <div style="font-size:10px;font-weight:700;color:#1A7A40;margin-bottom:5px;">👍 Good</div>
+              <div style="font-size:11px;color:var(--text-mid);line-height:1.65;">✅ 追加費用ゼロ<br>✅ 宿の移動なし<br>✅ 手配不要</div>
+            </div>
+            <div>
+              <div style="font-size:10px;font-weight:700;color:#B02020;margin-bottom:5px;">👎 Bad</div>
+              <div style="font-size:11px;color:var(--text-mid);line-height:1.65;">❌ 3〜4時起き、全員疲弊<br>❌ 眠い目でドライブ<br>❌ 到着7時台で鏡面消えかけ</div>
+            </div>
+          </div>
+          <div style="background:#FEF9EC;border-top:1px solid var(--border-light);padding:7px 14px;font-size:10.5px;color:#8B6000;">
+            ⏰ 3:30発 → Lake Louise 5:30着（ギリギリ）
+          </div>
+        </div>
+      </div>
+
+      <!-- B. バンフ1泊 -->
+      <div style="position:relative;">
+        <div style="position:absolute;left:-19px;top:21px;width:19px;height:2px;background:#4A7BAB;"></div>
+        <div style="border:2px solid var(--navy);border-radius:10px;overflow:hidden;">
+          <div style="background:var(--navy);color:#fff;padding:9px 14px;">
+            <span style="font-size:12.5px;font-weight:800;">B. バンフ近くに1泊 → 5時発</span>
+          </div>
+          <div style="padding:10px 14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div>
+              <div style="font-size:10px;font-weight:700;color:#1A7A40;margin-bottom:5px;">👍 Good</div>
+              <div style="font-size:11px;color:var(--text-mid);line-height:1.65;">✅ 5時出発で余裕あり<br>✅ 鏡面・空き駐車場を確実に<br>✅ 全員体力温存</div>
+            </div>
+            <div>
+              <div style="font-size:10px;font-weight:700;color:#B02020;margin-bottom:5px;">👎 Bad</div>
+              <div style="font-size:11px;color:var(--text-mid);line-height:1.65;">❌ 追加宿泊費が発生<br>❌ 荷物移動・チェックイン手間<br>❌ 事前手配が必要</div>
+            </div>
+          </div>
+          <div style="background:#EBF4FF;border-top:1px solid var(--border-light);padding:7px 14px;font-size:10.5px;color:#1B3A5C;font-weight:600;">
+            ⏰ 5:00発 → Lake Louise 5:45着（鏡面バッチリ）→ 論点②へ ↓
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /論点①ブランチ -->
+
+    <!-- ══════════ 論点② ══════════ -->
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+      <span style="background:var(--navy);color:#fff;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">②</span>
+      <span style="font-size:12px;font-weight:700;color:var(--navy);">いつ・どこに泊まる？（B 選択時）</span>
+    </div>
+
+    <!-- Root② -->
+    <div style="background:linear-gradient(90deg,#1B3A5C,#2C4A7A);color:#fff;border-radius:10px;padding:11px 16px;font-size:12.5px;font-weight:800;text-align:center;">
+      🏡 バンフ近くに1泊することになったとして…
+    </div>
+    <div style="display:flex;justify-content:center;"><div style="width:2px;height:14px;background:#4A7BAB;"></div></div>
+
+    <!-- 論点②ブランチ -->
+    <div style="position:relative;border-left:2px solid #4A7BAB;margin-left:18px;padding-left:18px;margin-bottom:22px;">
+
+      <!-- いつ？ ラベル -->
+      <div style="position:relative;margin-top:10px;margin-bottom:12px;">
+        <div style="position:absolute;left:-19px;top:15px;width:19px;height:2px;background:#4A7BAB;"></div>
+        <div style="background:#EBF4FF;border:1.5px solid #4A7BAB;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:800;color:var(--navy);">
+          📅 いつ泊まる？（＝ どのプランを選ぶか）
+        </div>
+      </div>
+
+      <!-- いつサブツリー -->
+      <div style="position:relative;border-left:2px solid #8BBBD8;margin-left:16px;padding-left:16px;margin-bottom:16px;">
+
+        <!-- Day2夜 = プラン② -->
+        <div style="position:relative;margin-top:10px;margin-bottom:12px;">
+          <div style="position:absolute;left:-17px;top:19px;width:17px;height:2px;background:#8BBBD8;"></div>
+          <div style="border:1.5px solid #2C5F2E;border-radius:10px;overflow:hidden;">
+            <div style="background:#2C5F2E;color:#fff;padding:8px 13px;font-size:11.5px;font-weight:700;">
+              Day2夜泊 → Day3 早朝バンフ（プラン② 置き去りver）
+            </div>
+            <div style="padding:9px 13px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <div>
+                <div style="font-size:10px;font-weight:700;color:#1A7A40;margin-bottom:4px;">👍 Good</div>
+                <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">✅ Day3に早め制覇<br>✅ 後半日程に余裕<br>✅ Day6にドラムヘラー</div>
+              </div>
+              <div>
+                <div style="font-size:10px;font-weight:700;color:#B02020;margin-bottom:4px;">👎 Bad</div>
+                <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">❌ <strong>健太郎バンフ行けない</strong><br>❌ 到着翌日すぐ移動で慌ただしい<br>❌ ホームパーティなし</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day5夜 = プラン③ -->
+        <div style="position:relative;">
+          <div style="position:absolute;left:-17px;top:19px;width:17px;height:2px;background:#8BBBD8;"></div>
+          <div style="border:2px solid var(--navy);border-radius:10px;overflow:hidden;">
+            <div style="background:linear-gradient(90deg,#1B3A5C,#7B3800);color:#fff;padding:8px 13px;font-size:11.5px;font-weight:700;">
+              Day5夜泊 → Day6 早朝バンフ（プラン③ 同乗ver）⭐ 推奨
+            </div>
+            <div style="padding:9px 13px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <div>
+                <div style="font-size:10px;font-weight:700;color:#1A7A40;margin-bottom:4px;">👍 Good</div>
+                <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">✅ <strong>健太郎含む全員でバンフ</strong><br>✅ ホームパーティ・ドラムヘラー全部OK<br>✅ 健太郎はバスで余裕帰国</div>
+              </div>
+              <div>
+                <div style="font-size:10px;font-weight:700;color:#B02020;margin-bottom:4px;">👎 Bad</div>
+                <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">❌ Day5夕方に移動が必要<br>❌ Banff Airporter 事前予約が要る<br>❌ 宿代が増える</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /いつサブツリー -->
+
+      <!-- どこ？ ラベル -->
+      <div style="position:relative;margin-bottom:12px;">
+        <div style="position:absolute;left:-19px;top:15px;width:19px;height:2px;background:#4A7BAB;"></div>
+        <div style="background:#EBF4FF;border:1.5px solid #4A7BAB;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:800;color:var(--navy);">
+          📍 どこに泊まる？（3択）
+        </div>
+      </div>
+
+      <!-- どこサブツリー -->
+      <div style="position:relative;border-left:2px solid #8BBBD8;margin-left:16px;padding-left:16px;">
+
+        <!-- バンフ市街 -->
+        <div style="position:relative;margin-top:10px;margin-bottom:10px;">
+          <div style="position:absolute;left:-17px;top:16px;width:17px;height:2px;background:#8BBBD8;"></div>
+          <div style="background:var(--navy-faint);border-radius:8px;padding:10px 13px;">
+            <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px;">🏨 バンフ市街（Banff Ave 周辺）</div>
+            <div style="font-size:11px;color:var(--text-mid);line-height:1.65;">✅ 飲食・ショッピングに便利<br>✅ Lake Louise まで 45分<br>❌ CA$250〜350 / 室 / 泊（高め）</div>
+          </div>
+        </div>
+
+        <!-- Canmore -->
+        <div style="position:relative;margin-bottom:10px;">
+          <div style="position:absolute;left:-17px;top:16px;width:17px;height:2px;background:#8BBBD8;"></div>
+          <div style="background:var(--navy-faint);border-radius:8px;padding:10px 13px;">
+            <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px;">🏘 Canmore</div>
+            <div style="font-size:11px;color:var(--text-mid);line-height:1.65;">✅ <strong>国立公園外で安め</strong>（CA$150〜220 / 室 / 泊）<br>✅ 落ち着いた雰囲気<br>❌ Lake Louise まで 75分（バンフより30分遠い）</div>
+          </div>
+        </div>
+
+        <!-- Lake Louise 周辺 -->
+        <div style="position:relative;">
+          <div style="position:absolute;left:-17px;top:16px;width:17px;height:2px;background:#8BBBD8;"></div>
+          <div style="background:var(--navy-faint);border-radius:8px;padding:10px 13px;">
+            <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px;">💎 Lake Louise 周辺</div>
+            <div style="font-size:11px;color:var(--text-mid);line-height:1.65;">✅ Lake Louise まで<strong>徒歩圏</strong>（最高のアクセス）<br>❌ CA$400〜 / 室 / 泊（超高額）<br>❌ 選択肢が少ない</div>
+          </div>
+        </div>
+
+      </div><!-- /どこサブツリー -->
+
+    </div><!-- /論点②ブランチ -->
+
+    <!-- ══════════ 選択肢マトリクス ══════════ -->
+    <div style="border:2px solid var(--navy);border-radius:12px;overflow:hidden;">
+      <div style="background:var(--navy);color:#fff;padding:10px 16px;font-size:12px;font-weight:800;">🗳 選択肢まとめ</div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:10.5px;min-width:280px;">
+          <thead>
+            <tr>
+              <th style="padding:6px 8px;background:var(--navy-faint);text-align:left;border-bottom:1px solid var(--border);color:var(--text-mid);font-weight:600;font-size:10px;">選択肢</th>
+              <th style="padding:6px 6px;background:var(--navy-faint);text-align:center;border-bottom:1px solid var(--border);color:var(--text-mid);font-weight:600;font-size:10px;">追加費用</th>
+              <th style="padding:6px 6px;background:var(--navy-faint);text-align:center;border-bottom:1px solid var(--border);color:var(--text-mid);font-weight:600;font-size:10px;">鏡面確実</th>
+              <th style="padding:6px 6px;background:var(--navy-faint);text-align:center;border-bottom:1px solid var(--border);color:var(--text-mid);font-weight:600;font-size:10px;">健太郎バンフ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border-light);">
+              <td style="padding:7px 8px;color:var(--text-mid);font-weight:600;">A. 深夜出発</td>
+              <td style="padding:7px 6px;text-align:center;">✅ なし</td>
+              <td style="padding:7px 6px;text-align:center;">⚠️ 微妙</td>
+              <td style="padding:7px 6px;text-align:center;">✅</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-light);">
+              <td style="padding:7px 8px;color:var(--text-mid);font-weight:600;">B + Day2（プラン②）</td>
+              <td style="padding:7px 6px;text-align:center;">❌ あり</td>
+              <td style="padding:7px 6px;text-align:center;">✅</td>
+              <td style="padding:7px 6px;text-align:center;">❌</td>
+            </tr>
+            <tr style="background:rgba(27,58,92,0.05);">
+              <td style="padding:7px 8px;color:var(--navy);font-weight:800;">B + Day5（プラン③）⭐</td>
+              <td style="padding:7px 6px;text-align:center;">❌ あり</td>
+              <td style="padding:7px 6px;text-align:center;">✅</td>
+              <td style="padding:7px 6px;text-align:center;font-weight:800;">✅ 全員！</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div><!-- /tab-meeting -->
 
 <!-- ━━━ TAB: スポット ━━━ -->
 <div class="tab-pane" id="tab-spots">
