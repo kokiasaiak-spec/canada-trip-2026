@@ -505,7 +505,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
   <button class="tab-btn" onclick="switchTab('spots',this)">🗺 スポット</button>
   <button class="tab-btn" onclick="switchTab('info',this)">✈ 旅行情報</button>
   <button class="tab-btn" onclick="switchTab('prep',this)">🧳 準備</button>
-  <button class="tab-btn" onclick="switchTab('english',this)">🗣 英語</button>
+  <button class="tab-btn" onclick="switchTab('morning',this)">🌄 早朝論</button>
   <button class="tab-btn" onclick="switchTab('reports',this)">📖 体験記</button>
 </nav>
 
@@ -2157,104 +2157,207 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 </div><!-- /tab-prep -->
 
 <!-- ━━━ TAB: 英語フレーズ ━━━ -->
-<div class="tab-pane" id="tab-english">
+<div class="tab-pane" id="tab-morning">
 <div class="section">
-  <div class="sec-hd">🗣 旅行で使える英語フレーズ集</div>
+  <div class="sec-hd" style="background:linear-gradient(135deg,#0D2B4A 0%,#1B5E8C 100%);">🌄 早朝バンフアタックをすべき理由</div>
   <div class="sec-body">
 
-    <div class="notice info" style="margin-top:0;">カナダは英語圏。難しい英語は不要ですが、これだけ知っておくと安心です。</div>
+    <!-- Hero -->
+    <div style="position:relative;border-radius:14px;overflow:hidden;margin-bottom:18px;height:200px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Lake_Louise_in_Banff_National_Park%2C_boat_view_2.jpg"
+           alt="Lake Louise 朝の静寂" loading="lazy"
+           style="width:100%;height:100%;object-fit:cover;object-position:center 55%;">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.78) 0%,rgba(0,0,0,0) 55%);"></div>
+      <div style="position:absolute;bottom:14px;left:14px;right:14px;color:#fff;">
+        <div style="font-size:16px;font-weight:800;line-height:1.4;text-shadow:0 2px 8px rgba(0,0,0,0.6);">バンフの「本当の顔」は<br>早朝にしか存在しない</div>
+        <div style="font-size:10.5px;margin-top:5px;opacity:0.82;">▶ Lake Louise — 朝 6 時台の様子</div>
+      </div>
+    </div>
 
-    <!-- レストラン -->
-    <div class="area-hd area-calgary" style="margin-top:14px;">🍽 レストラン・カフェ</div>
-    <table class="kv" style="margin-bottom:0;">
-      <tr><th>席をもらえますか？</th><td>Table for four, please.</td></tr>
-      <tr><th>メニューをください</th><td>Could I get a menu, please?</td></tr>
-      <tr><th>これをください（指差し）</th><td>I'll have this one, please.</td></tr>
-      <tr><th>おすすめは何ですか？</th><td>What do you recommend?</td></tr>
-      <tr><th>アレルギーがあります</th><td>I have a [nut / dairy] allergy.</td></tr>
-      <tr><th>お会計をください</th><td>Can I get the check, please?</td></tr>
-      <tr><th>一緒に払います</th><td>Together, please.</td></tr>
-      <tr><th>別々に払います</th><td>Separate checks, please.</td></tr>
-      <tr><th>とても美味しかったです</th><td>It was delicious. Thank you!</td></tr>
-    </table>
+    <!-- Lead -->
+    <div class="notice info" style="margin-top:0;margin-bottom:18px;">
+      7月のバンフは世界中から観光客が押し寄せる超人気スポット。<strong>9時を過ぎるとツアーバスが20台以上</strong>入ってきて駐車場は即満車、湖畔は人でいっぱいになる。<br><br>
+      でも早朝5〜6時台は別世界。駐車場は空、人は数人、湖面は完全な鏡。<strong>この時間帯だけに許された体験がある。</strong>
+    </div>
 
-    <!-- 観光地・国立公園 -->
-    <div class="area-hd area-banff" style="margin-top:18px;">🏔 観光地・国立公園</div>
-    <table class="kv" style="margin-bottom:0;">
-      <tr><th>入場料はいくらですか？</th><td>How much is the admission?</td></tr>
-      <tr><th>〜はどこですか？</th><td>Where is the [trailhead / viewpoint]?</td></tr>
-      <tr><th>写真を撮ってもらえますか？</th><td>Could you take a photo of us?</td></tr>
-      <tr><th>一緒に写真いいですか？</th><td>Could we get a photo together?</td></tr>
-      <tr><th>ハイキングコースはどれくらいですか？</th><td>How long is the hiking trail?</td></tr>
-      <tr><th>難易度は？</th><td>Is it easy / moderate / difficult?</td></tr>
-      <tr><th>クマがいますか？</th><td>Are there bears in this area?</td></tr>
-      <tr><th>シャトルはどこから乗れますか？</th><td>Where can I catch the shuttle bus?</td></tr>
-      <tr><th>パスはどこで買えますか？</th><td>Where can I buy a park pass?</td></tr>
-    </table>
+    <!-- REASON 01 -->
+    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-bottom:14px;">
+      <div style="position:relative;height:160px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Moraine_Lake_17092005.jpg"
+             alt="モレーン湖" loading="lazy"
+             style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 55%);"></div>
+        <div style="position:absolute;top:10px;left:10px;">
+          <span style="background:var(--navy);color:#fff;border-radius:20px;padding:3px 12px;font-size:10.5px;font-weight:700;letter-spacing:0.5px;">REASON 01</span>
+        </div>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="font-weight:800;font-size:14.5px;color:var(--navy);margin-bottom:6px;">🚗 モレーン湖はマイカーで入れない</div>
+        <div style="font-size:12px;color:var(--text-mid);line-height:1.7;">
+          7〜9月のピーク期、モレーン湖への道路（Lake Moraine Road）は<strong>朝6時頃まで</strong>しかマイカー通行が許可されない。それ以降は強制的にシャトルバス（往復 CA$8〜、混雑・待ち時間あり）へ誘導される。<br><br>
+          ただし <strong style="color:var(--navy);">6時前に駐車場に入ってしまえば終日マイカーのまま OK</strong>。早起きした人だけが「自分の車でモレーン湖」を体験できる。
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px;">
+          <div style="flex:1;background:rgba(200,50,50,0.07);border:1px solid rgba(200,50,50,0.2);border-radius:8px;padding:9px 10px;font-size:11px;text-align:center;">
+            <div style="font-weight:700;color:#B02020;margin-bottom:4px;">❌ 6時以降</div>
+            <div style="color:var(--text-mid);line-height:1.5;">マイカー不可<br>シャトル待ち<br>混雑確定</div>
+          </div>
+          <div style="flex:1;background:rgba(30,140,70,0.07);border:1px solid rgba(30,140,70,0.2);border-radius:8px;padding:9px 10px;font-size:11px;text-align:center;">
+            <div style="font-weight:700;color:#1A7A40;margin-bottom:4px;">✅ 6時前</div>
+            <div style="color:var(--text-mid);line-height:1.5;">マイカーOK<br>駐車場ほぼ空<br>貸し切り状態</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- レンタカー・ドライブ -->
-    <div class="area-hd area-drumheller" style="margin-top:18px;">🚗 レンタカー・ドライブ</div>
-    <table class="kv" style="margin-bottom:0;">
-      <tr><th>車を借りに来ました</th><td>I'm here to pick up my rental car.</td></tr>
-      <tr><th>予約名は〜です</th><td>My reservation is under [name].</td></tr>
-      <tr><th>追加保険は不要です</th><td>No additional insurance, thank you.</td></tr>
-      <tr><th>ガソリンはどこで入れますか？</th><td>Where is the nearest gas station?</td></tr>
-      <tr><th>返却はどこですか？</th><td>Where should I return the car?</td></tr>
-      <tr><th>道に迷いました</th><td>I'm lost. Can you help me?</td></tr>
-      <tr><th>〜へはどう行けばいいですか？</th><td>How do I get to [destination]?</td></tr>
-      <tr><th>駐車場はありますか？</th><td>Is there a parking lot nearby?</td></tr>
-    </table>
+    <!-- REASON 02 -->
+    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-bottom:14px;">
+      <div style="position:relative;height:160px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Lake_Louise_in_Banff_National_Park%2C_boat_view_2.jpg"
+             alt="Lake Louise 鏡面リフレクション" loading="lazy"
+             style="width:100%;height:100%;object-fit:cover;object-position:center 30%;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 55%);"></div>
+        <div style="position:absolute;top:10px;left:10px;">
+          <span style="background:var(--navy);color:#fff;border-radius:20px;padding:3px 12px;font-size:10.5px;font-weight:700;letter-spacing:0.5px;">REASON 02</span>
+        </div>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="font-weight:800;font-size:14.5px;color:var(--navy);margin-bottom:6px;">💎 湖面が完全な鏡になる</div>
+        <div style="font-size:12px;color:var(--text-mid);line-height:1.7;">
+          風がない早朝だけ、湖面が完全に静止する。ビクトリア氷河とフェアモントホテルが湖面に完璧に映り込む<strong>パーフェクトリフレクション</strong>が発生。<br><br>
+          <strong style="color:var(--navy);">9時を過ぎると風が立ちはじめ、この景色は消える。</strong>SNS で見るあの絶景写真はほぼ全部早朝撮影。写真も動画も、早朝の鏡面は別格。
+        </div>
+      </div>
+    </div>
 
-    <!-- ショッピング -->
-    <div class="area-hd area-okotoks" style="margin-top:18px;">🛍 ショッピング</div>
-    <table class="kv" style="margin-bottom:0;">
-      <tr><th>これはいくらですか？</th><td>How much is this?</td></tr>
-      <tr><th>試着できますか？</th><td>Can I try this on?</td></tr>
-      <tr><th>もう少し安くなりますか？</th><td>Is there any discount available?</td></tr>
-      <tr><th>袋はいりますか？</th><td>— （店員から聞かれます）<br>"Yes please." / "No thank you."</td></tr>
-      <tr><th>カードで払えますか？</th><td>Do you accept credit cards?</td></tr>
-      <tr><th>日本に送れますか？</th><td>Can you ship this to Japan?</td></tr>
-      <tr><th>免税手続きはありますか？</th><td>Is there a tax refund available?</td></tr>
-    </table>
+    <!-- REASON 03 — stats card -->
+    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-bottom:14px;">
+      <div style="background:linear-gradient(135deg,#0D2B4A 0%,#1B5E8C 100%);padding:16px 16px 14px;color:#fff;">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:0.5px;margin-bottom:8px;opacity:0.72;">REASON 03</div>
+        <div style="font-weight:800;font-size:14.5px;margin-bottom:14px;">👥 人が圧倒的にいない</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;">
+          <div style="background:rgba(255,255,255,0.12);border-radius:10px;padding:10px 6px;text-align:center;">
+            <div style="font-size:22px;font-weight:800;line-height:1;">数台</div>
+            <div style="font-size:9px;margin-top:5px;opacity:0.8;line-height:1.4;">06:00 の<br>Lake Louise 駐車台数</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.12);border-radius:10px;padding:10px 6px;text-align:center;">
+            <div style="font-size:22px;font-weight:800;line-height:1;">満車</div>
+            <div style="font-size:9px;margin-top:5px;opacity:0.8;line-height:1.4;">08:00 には<br>両スポット満杯</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.12);border-radius:10px;padding:10px 6px;text-align:center;">
+            <div style="font-size:22px;font-weight:800;line-height:1;">20+</div>
+            <div style="font-size:9px;margin-top:5px;opacity:0.8;line-height:1.4;">10:00 頃の<br>ツアーバス台数</div>
+          </div>
+        </div>
+        <div style="font-size:11px;opacity:0.88;line-height:1.65;">カルガリーからの日帰りツアーは9〜10時台に集中。その前に制覇してしまえば写真撮影も湖畔散策もストレスゼロ。</div>
+      </div>
+    </div>
 
-    <!-- ホテル・宿泊 -->
-    <div class="area-hd area-calgary" style="margin-top:18px;">🏠 宿泊・チェックイン</div>
-    <table class="kv" style="margin-bottom:0;">
-      <tr><th>チェックインをしたいです</th><td>I'd like to check in, please.</td></tr>
-      <tr><th>〜名でチェックインしました</th><td>I have a reservation under [name].</td></tr>
-      <tr><th>Wi-Fiのパスワードは？</th><td>What's the Wi-Fi password?</td></tr>
-      <tr><th>タオルを追加してください</th><td>Could I get extra towels, please?</td></tr>
-      <tr><th>チェックアウトは何時ですか？</th><td>What time is checkout?</td></tr>
-    </table>
+    <!-- REASON 04 -->
+    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-bottom:14px;">
+      <div style="position:relative;height:160px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vermillion_Lakes%2C_Banff.jpg"
+             alt="バーミリオン湖 朝の光" loading="lazy"
+             style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 55%);"></div>
+        <div style="position:absolute;top:10px;left:10px;">
+          <span style="background:var(--navy);color:#fff;border-radius:20px;padding:3px 12px;font-size:10.5px;font-weight:700;letter-spacing:0.5px;">REASON 04</span>
+        </div>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="font-weight:800;font-size:14.5px;color:var(--navy);margin-bottom:6px;">☀️ アルペングロー — 朝だけの奇跡の光</div>
+        <div style="font-size:12px;color:var(--text-mid);line-height:1.7;">
+          日の出後30〜60分、ロッキーの山頂が金〜ピンク〜オレンジ色に染まる<strong>「アルペングロー」</strong>が発生する。朝の斜光が雪と岩を照らす自然現象で、同じ光が夕方に来るとは限らない。<br><br>
+          7月の日の出は <strong style="color:var(--navy);">5:30 頃</strong>。Lake Louise 到着が 6:00〜6:30 なら黄金タイムど真ん中。
+        </div>
+      </div>
+    </div>
 
-    <!-- 緊急・トラブル -->
-    <div class="area-hd" style="background:linear-gradient(90deg,#6B2020,#A03030);margin-top:18px;">🚨 緊急・トラブル</div>
-    <table class="kv" style="margin-bottom:0;">
-      <tr><th>助けてください！</th><td><strong>Help!</strong></td></tr>
-      <tr><th>救急車を呼んでください</th><td>Please call an ambulance!</td></tr>
-      <tr><th>警察を呼んでください</th><td>Please call the police!</td></tr>
-      <tr><th>財布を盗まれました</th><td>My wallet was stolen.</td></tr>
-      <tr><th>体調が悪いです</th><td>I don't feel well.</td></tr>
-      <tr><th>病院はどこですか？</th><td>Where is the nearest hospital?</td></tr>
-      <tr><th>日本語を話せる人はいますか？</th><td>Is there anyone who speaks Japanese?</td></tr>
-      <tr><th>緊急電話番号</th><td><strong>911</strong>（警察・救急・消防）</td></tr>
-      <tr><th>在カナダ日本大使館</th><td>+1-613-241-8541（Ottawa）</td></tr>
-    </table>
+    <!-- REASON 05 — weather -->
+    <div style="border-radius:12px;border:1px solid var(--border-light);box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-bottom:20px;">
+      <div style="padding:14px 16px;">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:0.5px;color:var(--text-light);margin-bottom:8px;">REASON 05</div>
+        <div style="font-weight:800;font-size:14.5px;color:var(--navy);margin-bottom:6px;">⛈ 午後は天気が急変する</div>
+        <div style="font-size:12px;color:var(--text-mid);line-height:1.7;margin-bottom:12px;">
+          ロッキー山脈では夏の午後（13〜16時）に山岳性雷雨が発生しやすい。地面が温まった空気が山肌を上昇し積乱雲を形成するため。朝は地面が冷えているので上昇気流が起きにくく<strong style="color:var(--navy);">快晴率が高い</strong>。山での行動は午前中に終えるのがベスト。
+        </div>
+        <div style="border-radius:10px;overflow:hidden;display:grid;grid-template-columns:2.2fr 1.4fr 1.6fr 1fr;height:52px;">
+          <div style="background:#4A90D9;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;font-size:11px;font-weight:700;gap:2px;">
+            ☀️ 快晴
+            <span style="font-size:8.5px;font-weight:400;opacity:0.88;">5〜10時</span>
+          </div>
+          <div style="background:#87BFDF;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;font-size:10px;font-weight:600;gap:2px;">
+            ⛅ 曇
+            <span style="font-size:8px;font-weight:400;">11〜13時</span>
+          </div>
+          <div style="background:#5A7284;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;font-size:10px;font-weight:600;gap:2px;">
+            ⛈ 雷雨
+            <span style="font-size:8px;font-weight:400;">14〜17時</span>
+          </div>
+          <div style="background:#87BFDF;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;font-size:9.5px;font-weight:600;gap:2px;">
+            ⛅ 夕
+            <span style="font-size:7.5px;font-weight:400;">18時〜</span>
+          </div>
+        </div>
+        <div style="font-size:10px;color:var(--text-light);margin-top:5px;">※ 日によって異なります。あくまで傾向として。</div>
+      </div>
+    </div>
 
-    <!-- チップ -->
-    <div class="area-hd area-banff" style="margin-top:18px;">💵 チップのポイント</div>
-    <div class="notice info" style="margin-top:0;margin-bottom:0;">
-      カナダはチップ文化あり。以下が目安：<br>
-      🍽 レストラン：<strong>15〜20%</strong>（請求額の）<br>
-      🚕 タクシー・Uber：<strong>10〜15%</strong><br>
-      🏨 ホテル荷物運び：<strong>$1〜2/個</strong><br>
-      ☕ カフェ・テイクアウト：<strong>任意（小銭程度でOK）</strong><br><br>
-      端末にチップ選択画面が出たら「Custom」で金額入力 or「No tip」を選べます。
+    <!-- Timeline -->
+    <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px;">⏱ 理想の早朝タイムライン（プラン②③ バンフ泊の場合）</div>
+    <div style="background:linear-gradient(135deg,#0D2B4A,#1B3A5C);border-radius:14px;padding:16px;margin-bottom:14px;color:#fff;">
+      <div style="display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1);">
+          <div style="min-width:50px;font-size:10px;font-weight:700;color:rgba(255,255,255,0.55);padding-top:1px;">05:00</div>
+          <div style="font-size:11.5px;line-height:1.5;">⏰ バンフ市街の宿を出発</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1);">
+          <div style="min-width:50px;font-size:10px;font-weight:700;color:rgba(255,255,255,0.55);padding-top:1px;">05:45</div>
+          <div style="font-size:11.5px;line-height:1.5;">💎 <strong>Lake Louise 到着</strong> — 駐車場まだ空き・鏡面リフレクション</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1);">
+          <div style="min-width:50px;font-size:10px;font-weight:700;color:rgba(255,255,255,0.55);padding-top:1px;">〜07:00</div>
+          <div style="font-size:11.5px;line-height:1.5;">📸 湖畔散策・アルペングロー・写真タイム（ほぼ貸し切り）</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1);">
+          <div style="min-width:50px;font-size:10px;font-weight:700;color:rgba(255,255,255,0.55);padding-top:1px;">07:00</div>
+          <div style="font-size:11.5px;line-height:1.5;">🚗 <strong>モレーン湖へ出発</strong> — マイカー通行 OK な早朝枠でアクセス</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1);">
+          <div style="min-width:50px;font-size:10px;font-weight:700;color:rgba(255,255,255,0.55);padding-top:1px;">07:30<br>〜09:00</div>
+          <div style="font-size:11.5px;line-height:1.5;">🌊 <strong>モレーン湖</strong> — ロックパイル展望台・湖畔散策・静寂</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1);">
+          <div style="min-width:50px;font-size:10px;font-weight:700;color:rgba(255,255,255,0.55);padding-top:1px;">09:00</div>
+          <div style="font-size:11.5px;line-height:1.5;">🛶 カヌーレンタル開始（CA$140〜/艘・Lake Louise か Moraine で）</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:9px 10px 9px;background:rgba(255,220,100,0.1);border-radius:8px;margin-top:8px;">
+          <div style="min-width:50px;font-size:10px;font-weight:700;color:rgba(255,215,80,0.9);padding-top:1px;">09:15</div>
+          <div style="font-size:11.5px;line-height:1.5;color:rgba(255,230,130,1);">🚌 <strong>健太郎 Banff Airporter 乗車</strong>（Lake Louise 発 → YYC 約11:30着）<br><span style="font-size:10px;opacity:0.8;">※ プラン③のみ — banffairporter.com で事前予約推奨（CA$70前後/人）</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plan 1 note -->
+    <div class="notice warn" style="margin-bottom:18px;">
+      <strong>プラン①（Okotoks泊）の場合:</strong> Lake Louise まで約2時間のため出発は <strong>4:30〜5:00</strong> が目安。到着が7時台になるため鏡面とマイカーのアドバンテージは薄れる。<strong>バンフ泊（プラン②③）が早朝アタックには断然有利。</strong>
+    </div>
+
+    <!-- Summary -->
+    <div style="background:var(--navy-faint);border-radius:12px;padding:14px 16px;">
+      <div style="font-weight:800;font-size:13.5px;color:var(--navy);margin-bottom:10px;">🏆 まとめ：早朝に行く5つの理由</div>
+      <div style="display:flex;flex-direction:column;gap:7px;font-size:12px;color:var(--text-mid);">
+        <div>🚗 <strong>モレーン湖をマイカーで制覇</strong>できる（6時前なら車OK）</div>
+        <div>💎 <strong>鏡面リフレクション</strong>（9時以降は風で消える）</div>
+        <div>👥 <strong>ツアーバスより先に到着</strong>して人ゼロを体験</div>
+        <div>☀️ <strong>アルペングロー</strong>（日の出後30〜60分の朝焼けの山）</div>
+        <div>⛈ <strong>午後の山岳性雷雨リスク</strong>を丸ごと回避</div>
+      </div>
     </div>
 
   </div>
 </div>
-</div><!-- /tab-english -->
+</div><!-- /tab-morning -->
 
 <!-- ━━━ TAB: 体験記 ━━━ -->
 <div class="tab-pane" id="tab-reports">
