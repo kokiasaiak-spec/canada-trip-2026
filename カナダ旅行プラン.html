@@ -500,7 +500,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 <!-- ━━━ TAB NAV ━━━ -->
 <nav class="tab-nav">
   <button class="tab-btn active" onclick="switchTab('schedule',this)">📅 ①叩き台</button>
-  <button class="tab-btn" onclick="switchTab('plan2',this)" style="opacity:0.35;text-decoration:line-through;">📅 ②置き去り</button>
+
   <button class="tab-btn" onclick="switchTab('plan3',this)">📅 ③同乗</button>
   <button class="tab-btn" onclick="switchTab('meeting',this)">📋 会議</button>
   <button class="tab-btn" onclick="switchTab('spots',this)">🗺 スポット</button>
@@ -577,24 +577,23 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 <div class="section">
   <div class="sec-hd">📅 プラン① Claude 叩き台ver — ドラムヘラー先 / バンフ後</div>
   <div class="sec-body">
-    <!-- ▼ 3プラン比較 ▼ -->
+    <!-- ▼ 2プラン比較 ▼ -->
     <div style="margin-bottom:16px;">
       <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:5px;">📅 日程比較</div>
       <table style="width:100%;border-collapse:collapse;font-size:10px;">
         <thead><tr>
           <th style="padding:4px 3px;width:22px;"></th>
           <th style="padding:5px 4px;text-align:center;background:var(--navy);color:#fff;font-weight:700;border-radius:5px 5px 0 0;">★ ①叩き台</th>
-          <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">②置き去り</th>
           <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">③同乗</th>
         </tr></thead>
         <tbody>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D1</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">到着・カジノ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">到着・カジノ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">到着・カジノ</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D2</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">ホームパーティ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">バンフ移動・宿泊</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">ホームパーティ</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D3</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">ドラム（3名）<br>健太郎別到着</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">早朝バンフ<br>→健太郎到着</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">⚠️ 健太郎到着<br>→弾丸ドラム</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D4</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">結婚式 💍</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">結婚式 💍</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">結婚式 💍</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D5</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">なつきと遊ぶ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">なつきと遊ぶ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">なつきと遊ぶ<br>→バンフ泊</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D6</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">⚠️ バンフ<br>→健太郎見送り</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">健太郎見送り<br>→ドラム</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">早朝バンフ<br>→健太郎バス空港</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D7</td><td style="padding:3px 4px;text-align:center;border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);border-bottom:2px solid var(--navy-light);font-weight:600;">3名帰国</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">3名帰国</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">3名帰国</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D1</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">到着・カジノ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">到着・カジノ</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D2</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">ホームパーティ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">ホームパーティ</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D3</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">ドラム（3名）<br>健太郎別到着</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">⚠️ 健太郎到着<br>→弾丸ドラム</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D4</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">結婚式 💍</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">結婚式 💍</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D5</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">なつきと遊ぶ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">なつきと遊ぶ<br>→バンフ泊</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D6</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">⚠️ バンフ<br>→健太郎見送り</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">早朝バンフ<br>→健太郎バス空港</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D7</td><td style="padding:3px 4px;text-align:center;border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);border-bottom:2px solid var(--navy-light);font-weight:600;">3名帰国</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">3名帰国</td></tr>
         </tbody>
       </table>
       <div style="font-size:11px;font-weight:700;color:var(--navy);margin:10px 0 5px;">🔑 ポイント比較</div>
@@ -602,15 +601,14 @@ tr:nth-child(even) td { background: var(--navy-faint); }
         <thead><tr>
           <th style="padding:4px 3px;width:70px;"></th>
           <th style="padding:5px 4px;text-align:center;background:var(--navy);color:#fff;font-weight:700;border-radius:5px 5px 0 0;">★ ①叩き台</th>
-          <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">②置き去り</th>
           <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">③同乗</th>
         </tr></thead>
         <tbody>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">健太郎バンフ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅ 急ぎ足</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅ 早朝</td></tr>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">健太郎ドラム</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td></tr>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">早朝バンフ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td></tr>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">ホームパーティ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-mid);font-size:9.5px;">追加宿泊</td><td style="padding:3px 4px;text-align:center;border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);border-bottom:2px solid var(--navy-light);font-weight:600;">なし</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">バンフ1泊</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">バンフ1泊</td></tr>
+          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">健太郎バンフ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅ 急ぎ足</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅ 早朝</td></tr>
+          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">健太郎ドラム</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td></tr>
+          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">早朝バンフ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td></tr>
+          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">ホームパーティ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-mid);font-size:9.5px;">追加宿泊</td><td style="padding:3px 4px;text-align:center;border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);border-bottom:2px solid var(--navy-light);font-weight:600;">なし</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">バンフ1泊</td></tr>
         </tbody>
       </table>
     </div>
@@ -821,202 +819,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 
 </div><!-- /tab-schedule -->
 
-<!-- ━━━ TAB: プラン② ━━━ -->
-<div class="tab-pane" id="tab-plan2">
 
-<div style="background:#8B2020;color:#fff;padding:11px 16px;font-size:13px;font-weight:800;text-align:center;letter-spacing:1px;">🚫 このプランはボツになりました</div>
-<div class="section" style="filter:grayscale(1);opacity:0.45;">
-  <div class="sec-hd" style="background:linear-gradient(90deg,#2C5F2E,#1B5E8C);">📅 プラン② 健太郎 置き去りver — 先にバンフ / 帰りにドラムヘラー</div>
-  <div class="sec-body">
-    <!-- ▼ 3プラン比較 ▼ -->
-    <div style="margin-bottom:16px;">
-      <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:5px;">📅 日程比較</div>
-      <table style="width:100%;border-collapse:collapse;font-size:10px;">
-        <thead><tr>
-          <th style="padding:4px 3px;width:22px;"></th>
-          <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">①叩き台</th>
-          <th style="padding:5px 4px;text-align:center;background:var(--navy);color:#fff;font-weight:700;border-radius:5px 5px 0 0;">★ ②置き去り</th>
-          <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">③同乗</th>
-        </tr></thead>
-        <tbody>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D1</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">到着・カジノ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">到着・カジノ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">到着・カジノ</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D2</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">ホームパーティ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">バンフ移動・宿泊</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">ホームパーティ</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D3</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">ドラム（3名）<br>健太郎別到着</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">早朝バンフ<br>→健太郎到着</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">⚠️ 健太郎到着<br>→弾丸ドラム</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D4</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">結婚式 💍</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">結婚式 💍</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">結婚式 💍</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D5</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">なつきと遊ぶ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">なつきと遊ぶ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">なつきと遊ぶ<br>→バンフ泊</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D6</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">⚠️ バンフ<br>→健太郎見送り</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">健太郎見送り<br>→ドラム</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">早朝バンフ<br>→健太郎バス空港</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D7</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">3名帰国</td><td style="padding:3px 4px;text-align:center;border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);border-bottom:2px solid var(--navy-light);font-weight:600;">3名帰国</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">3名帰国</td></tr>
-        </tbody>
-      </table>
-      <div style="font-size:11px;font-weight:700;color:var(--navy);margin:10px 0 5px;">🔑 ポイント比較</div>
-      <table style="width:100%;border-collapse:collapse;font-size:10px;">
-        <thead><tr>
-          <th style="padding:4px 3px;width:70px;"></th>
-          <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">①叩き台</th>
-          <th style="padding:5px 4px;text-align:center;background:var(--navy);color:#fff;font-weight:700;border-radius:5px 5px 0 0;">★ ②置き去り</th>
-          <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">③同乗</th>
-        </tr></thead>
-        <tbody>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">健太郎バンフ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅ 急ぎ足</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅ 早朝</td></tr>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">健太郎ドラム</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td></tr>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">早朝バンフ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td></tr>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">ホームパーティ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-mid);font-size:9.5px;">追加宿泊</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">なし</td><td style="padding:3px 4px;text-align:center;border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);border-bottom:2px solid var(--navy-light);font-weight:600;">バンフ1泊</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">バンフ1泊</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
-      <div class="notice ok" style="margin:0;">
-        <strong>👍 Good</strong><br>
-        ✅ 早朝バンフ（5:30〜）人ゼロの湖面独占<br>
-        ✅ Day6ドラムヘラーを3名で丸ごと1日<br>
-        ✅ バンフ泊で朝の山を独占
-      </div>
-      <div class="notice warn" style="margin:0;">
-        <strong>👎 Bad</strong><br>
-        ❌ ホームパーティに参加できない<br>
-        ❌ 健太郎がバンフもドラムヘラーも行けない<br>
-        ❌ Day2にバンフ追加宿泊が必要
-      </div>
-    </div>
-
-    <!-- Day 1 -->
-    <div class="day-card">
-      <div class="day-hd">
-        <span class="day-num">DAY 1</span>
-        <span class="day-title">到着 &amp; カジノ 🎰</span>
-        <span class="day-date">7月8日（水）</span>
-      </div>
-      <div class="day-body">
-        <div class="day-item"><span class="day-time">12:40</span><span>✈ 3名 カルガリー空港 YYC 着（WS081）</span></div>
-        <div class="day-item"><span class="day-time">13:30</span><span>🚙 Thrifty レンタカー受け取り（ターミナル内カウンター） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Thrifty+Car+Rental+Calgary+International+Airport" target="_blank">📍 地図</a></span></div>
-        <div class="day-item"><span class="day-time">〜16:00</span><span>🤠 カルガリー市内観光 or スタンピード（開催中！）/ 軽く食事</span></div>
-        <div class="day-item"><span class="day-time">16:00</span><span>🏠 Mountain View Retreat チェックイン（Okotoks） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=15+Aster+Link+Okotoks+Alberta" target="_blank">📍 地図</a></span></div>
-        <div class="day-item"><span class="day-time">夜</span><span>🎰 <strong>カジノ</strong> — Grey Eagle Resort &amp; Casino（宿から約35分） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Grey+Eagle+Resort+Casino+Calgary" target="_blank">📍 地図</a></span></div>
-      </div>
-    </div>
-
-    <!-- Day 2 -->
-    <div class="day-card dc-2">
-      <div class="day-hd">
-        <span class="day-num">DAY 2</span>
-        <span class="day-title">バンフへ移動 &amp; 泊 🏔</span>
-        <span class="day-date">7月9日（木）</span>
-      </div>
-      <div class="day-body">
-        <div class="day-item"><span class="day-time">午前</span><span>🚗 Okotoks 出発 → ボウ・バレー・パークウェイ経由でバンフへ（約1.5時間）<br><small style="color:var(--text-mid);">野生動物（エルク・カラマシカ）に出会えるルートでゆっくり移動</small></span></div>
-        <div class="day-item"><span class="day-time">昼</span><span>🌮 <strong>バンフ市街でランチ</strong> — Anejo（111 Banff Ave）/ Hankki（Korean BBQ） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Banff+Avenue+Banff+Alberta" target="_blank">📍 地図</a></span></div>
-        <div class="day-item"><span class="day-time">午後</span><span>🥾 <strong>ジョンストン渓谷ハイキング</strong>（下の滝まで片道2km・約40分） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Johnston+Canyon+Banff+Alberta" target="_blank">📍 地図</a></span></div>
-        <div class="day-item"><span class="day-time">夕方</span><span>🌅 <strong>バーミリオン湖</strong> — 夕焼けがロッキーに映える絶景ポイント <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Vermilion+Lakes+Banff+Alberta" target="_blank">📍 地図</a></span></div>
-        <div class="day-item"><span class="day-time">夜</span><span>🦌 <strong>The Bison</strong> or <strong>Fat Ox</strong> でディナー（要予約）<br><small style="color:var(--text-mid);">翌日の早起きに備えて 22:00 就寝目標</small></span></div>
-        <div class="day-item alert-row"><span class="day-time">宿泊</span><span>🏡 <strong>バンフ内 Airbnb or ホテル</strong>（要別途予約 — プラン①の宿は不使用）</span></div>
-      </div>
-    </div>
-
-    <!-- Day 3 -->
-    <div class="day-card dc-3">
-      <div class="day-hd">
-        <span class="day-num">DAY 3</span>
-        <span class="day-title">早朝バンフ 💎 → 健太郎 到着 🧳</span>
-        <span class="day-date">7月10日（金）</span>
-      </div>
-      <div class="day-body">
-        <div class="day-item"><span class="day-time">5:00</span><span>⏰ 起床 — 早い者勝ちの朝！</span></div>
-        <div class="day-item"><span class="day-time">5:30</span><span>💎 <strong>レイク・ルイーズ</strong> 到着（早朝は車で直接駐車可・人ゼロ・鏡の湖面） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Lake+Louise+Alberta" target="_blank">📍 地図</a><br><small style="color:var(--text-mid);">8時を過ぎると一気に混雑。6時台はほぼ貸し切り状態！</small></span></div>
-        <div class="day-item"><span class="day-time">7:00</span><span>🌊 <strong>モレーン湖</strong> — 早朝なら車で上まで行ける可能性あり（7時以降は規制入る年も） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Moraine+Lake+Alberta" target="_blank">📍 地図</a><br><small style="color:var(--text-mid);">十峰の谷を朝靄の中で見る体験は一生ものの景色</small></span></div>
-        <div class="day-item"><span class="day-time">8:30</span><span>🛶 モレーン湖 <strong>カヌー</strong>（レンタル 30分 $25前後 / 人）— 混む前に楽しむ</span></div>
-        <div class="day-item alert-row"><span class="day-time">9:00</span><span>🚗 <strong>空港へ出発</strong>（Lake Louise → YYC 約2.5〜3時間）<br><small style="color:var(--text-mid);">夏の渋滞を考慮して余裕を持って出発</small></span></div>
-        <div class="day-item"><span class="day-time">12:00</span><span>🚗 カルガリー空港 YYC 着 → 国内外到着ロビーで待機</span></div>
-        <div class="day-item kent-row"><span class="day-time">12:40</span><span>🧳 <strong>健太郎 YYC 到着！</strong>（WS081）4名全員そろう</span></div>
-        <div class="day-item"><span class="day-time">13:30</span><span>🛒 T&amp;T スーパーマーケット or 17th Avenue SW でランチ &amp; 買い物 <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=17th+Avenue+SW+Calgary+Alberta" target="_blank">📍 地図</a></span></div>
-        <div class="day-item"><span class="day-time">夕方</span><span>🏠 Okotoks 宿に帰還・ゆっくり夕食</span></div>
-      </div>
-    </div>
-
-    <!-- Day 4 -->
-    <div class="day-card dc-4">
-      <div class="day-hd">
-        <span class="day-num">DAY 4</span>
-        <span class="day-title">なつき結婚式 💍</span>
-        <span class="day-date">7月11日（土）</span>
-      </div>
-      <div class="day-body">
-        <div class="day-item"><span class="day-time">午前</span><span>🏠 宿でゆっくり準備（式場はOkotoksから約25分 — 近い！）</span></div>
-        <div class="day-item"><span class="day-time">14:30</span><span>🚗 Sheppard Family Park へ出発 <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Sheppard+Family+Park+1201+5+Street+SE+High+River+Alberta" target="_blank">📍 地図</a> <a class="web-btn" href="https://www.theknot.com/us/mckenna-barlow-and-natski-sarayama-jul-2026" target="_blank">💍 招待状</a></span></div>
-        <div class="day-item"><span class="day-time">15:00</span><span>💒 <strong>挙式</strong> — McKenna &amp; なつき（Natski Sarayama）</span></div>
-        <div class="day-item"><span class="day-time">16:00</span><span>🥂 カクテルアワー</span></div>
-        <div class="day-item"><span class="day-time">17:00</span><span>🍽 披露宴スタート</span></div>
-        <div class="day-item"><span class="day-time">23:30</span><span>🎉 お開き → 宿へ帰宅（約25分）</span></div>
-        <div class="day-item alert-row"><span class="day-time">持参</span><span>👔 スーツ・ネクタイ・革靴 ← 忘れずに！</span></div>
-      </div>
-    </div>
-
-    <!-- Day 5 -->
-    <div class="day-card dc-5">
-      <div class="day-hd">
-        <span class="day-num">DAY 5</span>
-        <span class="day-title">なつきと遊ぶ 🤝</span>
-        <span class="day-date">7月12日（日）</span>
-      </div>
-      <div class="day-body">
-        <div class="day-item"><span class="day-time">終日</span><span>🤝 なつきさんと合流（4名 + なつきさん）— 場所・内容は事前調整</span></div>
-        <div class="day-item"><span class="day-time">tip</span><span>🤠 <strong>スタンピード最終日！</strong>（〜7/13）一緒に行くのも最高の思い出に</span></div>
-      </div>
-    </div>
-
-    <!-- Day 6 -->
-    <div class="day-card dc-6">
-      <div class="day-hd">
-        <span class="day-num">DAY 6</span>
-        <span class="day-title">健太郎 帰国 ✈ → ドラムヘラー 🦕</span>
-        <span class="day-date">7月13日（月）</span>
-      </div>
-      <div class="day-body">
-        <div class="day-item kent-row"><span class="day-time">⚠ 注意</span><span><strong>健太郎 14:50 カルガリー発（国際線）</strong><br>国際線は <strong>3時間前チェックイン = 11:50締切</strong> → <strong>11:30 には空港到着</strong>したい</span></div>
-        <div class="day-item"><span class="day-time">10:30</span><span>🚗 Okotoks 出発 → カルガリー空港へ（約45分）</span></div>
-        <div class="day-item kent-row"><span class="day-time">11:20</span><span>🧳 <strong>健太郎 空港でお別れ</strong>（チェックイン・荷物預け）<br>✈ 14:50 WS080 カルガリー発 → 翌7/14（火）16:20 成田着</span></div>
-        <div class="day-item alert-row"><span class="day-time">12:00</span><span>🚗 <strong>3名 ドラムヘラーへ出発！</strong>（YYC → ドラムヘラー 約1時間45分）</span></div>
-        <div class="day-item"><span class="day-time">13:45</span><span>🦕 <strong>ロイヤル・ティレル博物館</strong>（夏季 21:00 閉館！）ゆっくり見放題 <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Royal+Tyrrell+Museum+Drumheller+Alberta" target="_blank">📍 地図</a></span></div>
-        <div class="day-item"><span class="day-time">16:00</span><span>🪨 <strong>Horseshoe Canyon</strong>（夕陽が赤く染まる時間帯に絶景） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Horseshoe+Canyon+Drumheller+Alberta" target="_blank">📍 地図</a></span></div>
-        <div class="day-item"><span class="day-time">17:00</span><span>🗿 <strong>ホードゥー</strong>（柱状奇岩群・夕陽の陰影で特に美しい） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Drumheller+Hoodoos+Alberta" target="_blank">📍 地図</a></span></div>
-        <div class="day-item"><span class="day-time">18:30</span><span>🍔 Bernie &amp; The Boys Bistro or Sam's Kitchen でディナー</span></div>
-        <div class="day-item"><span class="day-time">20:00</span><span>🚗 Okotoks 宿に帰還（ドラムヘラー → Okotoks 約2時間）— 最終夜は拠点でゆっくり</span></div>
-      </div>
-    </div>
-
-    <!-- Day 7 -->
-    <div class="day-card dc-7">
-      <div class="day-hd">
-        <span class="day-num">DAY 7</span>
-        <span class="day-title">3名 帰国 ⚠ 時間厳守！</span>
-        <span class="day-date">7月14日（火）</span>
-      </div>
-      <div class="day-body">
-        <div class="day-item"><span class="day-time">11:00</span><span>🏠 Mountain View Retreat チェックアウト（3名）</span></div>
-        <div class="day-item"><span class="day-time">〜12:00</span><span>🚗 カルガリー空港 YYC 到着（宿から約45分）</span></div>
-        <div class="day-item alert-row"><span class="day-time">⚠ 12:30</span><span><strong>Thrifty レンタカー返却 ← 実質締切！</strong></span></div>
-        <div class="day-item"><span class="day-time">12:50</span><span>チェックインカウンター締切（14:50発の2時間前）</span></div>
-        <div class="day-item"><span class="day-time">14:50</span><span>✈ WS080 カルガリー出発（3名）→ 翌7/15（水）16:20 成田T1 着</span></div>
-      </div>
-    </div>
-
-    <div class="notice info" style="margin-top:18px;">
-      💡 <strong>プラン① vs プラン② 比較</strong><br>
-      <table class="kv" style="margin-top:10px;">
-        <tr><th>①叩き台</th><th>②置き去り</th></tr>
-        <tr><td>Day2: ホームパーティ</td><td>Day2: バンフ移動・宿泊</td></tr>
-        <tr><td>Day3: ドラムヘラー + 健太郎到着</td><td>Day3: 早朝バンフ + 健太郎到着</td></tr>
-        <tr><td>Day6: バンフ（健太郎と早朝）</td><td>Day6: 健太郎見送り + ドラムヘラー</td></tr>
-        <tr><td>Day7: そのまま帰国</td><td>Day7: Okotoks発 → 帰国（同じ）</td></tr>
-      </table>
-      ⚠ プラン②は Day2 にバンフ追加宿泊（1泊）が必要です。
-    </div>
-
-  </div>
-</div>
-
-</div><!-- /tab-plan2 -->
 
 <!-- ━━━ TAB: プラン③ ━━━ -->
 <div class="tab-pane" id="tab-plan3">
@@ -1024,24 +827,23 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 <div class="section">
   <div class="sec-hd" style="background:linear-gradient(90deg,#1B3A5C,#7B3800);">📅 プラン③ 健太郎 同乗ver — バンフもドラムヘラーも全員で</div>
   <div class="sec-body">
-    <!-- ▼ 3プラン比較 ▼ -->
+    <!-- ▼ 2プラン比較 ▼ -->
     <div style="margin-bottom:16px;">
       <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:5px;">📅 日程比較</div>
       <table style="width:100%;border-collapse:collapse;font-size:10px;">
         <thead><tr>
           <th style="padding:4px 3px;width:22px;"></th>
           <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">①叩き台</th>
-          <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">②置き去り</th>
           <th style="padding:5px 4px;text-align:center;background:var(--navy);color:#fff;font-weight:700;border-radius:5px 5px 0 0;">★ ③同乗</th>
         </tr></thead>
         <tbody>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D1</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">到着・カジノ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">到着・カジノ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">到着・カジノ</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D2</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">ホームパーティ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">バンフ移動・宿泊</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">ホームパーティ</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D3</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">ドラム（3名）<br>健太郎別到着</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">早朝バンフ<br>→健太郎到着</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">⚠️ 健太郎到着<br>→弾丸ドラム</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D4</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">結婚式 💍</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">結婚式 💍</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">結婚式 💍</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D5</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">なつきと遊ぶ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">なつきと遊ぶ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">なつきと遊ぶ<br>→バンフ泊</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D6</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">⚠️ バンフ<br>→健太郎見送り</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">健太郎見送り<br>→ドラム</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">早朝バンフ<br>→健太郎バス空港</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D7</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">3名帰国</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">3名帰国</td><td style="padding:3px 4px;text-align:center;border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);border-bottom:2px solid var(--navy-light);font-weight:600;">3名帰国</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D1</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">到着・カジノ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">到着・カジノ</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D2</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">ホームパーティ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">ホームパーティ</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D3</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">ドラム（3名）<br>健太郎別到着</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">⚠️ 健太郎到着<br>→弾丸ドラム</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D4</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">結婚式 💍</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">結婚式 💍</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D5</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">なつきと遊ぶ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">なつきと遊ぶ<br>→バンフ泊</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D6</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">⚠️ バンフ<br>→健太郎見送り</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">早朝バンフ<br>→健太郎バス空港</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-light);font-weight:700;font-size:9px;white-space:nowrap;">D7</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">3名帰国</td><td style="padding:3px 4px;text-align:center;border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);border-bottom:2px solid var(--navy-light);font-weight:600;">3名帰国</td></tr>
         </tbody>
       </table>
       <div style="font-size:11px;font-weight:700;color:var(--navy);margin:10px 0 5px;">🔑 ポイント比較</div>
@@ -1049,15 +851,14 @@ tr:nth-child(even) td { background: var(--navy-faint); }
         <thead><tr>
           <th style="padding:4px 3px;width:70px;"></th>
           <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">①叩き台</th>
-          <th style="padding:5px 4px;text-align:center;background:var(--navy-faint);color:var(--text-light);">②置き去り</th>
           <th style="padding:5px 4px;text-align:center;background:var(--navy);color:#fff;font-weight:700;border-radius:5px 5px 0 0;">★ ③同乗</th>
         </tr></thead>
         <tbody>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">健太郎バンフ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅ 急ぎ足</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅ 早朝</td></tr>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">健太郎ドラム</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅</td></tr>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">早朝バンフ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅</td></tr>
-          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">ホームパーティ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅</td></tr>
-          <tr><td style="padding:3px 3px;color:var(--text-mid);font-size:9.5px;">追加宿泊</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">なし</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">バンフ1泊</td><td style="padding:3px 4px;text-align:center;border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);border-bottom:2px solid var(--navy-light);font-weight:600;">バンフ1泊</td></tr>
+          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">健太郎バンフ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅ 急ぎ足</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅ 早朝</td></tr>
+          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">健太郎ドラム</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅</td></tr>
+          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">早朝バンフ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">❌</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅</td></tr>
+          <tr><td style="padding:3px 3px;border-bottom:1px solid var(--border-light);color:var(--text-mid);font-size:9.5px;">ホームパーティ</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);text-align:center;color:var(--text-mid);">✅</td><td style="padding:3px 4px;border-bottom:1px solid var(--border-light);border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);text-align:center;font-weight:600;">✅</td></tr>
+          <tr><td style="padding:3px 3px;color:var(--text-mid);font-size:9.5px;">追加宿泊</td><td style="padding:3px 4px;text-align:center;color:var(--text-mid);">なし</td><td style="padding:3px 4px;text-align:center;border-left:2px solid var(--navy-light);border-right:2px solid var(--navy-light);border-bottom:2px solid var(--navy-light);font-weight:600;">バンフ1泊</td></tr>
         </tbody>
       </table>
     </div>
@@ -1229,7 +1030,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
       </div>
       <div style="display:flex;align-items:center;gap:14px;background:var(--navy);color:#fff;border-radius:10px;padding:13px 16px;">
         <span style="font-size:24px;font-weight:900;opacity:0.4;min-width:28px;text-align:center;">②</span>
-        <span style="font-size:13px;font-weight:700;line-height:1.45;">泊まる場合 — いつ・どこに泊まるか</span>
+        <span style="font-size:13px;font-weight:700;line-height:1.45;">泊まる場合 — どこに泊まるか</span>
       </div>
     </div>
 
@@ -1300,78 +1101,19 @@ tr:nth-child(even) td { background: var(--navy-faint); }
     <!-- ══════════ 論点② ══════════ -->
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
       <span style="background:var(--navy);color:#fff;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">②</span>
-      <span style="font-size:12px;font-weight:700;color:var(--navy);">いつ・どこに泊まる？（B 選択時）</span>
+      <span style="font-size:12px;font-weight:700;color:var(--navy);">どこに泊まる？（B 選択時）</span>
     </div>
 
     <!-- Root② -->
     <div style="background:linear-gradient(90deg,#1B3A5C,#2C4A7A);color:#fff;border-radius:10px;padding:11px 16px;font-size:12.5px;font-weight:800;text-align:center;">
-      🏡 バンフ近くに1泊することになったとして…
+      🏡 バンフ近くに1泊（Day5夜 / プラン③確定）する場合、どこに泊まる？
     </div>
     <div style="display:flex;justify-content:center;"><div style="width:2px;height:14px;background:#4A7BAB;"></div></div>
 
     <!-- 論点②ブランチ -->
     <div style="position:relative;border-left:2px solid #4A7BAB;margin-left:18px;padding-left:18px;margin-bottom:22px;">
 
-      <!-- いつ？ ラベル -->
-      <div style="position:relative;margin-top:10px;margin-bottom:12px;">
-        <div style="position:absolute;left:-19px;top:15px;width:19px;height:2px;background:#4A7BAB;"></div>
-        <div style="background:#EBF4FF;border:1.5px solid #4A7BAB;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:800;color:var(--navy);">
-          📅 いつ泊まる？（＝ どのプランを選ぶか）
-        </div>
-      </div>
 
-      <!-- いつサブツリー -->
-      <div style="position:relative;border-left:2px solid #8BBBD8;margin-left:16px;padding-left:16px;margin-bottom:16px;">
-
-        <!-- Day2夜 = プラン② -->
-        <div style="position:relative;margin-top:10px;margin-bottom:12px;">
-          <div style="position:absolute;left:-17px;top:19px;width:17px;height:2px;background:#8BBBD8;"></div>
-          <div style="border:1.5px solid #2C5F2E;border-radius:10px;overflow:hidden;">
-            <div style="background:#2C5F2E;color:#fff;padding:8px 13px;font-size:11.5px;font-weight:700;">
-              Day2夜泊 → Day3 早朝バンフ（プラン② 置き去りver）
-            </div>
-            <div style="padding:9px 13px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-              <div>
-                <div style="font-size:10px;font-weight:700;color:#1A7A40;margin-bottom:4px;">👍 Good</div>
-                <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">✅ Day3に早め制覇<br>✅ 後半日程に余裕<br>✅ Day6にドラムヘラー</div>
-              </div>
-              <div>
-                <div style="font-size:10px;font-weight:700;color:#B02020;margin-bottom:4px;">👎 Bad</div>
-                <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">❌ <strong>健太郎バンフ行けない</strong><br>❌ 到着翌日すぐ移動で慌ただしい<br>❌ ホームパーティなし</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Day5夜 = プラン③ -->
-        <div style="position:relative;">
-          <div style="position:absolute;left:-17px;top:19px;width:17px;height:2px;background:#8BBBD8;"></div>
-          <div style="border:2px solid var(--navy);border-radius:10px;overflow:hidden;">
-            <div style="background:linear-gradient(90deg,#1B3A5C,#7B3800);color:#fff;padding:8px 13px;font-size:11.5px;font-weight:700;">
-              Day5夜泊 → Day6 早朝バンフ（プラン③ 同乗ver）⭐ 推奨
-            </div>
-            <div style="padding:9px 13px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-              <div>
-                <div style="font-size:10px;font-weight:700;color:#1A7A40;margin-bottom:4px;">👍 Good</div>
-                <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">✅ <strong>健太郎含む全員でバンフ</strong><br>✅ ホームパーティ・ドラムヘラー全部OK<br>✅ 健太郎はバスで余裕帰国</div>
-              </div>
-              <div>
-                <div style="font-size:10px;font-weight:700;color:#B02020;margin-bottom:4px;">👎 Bad</div>
-                <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">❌ Day5夕方に移動が必要<br>❌ Banff Airporter 事前予約が要る<br>❌ 宿代が増える</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /いつサブツリー -->
-
-      <!-- どこ？ ラベル -->
-      <div style="position:relative;margin-bottom:12px;">
-        <div style="position:absolute;left:-19px;top:15px;width:19px;height:2px;background:#4A7BAB;"></div>
-        <div style="background:#EBF4FF;border:1.5px solid #4A7BAB;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:800;color:var(--navy);">
-          📍 どこに泊まる？（3択）
-        </div>
-      </div>
 
       <!-- どこサブツリー -->
       <div style="position:relative;border-left:2px solid #8BBBD8;margin-left:16px;padding-left:16px;">
@@ -1427,14 +1169,8 @@ tr:nth-child(even) td { background: var(--navy-faint); }
               <td style="padding:7px 6px;text-align:center;">⚠️ 微妙</td>
               <td style="padding:7px 6px;text-align:center;">✅</td>
             </tr>
-            <tr style="border-bottom:1px solid var(--border-light);">
-              <td style="padding:7px 8px;color:var(--text-mid);font-weight:600;">B + Day2（プラン②）</td>
-              <td style="padding:7px 6px;text-align:center;">❌ あり</td>
-              <td style="padding:7px 6px;text-align:center;">✅</td>
-              <td style="padding:7px 6px;text-align:center;">❌</td>
-            </tr>
             <tr style="background:rgba(27,58,92,0.05);">
-              <td style="padding:7px 8px;color:var(--navy);font-weight:800;">B + Day5（プラン③）⭐</td>
+              <td style="padding:7px 8px;color:var(--navy);font-weight:800;">B. バンフ1泊（プラン③）⭐</td>
               <td style="padding:7px 6px;text-align:center;">❌ あり</td>
               <td style="padding:7px 6px;text-align:center;">✅</td>
               <td style="padding:7px 6px;text-align:center;font-weight:800;">✅ 全員！</td>
