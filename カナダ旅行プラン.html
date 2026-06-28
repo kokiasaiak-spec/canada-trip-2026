@@ -213,7 +213,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 .day-item:nth-child(even) { background: var(--navy-faint); }
 .day-time { color: var(--navy-mid); font-weight: 700; font-size: 12px; white-space: nowrap; min-width: 48px; flex-shrink: 0; }
 .day-item.alert-row { background: var(--red-light) !important; color: var(--red); font-weight: 600; }
-.day-item.kent-row { background: #EFF5FB !important; }
+.day-item.kent-row { background: #D0E8FA !important; border-left: 3px solid #5A9CC5; }
 
 /* day header color variants */
 .dc-2 .day-hd { background: #1F4D7A; }
@@ -428,12 +428,16 @@ tr:nth-child(even) td { background: var(--navy-faint); }
   display: flex;
   gap: 6px;
   margin: 14px 0 10px;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 2px;
 }
+.tab-nav::-webkit-scrollbar { display: none; }
 .tab-btn {
-  flex: 1;
-  min-width: 70px;
-  padding: 10px 6px;
+  flex-shrink: 0;
+  padding: 10px 12px;
   border: none;
   border-radius: 10px;
   background: var(--navy-xlight);
@@ -444,10 +448,12 @@ tr:nth-child(even) td { background: var(--navy-faint); }
   font-family: inherit;
   touch-action: manipulation;
   transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
 }
 .tab-btn.active {
   background: var(--navy);
   color: #fff;
+  box-shadow: 0 2px 6px rgba(27,58,92,0.3);
 }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
@@ -529,7 +535,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
       <div class="flight-label"><span class="tag tag-mid">健太郎（KENTARO SUGIURA）</span></div>
       <div class="tbl-wrap"><table>
         <tr><th>区間</th><th>出発</th><th>到着</th><th>便名</th></tr>
-        <tr><td>成田 → カルガリー</td><td><strong>7/10（金）18:30</strong></td><td><strong>7/10（金）12:40</strong></td><td>WS081</td></tr>
+        <tr><td>成田 → カルガリー</td><td><strong>7/10（金）18:30</strong></td><td><strong>7/10（金）12:40（現地時間・同日）</strong></td><td>WS081</td></tr>
         <tr><td>カルガリー → 成田</td><td><strong>7/13（月）14:50</strong></td><td>7/14（火）16:20</td><td>WS080</td></tr>
       </table></div>
     </div>
@@ -616,7 +622,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
         <span class="day-date">7月10日（金）</span>
       </div>
       <div class="day-body">
-        <div class="day-item"><span class="day-time">早朝</span><span>🚗 Okotoksを出発 → ドラムヘラーへ（東へ約2時間）</span></div>
+        <div class="day-item"><span class="day-time">早朝</span><span>🚗 Okotoksを出発 → ドラムヘラーへ（東へ約1.5〜2時間）</span></div>
         <div class="day-item"><span class="day-time">午前</span><span>🦕 <strong>ロイヤル・ティレル博物館</strong>（世界最大級の恐竜博物館・事前予約推奨） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Royal+Tyrrell+Museum+Drumheller+Alberta" target="_blank">📍 地図</a></span></div>
         <div class="day-item kent-row"><span class="day-time">12:40</span><span>🧳 <strong>健太郎 YYC 到着</strong>（WS081）→ Uberで宿へ直行（約45分）or 帰路で合流</span></div>
         <div class="day-item"><span class="day-time">午後</span><span>🪨 <strong>Horseshoe Canyon</strong>（バッドランドの絶景） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Horseshoe+Canyon+Drumheller+Alberta" target="_blank">📍 地図</a></span></div>
@@ -665,7 +671,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
       </div>
       <div class="day-body">
         <div class="day-item"><span class="day-time">終日</span><span>🤝 なつきさんと合流（4名 + なつきさん）— 場所・内容は事前調整</span></div>
-        <div class="day-item"><span class="day-time">tip</span><span>🤠 <strong>スタンピード最終日！</strong>（〜7/13）一緒に行くのも最高の思い出になるかも</span></div>
+        <div class="day-item"><span class="day-time">tip</span><span>🤠 <strong>スタンピード最終日！</strong>（7/12が最終日）一緒に行くのも最高の思い出になるかも</span></div>
         <div style="background:var(--navy-faint);border-radius:10px;padding:10px 12px;margin:8px 0 0;">
           <div style="font-size:10.5px;font-weight:700;color:var(--navy);margin-bottom:7px;">🔀 バンフに泊まるか（D6 早朝クオリティに直結）</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;">
@@ -705,7 +711,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
         <div class="day-item kent-row"><span class="day-time">B: 5:30</span><span>🌅 バンフ出発 → <strong>レイク・ルイーズ</strong>（約50分）</span></div>
         <div class="day-item"><span class="day-time">B: 6:20</span><span>💎 <strong>レイク・ルイーズ</strong> 早朝散策・鏡面タイム（4名） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Lake+Louise+Alberta" target="_blank">📍 地図</a></span></div>
         <div class="day-item kent-row"><span class="day-time">B: 8:20</span><span>🚗 健太郎を乗せてバンフへ折り返し（約50分）</span></div>
-        <div class="day-item kent-row"><span class="day-time">B: 9:20</span><span>🏨 <strong>健太郎 バス停着</strong>（Brewster Mountain Lodge / Mount Royal Hotel 前）</span></div>
+        <div class="day-item kent-row"><span class="day-time">B: 9:10</span><span>🏨 <strong>健太郎 バス停着</strong>（Brewster Mountain Lodge / Mount Royal Hotel 前）</span></div>
         <div class="day-item kent-row"><span class="day-time">B: 9:30</span><span>🚌 <strong>健太郎 Brewster Express 乗車</strong>（Banff 発 → YYC 11:30着・CA$66.75〜）<br><span style="font-size:10.5px;color:var(--text-mid);">予約: banffjaspercollection.com/brewster-express</span></span></div>
         <div class="day-item"><span class="day-time">B: 9:30</span><span>🚗 3名 → <strong>モレーン湖</strong>へ折り返し（Banff→オーバーフロー駐車場 約50分）</span></div>
         <div class="day-item"><span class="day-time">B: 10:20</span><span>🌊 オーバーフロー駐車場着 → <strong>モレーン湖シャトル</strong>乗車（約30分） <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Moraine+Lake+Alberta" target="_blank">📍 地図</a></span></div>
@@ -839,7 +845,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 
     <!-- Root② -->
     <div style="background:linear-gradient(90deg,#1B3A5C,#2C4A7A);color:#fff;border-radius:10px;padding:11px 16px;font-size:12.5px;font-weight:800;text-align:center;">
-      🏡 バンフ近くに1泊（Day5夜 / プラン③確定）する場合、どこに泊まる？
+      🏡 バンフ近くに1泊（Day5夜）する場合、どこに泊まる？
     </div>
     <div style="display:flex;justify-content:center;"><div style="width:2px;height:14px;background:#4A7BAB;"></div></div>
 
@@ -1092,7 +1098,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
           </div>
           <div class="spot-links">
             <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Sheep+River+Provincial+Park+Alberta" target="_blank">📍 Googleマップ</a>
-            <a class="web-btn" href="https://www.travelalberta.com/ja/" target="_blank">🌐 Travel Alberta（日本語）</a>
+            <a class="web-btn" href="https://www.travelalberta.com/" target="_blank">🌐 Travel Alberta</a>
           </div>
         </div>
       </div>
@@ -1260,7 +1266,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
         <div class="dining-name">🍕 Una Pizza + Wine</div>
         <div class="dining-desc">618 17th Ave SW。薪窯ナポリピザとワインが自慢。2012年創業のカルガリー人気店</div>
         <div class="dining-price">$$ ランチ・ディナー</div>
-        <div class="spot-links" style="margin-top:6px;"><a class="web-btn" href="https://www.unarestaurant.ca" target="_blank">🌐 公式</a><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Una+Pizza+Wine+17th+Avenue+Calgary" target="_blank">📍 地図</a></div>
+        <div class="spot-links" style="margin-top:6px;"><a class="web-btn" href="https://www.una.ca/" target="_blank">🌐 公式</a><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Una+Pizza+Wine+17th+Avenue+Calgary" target="_blank">📍 地図</a></div>
       </div>
       <div class="dining-card">
         <div class="dining-name">🥩 Model Milk</div>
@@ -1288,7 +1294,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
           <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Royal_Tyrrell_Museum_from_the_staircase.jpg" alt="Royal Tyrrell Museum" loading="lazy"></div>
           <div class="spot-meta">
             <span class="meta-badge">🚗 Okotoksから2時間</span>
-            <span class="meta-badge">入場料 $23前後</span>
+            <span class="meta-badge">入場料 CA$25（18歳未満無料）</span>
             <span class="meta-badge">2〜3時間</span>
             <span class="meta-badge" style="background:var(--red-light);color:var(--red);">⚠ 事前予約推奨</span>
           </div>
@@ -1312,7 +1318,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
         <div class="spot-body">
           <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Badlands-Drumheller.jpg" alt="Horseshoe Canyon — Drumheller Badlands" loading="lazy"></div>
           <div class="spot-meta">
-            <span class="meta-badge">🚗 博物館から10分</span>
+            <span class="meta-badge">🚗 博物館から約20分</span>
             <span class="meta-badge">無料</span>
             <span class="meta-badge">1〜2時間</span>
           </div>
@@ -1405,7 +1411,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
     <div class="notice" style="font-size:11px;color:var(--text-mid);margin:6px 0 12px;padding:8px 12px;background:var(--navy-faint);border-radius:8px;">⚠️ ドラムヘラーは飲食店が少なく夏季はどこも混みます。できれば予約を。</div>
 
     <div class="area-hd area-banff area-main">🏔 バンフエリア — Day 6（7月13日） / 宿から約1.5時間</div>
-    <div class="notice info" style="margin-bottom:10px;">🎫 <strong>入場パスについて：</strong> バンフ国立公園は有料（$75.25/人 年間パス 或いは $22前後/日）。購入は <a href="https://www.pc.gc.ca/ja/pn-np/ab/banff" target="_blank">Parks Canada 公式（日本語あり）</a> から事前予約がスムーズ。</div>
+    <div class="notice info" style="margin-bottom:10px;">🎫 <strong>入場パスについて：</strong> バンフ国立公園は有料（$75.25/人 年間パス 或いは $22前後/日）。購入は <a href="https://parks.canada.ca/ja/pn-np/ab/banff" target="_blank">Parks Canada 公式（日本語あり）</a> から事前予約がスムーズ。</div>
     <div class="spot-grid">
 
       <div class="spot-card">
@@ -1423,10 +1429,10 @@ tr:nth-child(even) td { background: var(--navy-faint); }
           <div class="spot-desc">カナダドル20ドル紙幣にも描かれた「カナダの宝石」。エメラルドグリーンの湖面に氷河を抱く山が映り込む景色はまさに絶景中の絶景。実物を見たときの「うわ、本当にこの色なんだ」という感動は写真では伝わらない。</div>
           <div class="spot-pros-cons">
             <div class="pros"><b>✔ いいところ</b>カナダ観光の最高峰・写真映えNo.1・カヌー体験も可能</div>
-            <div class="cons"><b>✘ デメリット</b>夏は激混み・駐車場が朝から満車・カヌーは約$120/時と高め</div>
+            <div class="cons"><b>✘ デメリット</b>夏は激混み・駐車場が朝から満車・カヌーは一般CA$180/時（+GST）と高め</div>
           </div>
           <div class="spot-links">
-            <a class="web-btn" href="https://www.banfflakelouise.com/ja/" target="_blank">🌐 公式観光サイト（日本語）</a>
+            <a class="web-btn" href="https://www.banfflakelouise.com/" target="_blank">🌐 公式観光サイト（日本語）</a>
             <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Lake+Louise+Alberta+Canada" target="_blank">📍 Googleマップ</a>
           </div>
         </div>
@@ -1450,7 +1456,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
           </div>
           <div class="spot-links">
             <a class="web-btn" style="background:#E05A00;border-color:#E05A00;" href="https://reservation.pc.gc.ca/" target="_blank">🚌 シャトル予約（Parks Canada）</a>
-            <a class="web-btn" href="https://www.banfflakelouise.com/ja/" target="_blank">🌐 公式（日本語）</a>
+            <a class="web-btn" href="https://www.banfflakelouise.com/" target="_blank">🌐 公式（日本語）</a>
             <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Moraine+Lake+Alberta+Canada" target="_blank">📍 地図</a>
           </div>
           <div class="notice alert" style="margin:8px 0 0;font-size:10.5px;">⚠️ シャトルは数ヶ月前に完売することがある。予約は早めに。</div>
@@ -1466,7 +1472,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
           <div class="spot-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Day267jsulphurmountain.JPG" alt="Banff Gondola — Sulphur Mountain" loading="lazy"></div>
           <div class="spot-meta">
             <span class="meta-badge">🚗 バンフ旧市街から5分</span>
-            <span class="meta-badge">約 $65/人</span>
+            <span class="meta-badge">CA$89.95〜/人（変動制）</span>
             <span class="meta-badge">1〜2時間</span>
           </div>
           <div class="spot-desc">ゴンドラで山頂（2,281m）まで一気に上昇。頂上からはバンフの街・弓川・ロッキー山脈の峰々が360度パノラマで広がる。晴れた日はどこまでも見渡せて最高。山頂レストランでコーヒー片手に絶景を楽しもう。</div>
@@ -1475,7 +1481,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
             <div class="cons"><b>✘ デメリット</b>値段高め・山頂は寒い場合あり（上着持参）</div>
           </div>
           <div class="spot-links">
-            <a class="web-btn" href="https://www.banffgondola.com/" target="_blank">🌐 公式サイト（英語）</a>
+            <a class="web-btn" href="https://www.banffjaspercollection.com/attractions/banff-gondola" target="_blank">🌐 公式サイト（英語）</a>
             <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Banff+Gondola+Sulphur+Mountain+Alberta" target="_blank">📍 Googleマップ</a>
           </div>
         </div>
@@ -1499,7 +1505,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
             <div class="cons"><b>✘ デメリット</b>夏は混雑・駐車場が満車になりやすい</div>
           </div>
           <div class="spot-links">
-            <a class="web-btn" href="https://www.pc.gc.ca/ja/pn-np/ab/banff" target="_blank">🌐 Parks Canada（日本語）</a>
+            <a class="web-btn" href="https://parks.canada.ca/ja/pn-np/ab/banff" target="_blank">🌐 Parks Canada（日本語）</a>
             <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Johnston+Canyon+Banff+Alberta" target="_blank">📍 Googleマップ</a>
           </div>
         </div>
@@ -2149,7 +2155,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
       </tr>
     </table>
     <div style="margin-top:10px;margin-bottom:20px;">
-      <a class="web-btn" href="https://www.greyeagle.ca/casino/" target="_blank">🌐 Grey Eagle 公式</a>
+      <a class="web-btn" href="https://www.greyeagleresortandcasino.ca/" target="_blank">🌐 Grey Eagle 公式</a>
       <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Grey+Eagle+Resort+Casino+Calgary" target="_blank">📍 Googleマップ</a>
     </div>
 
@@ -2189,7 +2195,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
         <div>🗣️ <strong>ヒット/スタンドはジェスチャーで伝えるのが基本</strong>。ヒット＝テーブルを指でコツコツ、スタンド＝手を横に振る（カメラ録画のため）。</div>
         <div>🧍 <strong>席に着いたらすぐ両替</strong>。テーブルに直接お金を置いてディーラーにチップに換えてもらう。</div>
         <div>🎉 <strong>ディーラーを責めない</strong>。自分が負けてもディーラーのせいじゃない。楽しく接するのが一番。</div>
-        <div>⏸️ <strong>席を離れるときは「I'm back in a minute」</strong>と言えば席を取っておいてくれる場合がある。</div>
+        <div>⏸️ <strong>席を離れるときは「I'll be back in a minute.」</strong>と言えば席を取っておいてくれる場合がある。</div>
       </div>
     </div>
 
@@ -2401,7 +2407,7 @@ tr:nth-child(even) td { background: var(--navy-faint); }
     </div>
 
     <!-- Timeline -->
-    <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px;">⏱ 理想の早朝タイムライン（プラン②③ バンフ泊の場合）</div>
+    <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px;">⏱ 理想の早朝タイムライン（プランB バンフ泊の場合）</div>
     <div style="background:linear-gradient(135deg,#0D2B4A,#1B3A5C);border-radius:14px;padding:16px;margin-bottom:14px;color:#fff;">
       <div style="display:flex;flex-direction:column;">
         <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1);">
