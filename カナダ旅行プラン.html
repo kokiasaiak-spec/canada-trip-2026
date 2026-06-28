@@ -506,13 +506,9 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 <!-- ━━━ TAB NAV ━━━ -->
 <nav class="tab-nav">
   <button class="tab-btn active" onclick="switchTab('schedule',this)">📅 プラン</button>
-
   <button class="tab-btn" onclick="switchTab('spots',this)">🗺 スポット</button>
-  <button class="tab-btn" onclick="switchTab('info',this)">✈ 旅行情報</button>
-  <button class="tab-btn" onclick="switchTab('prep',this)">🧳 準備</button>
-  <button class="tab-btn" onclick="switchTab('casino',this)">🎰 カジノ</button>
-  <button class="tab-btn" onclick="switchTab('morning',this)">🌄 早朝論</button>
-  <button class="tab-btn" onclick="switchTab('reports',this)">📖 体験記</button>
+  <button class="tab-btn" onclick="switchTab('info',this)">✈ 情報・準備</button>
+  <button class="tab-btn" onclick="switchTab('morning',this)">📖 読み物</button>
 </nav>
 
 <!-- ━━━ TAB: 旅行情報 ━━━ -->
@@ -572,6 +568,202 @@ tr:nth-child(even) td { background: var(--navy-faint); }
   </div>
 </div>
 <div class="notice info">🗺 <strong>アクセス（空港→宿）:</strong> Highway 2 南下 → Okotoks 出口 → D'arcy Ranch Drive 右折 → Aster Link 左折（約45分）<br>入口：家の側面ドア → 階段を下りてスイートへ。駐車は裏口または路上OK。</div>
+
+
+
+<!-- ━━━ 準備（情報タブ内）━━━ -->
+
+<!-- ━━━ WEATHER ━━━ -->
+<div class="section">
+  <div class="sec-hd" style="background:linear-gradient(90deg,#1B6A8C,#1B3A5C);">🌡 7月の気温と服装ガイド（7/8〜14）</div>
+  <div class="sec-body">
+
+    <!-- エリア別気温カード -->
+    <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:8px;">📍 エリア別 日中・朝晩の気温</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;">
+
+      <div style="background:#F0F6FF;border-radius:10px;padding:10px 12px;border-top:3px solid #1B3A5C;">
+        <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px;">🏙 Calgary / Okotoks</div>
+        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
+          日中: <strong>24〜27°C</strong><br>
+          朝晩: <strong>11〜13°C</strong><br>
+          <span style="font-size:10px;">快晴が多い・湿気は少ない</span>
+        </div>
+      </div>
+
+      <div style="background:#FFF5EB;border-radius:10px;padding:10px 12px;border-top:3px solid #B85000;">
+        <div style="font-size:12px;font-weight:700;color:#7B3800;margin-bottom:4px;">🦕 ドラムヘラー</div>
+        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
+          日中: <strong>28〜33°C</strong><br>
+          朝晩: <strong>12〜15°C</strong><br>
+          <span style="font-size:10px;">砂漠性気候・炎天下注意</span>
+        </div>
+      </div>
+
+      <div style="background:#EBF5FF;border-radius:10px;padding:10px 12px;border-top:3px solid #2B6CB0;">
+        <div style="font-size:12px;font-weight:700;color:#1B4D8A;margin-bottom:4px;">🏔 バンフ市街（1,383m）</div>
+        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
+          日中: <strong>20〜23°C</strong><br>
+          朝晩: <strong>7〜9°C</strong><br>
+          <span style="font-size:10px;">午後は雷雨リスクあり</span>
+        </div>
+      </div>
+
+      <div style="background:#E8F0FF;border-radius:10px;padding:10px 12px;border-top:3px solid #4A90D9;">
+        <div style="font-size:12px;font-weight:700;color:#1B3A5C;margin-bottom:4px;">💎 Lake Louise（1,731m）</div>
+        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
+          日中: <strong>17〜20°C</strong><br>
+          早朝5-7時: <strong>4〜8°C</strong><br>
+          <span style="font-size:10px;">早朝は真冬並みの体感も</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 服装ガイド -->
+    <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:8px;">👕 シーン別 服装目安</div>
+    <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border-light);margin-bottom:14px;">
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+        <thead>
+          <tr style="background:var(--navy);color:#fff;">
+            <th style="padding:7px 10px;text-align:left;width:38%;">シーン</th>
+            <th style="padding:7px 10px;text-align:left;">服装</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border-light);">
+            <td style="padding:7px 10px;color:var(--text-mid);">🌅 早朝バンフ・ルイーズ</td>
+            <td style="padding:7px 10px;">フリース or 薄手ダウン ＋ ウィンドブレーカー（防水）必須。長袖・長ズボン推奨</td>
+          </tr>
+          <tr style="background:var(--navy-faint);border-bottom:1px solid var(--border-light);">
+            <td style="padding:7px 10px;color:var(--text-mid);">☀️ 日中 Calgary / Okotoks</td>
+            <td style="padding:7px 10px;">Tシャツ ＋ ショートパンツでOK。夜は1枚羽織ると◎</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-light);">
+            <td style="padding:7px 10px;color:var(--text-mid);">🦕 ドラムヘラー（D3）</td>
+            <td style="padding:7px 10px;">軽装でOKだが<strong>帽子・日焼け止め必須</strong>。日差しが強烈。水2L以上を携行</td>
+          </tr>
+          <tr style="background:var(--navy-faint);border-bottom:1px solid var(--border-light);">
+            <td style="padding:7px 10px;color:var(--text-mid);">💍 結婚式（D4）</td>
+            <td style="padding:7px 10px;">スーツ・ネクタイ・革靴。式場は屋外の可能性あり → 日差し対策を</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-light);">
+            <td style="padding:7px 10px;color:var(--text-mid);">🎰 カジノ（D1夜）</td>
+            <td style="padding:7px 10px;">カジュアルOK（ジーンズ・スニーカー可）。空調が効いてるので1枚羽織ると◎</td>
+          </tr>
+          <tr>
+            <td style="padding:7px 10px;color:var(--text-mid);">🌧 雨・雷雨対策（全日）</td>
+            <td style="padding:7px 10px;">軽量<strong>レインジャケット</strong>を1枚バックパックに常備。山の午後は急変する</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 必携アイテム -->
+    <div class="notice info" style="font-size:11.5px;">
+      🎒 <strong>バンフ早朝アタック必携セット：</strong>
+      フリース or 薄手ダウン / 防水ウィンドブレーカー / 手袋（薄手） / ニット帽（念のため） / 水 / 日焼け止め
+    </div>
+
+  </div>
+</div>
+
+<!-- ━━━ PACKING ━━━ -->
+<div class="section">
+  <div class="sec-hd">🧳 持ち物リスト</div>
+  <div class="sec-body">
+    <ul class="chk-list">
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>パスポート（有効期限6ヶ月以上）</li>
+      <li class="chk-item"><input type="checkbox" checked><span class="chk-cat">書類</span>国際運転免許証（IDP）✅ 取得済み</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>eチケット控え・搭乗券</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>レンタカーバウチャー</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>Airbnb確認書（チェックインコード）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>クレジットカード（VISA/Mastercard・番号印字あり）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>スーツ・ネクタイ・革靴（結婚式 7/11用）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>カジノ・パーティ用の少し小綺麗な服</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>普段着（Tシャツ・パンツ 6日分）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>アウトドア用ジャケット（バンフ・ドラムヘラー用）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>歩きやすいスニーカー</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">手土産</span>レモンサワー缶 / 日本のお菓子（ポッキー・抹茶Kit Kat等）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">デジタル</span>eSIM設定済みスマートフォン</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">デジタル</span>モバイルバッテリー</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">デジタル</span>オフラインマップDL（Googleマップ / Maps.me）</li>
+      <li class="chk-item"><input type="checkbox" checked><span class="chk-cat">デジタル</span>変換プラグ — 不要（カナダはType A = 日本と同規格）✅</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>日焼け止め・リップクリーム（7月の日差しは強烈）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>サングラス・帽子</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>虫除けスプレー（ハイキング・湖畔用）</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>常備薬・胃薬・鎮痛剤</li>
+      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>現金（CAD）── 少額でOK。カードが主流。</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ━━━ NOTES ━━━ -->
+<div class="section">
+  <div class="sec-hd red-hd">⚠ 注意事項・現地マナー</div>
+  <div class="sec-body">
+    <div class="note-blk">
+      <div class="note-title">🚗 運転</div>
+      <ul>
+        <li>右側通行（日本と逆）。慣れるまでは特に左折・駐車場の出入り口に注意。</li>
+        <li>フリーウェイの制限速度は110km/h。スクールゾーン・住宅街は30km/h厳守。</li>
+        <li>赤信号でも一時停止後に右折可能（カナダ全域・ケベック州を除く）。</li>
+        <li>他のメンバーが運転する場合、レンタカー受け取り時に追加ドライバー登録が必要。</li>
+      </ul>
+    </div>
+    <div class="note-blk">
+      <div class="note-title">💳 お金・チップ</div>
+      <ul>
+        <li>レストランのチップは合計の15〜20%が目安（テーブルサービスの場合）。</li>
+        <li>カジノはチップ不要だが、飲み物サービスには$1〜2渡すのがマナー。</li>
+        <li>GST（消費税）5%が価格に別途加算される。表示価格より高くなるので注意。</li>
+        <li>クレジットカードが主流。現金は少額だけ持てば十分。</li>
+      </ul>
+    </div>
+    <div class="note-blk">
+      <div class="note-title">🏔 バンフ国立公園</div>
+      <ul>
+        <li>入場には Parks Canada のパスが必要（$22前後/日 or $75.25/人 年間パス）。</li>
+        <li>野生動物（ムース・エルク・クマ）に遭遇したら車内に留まり絶対に近づかない。</li>
+        <li>湖畔でのBBQ・直火は禁止エリア多数。ゴミは必ず持ち帰り。</li>
+        <li>モレーン湖はシャトルバスが必要（事前予約・売り切れ注意）。</li>
+      </ul>
+    </div>
+    <div class="note-blk">
+      <div class="note-title">📋 入国・税関</div>
+      <ul>
+        <li>ArriveCAN アプリによる事前申告は不要になったが、税関申告書は機内で記入。</li>
+        <li>肉類・果物・野菜の持ち込みは申告が必要（持ち込み不可の場合あり）。</li>
+        <li>アルコールの免税持ち込みは1人あたり1.14Lまで。超えた分は申告・課税。</li>
+      </ul>
+    </div>
+    <div class="note-blk">
+      <div class="note-title">🆘 緊急連絡先</div>
+      <ul>
+        <li>緊急（警察・消防・救急）: <strong>911</strong></li>
+        <li>Thrifty ロードサービス: +1-403-221-1806</li>
+        <li>在カルガリー日本総領事館: +1-403-294-0782</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ━━━ TODO ━━━ -->
+<div class="section">
+  <div class="sec-hd mid">☑ やること・未確定事項</div>
+  <div class="sec-body">
+    <div class="tbl-wrap"><table class="todo-tbl">
+      <tr><th>優先度</th><th>タスク</th><th>状態</th></tr>
+      <tr><td>🔴 必須</td><td>ロイヤル・ティレル博物館の事前予約（7/10用）</td><td><span class="badge-need">未</span></td></tr>
+      <tr><td>🔴 必須</td><td>健太郎と空港での合流場所・方法をLINEで確認</td><td><span class="badge-need">未</span></td></tr>
+      <tr><td>🟡 推奨</td><td>バンフ国立公園パス購入（Parks Canada）</td><td><span class="badge-todo">未</span></td></tr>
+      <tr><td>🟡 推奨</td><td>モレーン湖シャトルバスの事前予約</td><td><span class="badge-todo">未</span></td></tr>
+      <tr><td>🟡 推奨</td><td>カルガリー・スタンピード グランドスタンドチケット購入</td><td><span class="badge-todo">未</span></td></tr>
+      <tr><td>🟡 推奨</td><td>帰りのフライト出発時刻（14:50 vs 15:10）を確認</td><td><span class="badge-todo">未</span></td></tr>
+      <tr><td>🟢 余裕があれば</td><td>バンフゴンドラ事前チケット購入（当日より安い）</td><td><span class="badge-done">任意</span></td></tr>
+      <tr><td>🟢 余裕があれば</td><td>Grey Eagle Casino の営業時間・イベント確認</td><td><span class="badge-done">任意</span></td></tr>
+    </table></div>
+  </div>
 
 </div><!-- /tab-info -->
 
@@ -1839,208 +2031,11 @@ tr:nth-child(even) td { background: var(--navy-faint); }
   </div>
 </div>
 
-</div><!-- /tab-spots -->
 
-<!-- ━━━ TAB: 準備 ━━━ -->
-<div class="tab-pane" id="tab-prep">
 
-<!-- ━━━ WEATHER ━━━ -->
-<div class="section">
-  <div class="sec-hd" style="background:linear-gradient(90deg,#1B6A8C,#1B3A5C);">🌡 7月の気温と服装ガイド（7/8〜14）</div>
-  <div class="sec-body">
-
-    <!-- エリア別気温カード -->
-    <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:8px;">📍 エリア別 日中・朝晩の気温</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;">
-
-      <div style="background:#F0F6FF;border-radius:10px;padding:10px 12px;border-top:3px solid #1B3A5C;">
-        <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px;">🏙 Calgary / Okotoks</div>
-        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
-          日中: <strong>24〜27°C</strong><br>
-          朝晩: <strong>11〜13°C</strong><br>
-          <span style="font-size:10px;">快晴が多い・湿気は少ない</span>
-        </div>
-      </div>
-
-      <div style="background:#FFF5EB;border-radius:10px;padding:10px 12px;border-top:3px solid #B85000;">
-        <div style="font-size:12px;font-weight:700;color:#7B3800;margin-bottom:4px;">🦕 ドラムヘラー</div>
-        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
-          日中: <strong>28〜33°C</strong><br>
-          朝晩: <strong>12〜15°C</strong><br>
-          <span style="font-size:10px;">砂漠性気候・炎天下注意</span>
-        </div>
-      </div>
-
-      <div style="background:#EBF5FF;border-radius:10px;padding:10px 12px;border-top:3px solid #2B6CB0;">
-        <div style="font-size:12px;font-weight:700;color:#1B4D8A;margin-bottom:4px;">🏔 バンフ市街（1,383m）</div>
-        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
-          日中: <strong>20〜23°C</strong><br>
-          朝晩: <strong>7〜9°C</strong><br>
-          <span style="font-size:10px;">午後は雷雨リスクあり</span>
-        </div>
-      </div>
-
-      <div style="background:#E8F0FF;border-radius:10px;padding:10px 12px;border-top:3px solid #4A90D9;">
-        <div style="font-size:12px;font-weight:700;color:#1B3A5C;margin-bottom:4px;">💎 Lake Louise（1,731m）</div>
-        <div style="font-size:11px;color:var(--text-mid);line-height:1.6;">
-          日中: <strong>17〜20°C</strong><br>
-          早朝5-7時: <strong>4〜8°C</strong><br>
-          <span style="font-size:10px;">早朝は真冬並みの体感も</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- 服装ガイド -->
-    <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:8px;">👕 シーン別 服装目安</div>
-    <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border-light);margin-bottom:14px;">
-      <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
-        <thead>
-          <tr style="background:var(--navy);color:#fff;">
-            <th style="padding:7px 10px;text-align:left;width:38%;">シーン</th>
-            <th style="padding:7px 10px;text-align:left;">服装</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid var(--border-light);">
-            <td style="padding:7px 10px;color:var(--text-mid);">🌅 早朝バンフ・ルイーズ</td>
-            <td style="padding:7px 10px;">フリース or 薄手ダウン ＋ ウィンドブレーカー（防水）必須。長袖・長ズボン推奨</td>
-          </tr>
-          <tr style="background:var(--navy-faint);border-bottom:1px solid var(--border-light);">
-            <td style="padding:7px 10px;color:var(--text-mid);">☀️ 日中 Calgary / Okotoks</td>
-            <td style="padding:7px 10px;">Tシャツ ＋ ショートパンツでOK。夜は1枚羽織ると◎</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border-light);">
-            <td style="padding:7px 10px;color:var(--text-mid);">🦕 ドラムヘラー（D3）</td>
-            <td style="padding:7px 10px;">軽装でOKだが<strong>帽子・日焼け止め必須</strong>。日差しが強烈。水2L以上を携行</td>
-          </tr>
-          <tr style="background:var(--navy-faint);border-bottom:1px solid var(--border-light);">
-            <td style="padding:7px 10px;color:var(--text-mid);">💍 結婚式（D4）</td>
-            <td style="padding:7px 10px;">スーツ・ネクタイ・革靴。式場は屋外の可能性あり → 日差し対策を</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border-light);">
-            <td style="padding:7px 10px;color:var(--text-mid);">🎰 カジノ（D1夜）</td>
-            <td style="padding:7px 10px;">カジュアルOK（ジーンズ・スニーカー可）。空調が効いてるので1枚羽織ると◎</td>
-          </tr>
-          <tr>
-            <td style="padding:7px 10px;color:var(--text-mid);">🌧 雨・雷雨対策（全日）</td>
-            <td style="padding:7px 10px;">軽量<strong>レインジャケット</strong>を1枚バックパックに常備。山の午後は急変する</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- 必携アイテム -->
-    <div class="notice info" style="font-size:11.5px;">
-      🎒 <strong>バンフ早朝アタック必携セット：</strong>
-      フリース or 薄手ダウン / 防水ウィンドブレーカー / 手袋（薄手） / ニット帽（念のため） / 水 / 日焼け止め
-    </div>
-
-  </div>
-</div>
-
-<!-- ━━━ PACKING ━━━ -->
-<div class="section">
-  <div class="sec-hd">🧳 持ち物リスト</div>
-  <div class="sec-body">
-    <ul class="chk-list">
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>パスポート（有効期限6ヶ月以上）</li>
-      <li class="chk-item"><input type="checkbox" checked><span class="chk-cat">書類</span>国際運転免許証（IDP）✅ 取得済み</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>eチケット控え・搭乗券</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>レンタカーバウチャー</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>Airbnb確認書（チェックインコード）</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">書類</span>クレジットカード（VISA/Mastercard・番号印字あり）</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>スーツ・ネクタイ・革靴（結婚式 7/11用）</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>カジノ・パーティ用の少し小綺麗な服</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>普段着（Tシャツ・パンツ 6日分）</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>アウトドア用ジャケット（バンフ・ドラムヘラー用）</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">衣類</span>歩きやすいスニーカー</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">手土産</span>レモンサワー缶 / 日本のお菓子（ポッキー・抹茶Kit Kat等）</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">デジタル</span>eSIM設定済みスマートフォン</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">デジタル</span>モバイルバッテリー</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">デジタル</span>オフラインマップDL（Googleマップ / Maps.me）</li>
-      <li class="chk-item"><input type="checkbox" checked><span class="chk-cat">デジタル</span>変換プラグ — 不要（カナダはType A = 日本と同規格）✅</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>日焼け止め・リップクリーム（7月の日差しは強烈）</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>サングラス・帽子</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>虫除けスプレー（ハイキング・湖畔用）</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>常備薬・胃薬・鎮痛剤</li>
-      <li class="chk-item"><input type="checkbox"><span class="chk-cat">その他</span>現金（CAD）── 少額でOK。カードが主流。</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ━━━ NOTES ━━━ -->
-<div class="section">
-  <div class="sec-hd red-hd">⚠ 注意事項・現地マナー</div>
-  <div class="sec-body">
-    <div class="note-blk">
-      <div class="note-title">🚗 運転</div>
-      <ul>
-        <li>右側通行（日本と逆）。慣れるまでは特に左折・駐車場の出入り口に注意。</li>
-        <li>フリーウェイの制限速度は110km/h。スクールゾーン・住宅街は30km/h厳守。</li>
-        <li>赤信号でも一時停止後に右折可能（カナダ全域・ケベック州を除く）。</li>
-        <li>他のメンバーが運転する場合、レンタカー受け取り時に追加ドライバー登録が必要。</li>
-      </ul>
-    </div>
-    <div class="note-blk">
-      <div class="note-title">💳 お金・チップ</div>
-      <ul>
-        <li>レストランのチップは合計の15〜20%が目安（テーブルサービスの場合）。</li>
-        <li>カジノはチップ不要だが、飲み物サービスには$1〜2渡すのがマナー。</li>
-        <li>GST（消費税）5%が価格に別途加算される。表示価格より高くなるので注意。</li>
-        <li>クレジットカードが主流。現金は少額だけ持てば十分。</li>
-      </ul>
-    </div>
-    <div class="note-blk">
-      <div class="note-title">🏔 バンフ国立公園</div>
-      <ul>
-        <li>入場には Parks Canada のパスが必要（$22前後/日 or $75.25/人 年間パス）。</li>
-        <li>野生動物（ムース・エルク・クマ）に遭遇したら車内に留まり絶対に近づかない。</li>
-        <li>湖畔でのBBQ・直火は禁止エリア多数。ゴミは必ず持ち帰り。</li>
-        <li>モレーン湖はシャトルバスが必要（事前予約・売り切れ注意）。</li>
-      </ul>
-    </div>
-    <div class="note-blk">
-      <div class="note-title">📋 入国・税関</div>
-      <ul>
-        <li>ArriveCAN アプリによる事前申告は不要になったが、税関申告書は機内で記入。</li>
-        <li>肉類・果物・野菜の持ち込みは申告が必要（持ち込み不可の場合あり）。</li>
-        <li>アルコールの免税持ち込みは1人あたり1.14Lまで。超えた分は申告・課税。</li>
-      </ul>
-    </div>
-    <div class="note-blk">
-      <div class="note-title">🆘 緊急連絡先</div>
-      <ul>
-        <li>緊急（警察・消防・救急）: <strong>911</strong></li>
-        <li>Thrifty ロードサービス: +1-403-221-1806</li>
-        <li>在カルガリー日本総領事館: +1-403-294-0782</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- ━━━ TODO ━━━ -->
-<div class="section">
-  <div class="sec-hd mid">☑ やること・未確定事項</div>
-  <div class="sec-body">
-    <div class="tbl-wrap"><table class="todo-tbl">
-      <tr><th>優先度</th><th>タスク</th><th>状態</th></tr>
-      <tr><td>🔴 必須</td><td>ロイヤル・ティレル博物館の事前予約（7/10用）</td><td><span class="badge-need">未</span></td></tr>
-      <tr><td>🔴 必須</td><td>健太郎と空港での合流場所・方法をLINEで確認</td><td><span class="badge-need">未</span></td></tr>
-      <tr><td>🟡 推奨</td><td>バンフ国立公園パス購入（Parks Canada）</td><td><span class="badge-todo">未</span></td></tr>
-      <tr><td>🟡 推奨</td><td>モレーン湖シャトルバスの事前予約</td><td><span class="badge-todo">未</span></td></tr>
-      <tr><td>🟡 推奨</td><td>カルガリー・スタンピード グランドスタンドチケット購入</td><td><span class="badge-todo">未</span></td></tr>
-      <tr><td>🟡 推奨</td><td>帰りのフライト出発時刻（14:50 vs 15:10）を確認</td><td><span class="badge-todo">未</span></td></tr>
-      <tr><td>🟢 余裕があれば</td><td>バンフゴンドラ事前チケット購入（当日より安い）</td><td><span class="badge-done">任意</span></td></tr>
-      <tr><td>🟢 余裕があれば</td><td>Grey Eagle Casino の営業時間・イベント確認</td><td><span class="badge-done">任意</span></td></tr>
-    </table></div>
-  </div>
-</div>
-
-</div><!-- /tab-prep -->
-
-<!-- ━━━ TAB: カジノ ━━━ -->
-<div class="tab-pane" id="tab-casino">
+<!-- ━━━ カジノ（スポットタブ内）━━━ -->
+<div class="section" style="margin-top:12px;">
+  <div class="sec-hd gold-hd" style="background:linear-gradient(90deg,#1B3A5C,#7B2000);">🎰 Grey Eagle Casino — カジノ完全ガイド</div>
 <div class="section">
   <div class="sec-hd" style="background:linear-gradient(90deg,#0D1F33,#5A2D00);letter-spacing:.5px;">🎰 Grey Eagle カジノ ── カナダの夜に全力を置け</div>
   <div class="sec-body">
@@ -2257,8 +2252,13 @@ tr:nth-child(even) td { background: var(--navy-faint); }
     </div>
 
   </div>
+
 </div>
-</div><!-- /tab-casino -->
+</div><!-- /tab-spots -->
+
+
+
+
 
 
 <!-- ━━━ TAB: 英語フレーズ ━━━ -->
@@ -2484,10 +2484,9 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 
   </div>
 </div>
-</div><!-- /tab-morning -->
 
-<!-- ━━━ TAB: 体験記 ━━━ -->
-<div class="tab-pane" id="tab-reports">
+
+<!-- ━━━ 体験記（読み物タブ内）━━━ -->
 
 <div class="section">
   <div class="sec-hd mid">🏔 バンフ・早朝観光 体験記</div>
@@ -2602,9 +2601,10 @@ tr:nth-child(even) td { background: var(--navy-faint); }
     </div>
 
   </div>
-</div>
 
-</div><!-- /tab-reports -->
+</div><!-- /tab-morning -->
+
+
 
 <div class="footer">🍁 カナダ旅行プラン 2026　／　7月8日〜14日　／　4名　／　Okotoks, Alberta</div>
 
