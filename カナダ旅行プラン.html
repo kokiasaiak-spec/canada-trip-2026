@@ -775,6 +775,64 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 <div class="section">
   <div class="sec-hd">📅 旅行プラン — ドラムヘラー &amp; バンフ（D3・D5 に選択あり）</div>
   <div class="sec-body">
+    <!-- ── D1〜D7 サマリー ── -->
+    <div style="overflow-x:auto;margin-bottom:18px;border-radius:10px;overflow:hidden;border:1px solid var(--border-light);">
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+        <thead>
+          <tr style="background:var(--navy);color:#fff;">
+            <th style="padding:8px 10px;text-align:center;white-space:nowrap;">Day</th>
+            <th style="padding:8px 10px;text-align:left;white-space:nowrap;">日付</th>
+            <th style="padding:8px 10px;text-align:left;">メイン</th>
+            <th style="padding:8px 10px;text-align:center;white-space:nowrap;">泊</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#fff;">
+            <td style="padding:7px 10px;text-align:center;font-weight:800;color:var(--navy);">D1</td>
+            <td style="padding:7px 10px;white-space:nowrap;color:var(--text-mid);">7/8（水）</td>
+            <td style="padding:7px 10px;">🛬 YYC 到着・カジノ</td>
+            <td style="padding:7px 10px;text-align:center;white-space:nowrap;color:var(--text-mid);">Okotoks</td>
+          </tr>
+          <tr style="background:#F5F7FA;">
+            <td style="padding:7px 10px;text-align:center;font-weight:800;color:var(--navy);">D2</td>
+            <td style="padding:7px 10px;white-space:nowrap;color:var(--text-mid);">7/9（木）</td>
+            <td style="padding:7px 10px;">🎉 ホームパーティ・スタンピード</td>
+            <td style="padding:7px 10px;text-align:center;white-space:nowrap;color:var(--text-mid);">Okotoks</td>
+          </tr>
+          <tr style="background:#fff;">
+            <td style="padding:7px 10px;text-align:center;font-weight:800;color:var(--navy);">D3</td>
+            <td style="padding:7px 10px;white-space:nowrap;color:var(--text-mid);">7/10（金）</td>
+            <td style="padding:7px 10px;">🦕 ドラムヘラー・健太郎合流</td>
+            <td style="padding:7px 10px;text-align:center;white-space:nowrap;color:var(--text-mid);">Okotoks</td>
+          </tr>
+          <tr style="background:#F5F7FA;">
+            <td style="padding:7px 10px;text-align:center;font-weight:800;color:var(--navy);">D4</td>
+            <td style="padding:7px 10px;white-space:nowrap;color:var(--text-mid);">7/11（土）</td>
+            <td style="padding:7px 10px;">💍 なつき結婚式</td>
+            <td style="padding:7px 10px;text-align:center;white-space:nowrap;color:var(--text-mid);">Okotoks</td>
+          </tr>
+          <tr style="background:#FFF8E1;">
+            <td style="padding:7px 10px;text-align:center;font-weight:800;color:var(--navy);">D5</td>
+            <td style="padding:7px 10px;white-space:nowrap;color:var(--text-mid);">7/12（日）</td>
+            <td style="padding:7px 10px;">🤝 なつきと遊ぶ <span style="font-size:10px;background:#F9A825;color:#fff;border-radius:4px;padding:1px 6px;margin-left:4px;">D5夜の宿 要決定</span></td>
+            <td style="padding:7px 10px;text-align:center;white-space:nowrap;font-weight:700;color:#7a5800;">要決定</td>
+          </tr>
+          <tr style="background:#E3F2FD;">
+            <td style="padding:7px 10px;text-align:center;font-weight:800;color:var(--navy);">D6</td>
+            <td style="padding:7px 10px;white-space:nowrap;color:var(--text-mid);">7/13（月）</td>
+            <td style="padding:7px 10px;">🏔 早朝バンフ・健太郎帰国 <span style="font-size:10px;background:#1565C0;color:#fff;border-radius:4px;padding:1px 6px;margin-left:4px;">モレーン湖 or フリー</span></td>
+            <td style="padding:7px 10px;text-align:center;white-space:nowrap;color:var(--text-mid);">Okotoks</td>
+          </tr>
+          <tr style="background:#F5F7FA;">
+            <td style="padding:7px 10px;text-align:center;font-weight:800;color:var(--navy);">D7</td>
+            <td style="padding:7px 10px;white-space:nowrap;color:var(--text-mid);">7/14（火）</td>
+            <td style="padding:7px 10px;">✈ 3名 YYC 出発・帰国</td>
+            <td style="padding:7px 10px;text-align:center;white-space:nowrap;color:var(--text-mid);">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <!-- Day 1 -->
     <div class="day-card">
       <div class="day-hd">
@@ -952,134 +1010,57 @@ tr:nth-child(even) td { background: var(--navy-faint); }
 
         <!-- ── 分岐ヘッダー ── -->
         <div style="margin:14px 0 10px;background:linear-gradient(90deg,var(--navy),#2C5282);border-radius:10px;padding:10px 14px;color:#fff;">
-          <div style="font-size:11px;font-weight:800;letter-spacing:0.5px;opacity:0.75;margin-bottom:3px;">9:30以降 ▸ 3名の選択肢</div>
-          <div style="font-size:13px;font-weight:800;">どこに行く？ここが最大の分岐点</div>
+          <div style="font-size:13px;font-weight:800;">9:30以降 ▸ 3名の選択肢</div>
         </div>
 
-        <!-- ── 判断キー ── -->
-        <div style="background:#FFF8E1;border-radius:10px;padding:10px 14px;margin-bottom:12px;border-left:4px solid #F9A825;font-size:11.5px;line-height:1.65;">
-          <div style="font-weight:800;color:#7a5800;margin-bottom:5px;">🔑 判断のポイント</div>
-          <div style="color:#5a4000;">
-            <div style="margin-bottom:3px;">① <strong>モレーン湖シャトルの事前予約が取れているか？</strong><br><span style="font-size:10.5px;opacity:0.8;">→ 取れてる → 迷わずモレーン湖へ　/　取れてない → 以下から選択</span></div>
-            <div style="margin-bottom:3px;">② <strong>体力・疲れ具合</strong>（5:30起き + 移動済み）<br><span style="font-size:10.5px;opacity:0.8;">→ 元気 → どこでも可　/　消耗気味 → バンフゴンドラ or バンフ散策</span></div>
-            <div>③ <strong>景色 vs 体験</strong>どちらを優先するか<br><span style="font-size:10.5px;opacity:0.8;">→ 景色 → モレーン湖　/　体験 → Johnston Canyon or ゴンドラ</span></div>
-          </div>
-        </div>
-
-        <!-- ── 選択肢カード ── -->
-
-        <!-- 選択肢①: モレーン湖 -->
+        <!-- 選択肢 A: モレーン湖 -->
         <div style="border-radius:12px;border:2px solid #2196F3;overflow:hidden;margin-bottom:10px;">
           <div style="background:#1565C0;color:#fff;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;">
-            <div style="font-weight:800;font-size:13px;">🌊 モレーン湖</div>
-            <div style="display:flex;gap:5px;">
-              <span style="background:rgba(255,200,0,0.3);border-radius:20px;padding:2px 8px;font-size:10px;font-weight:700;">事前予約必須</span>
-              <span style="background:rgba(255,255,255,0.15);border-radius:20px;padding:2px 8px;font-size:10px;">CA$12.75/人</span>
-            </div>
+            <div style="font-weight:800;font-size:13px;">🌊 A. モレーン湖</div>
+            <span style="background:rgba(255,200,0,0.35);border-radius:20px;padding:2px 10px;font-size:10px;font-weight:700;">シャトル事前予約が取れた場合</span>
           </div>
           <div style="padding:10px 14px;background:#E3F2FD;">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;margin-bottom:8px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;margin-bottom:10px;">
               <div style="background:#fff;border-radius:8px;padding:8px 10px;">
                 <div style="font-weight:800;color:#1565C0;margin-bottom:4px;">✅ Good</div>
-                <div style="color:#1a3a6a;line-height:1.6;">カナダ最高峰の絶景<br>Lake Louiseと全く別の景色<br>Valley of Ten Peaks<br>一生に一度レベル</div>
+                <div style="color:#1a3a6a;line-height:1.6;">カナダ最高峰クラスの絶景<br>Lake Louiseと全く別の景色<br>Valley of Ten Peaks<br>一生に一度レベル</div>
               </div>
               <div style="background:#fff;border-radius:8px;padding:8px 10px;">
                 <div style="font-weight:800;color:#c62828;margin-bottom:4px;">✗ Bad</div>
-                <div style="color:#5a1a1a;line-height:1.6;">シャトル予約なし→行けない<br>バンフから往復1h40分<br>到着11時=混雑ピーク<br>バス↔LL 2往復の運転疲れ</div>
+                <div style="color:#5a1a1a;line-height:1.6;">シャトル予約なし→行けない<br>バンフから往復1h40分<br>早起き後の長距離移動<br>10時以降は混雑ピーク</div>
               </div>
             </div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:10.5px;">
+            <!-- 予約手順 -->
+            <div style="background:#fff;border-radius:8px;padding:10px 12px;border-left:3px solid #1565C0;font-size:11px;line-height:1.7;">
+              <div style="font-weight:800;color:#1565C0;margin-bottom:6px;">🎫 シャトルバスの予約方法</div>
+              <div style="color:#1a3a6a;">
+                <div style="margin-bottom:4px;"><strong>予約サイト:</strong> <a href="https://reservation.pc.gc.ca/" target="_blank" style="color:#1565C0;font-weight:700;">reservation.pc.gc.ca</a>（Parks Canada 公式）</div>
+                <div style="margin-bottom:4px;"><strong>手順:</strong> サイト内で「Banff National Park」→「Moraine Lake Shuttle」を選択 → 日付・便・人数を指定して決済</div>
+                <div style="margin-bottom:4px;"><strong>料金:</strong> 往復 CA$25.50/人（片道 CA$12.75）× 3名 + 予約手数料 CA$3.50 ＝ 約 CA$80</div>
+                <div style="margin-bottom:4px;"><strong>早朝便が狙い目:</strong> 6:30〜8:30発の便は混雑が少ない。10時以降の便は湖が混み始める</div>
+                <div style="color:#c62828;font-weight:700;">⚠ 人気が高く早期完売。旅行の数週間前には予約を</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:10.5px;margin-top:8px;">
               <span style="background:#BBDEFB;border-radius:6px;padding:3px 9px;">⏱ 合計4〜5時間</span>
               <span style="background:#BBDEFB;border-radius:6px;padding:3px 9px;">🚗 バンフから50分</span>
-              <span style="background:#BBDEFB;border-radius:6px;padding:3px 9px;">🚌 シャトル往復 CA$12.75+CA$3.50</span>
-              <a href="https://reservation.pc.gc.ca/" target="_blank" style="background:#1565C0;color:#fff;border-radius:6px;padding:3px 9px;text-decoration:none;font-weight:700;">📋 Parks Canada予約</a>
             </div>
           </div>
         </div>
 
-        <!-- 選択肢②: Johnston Canyon -->
-        <div style="border-radius:12px;border:2px solid #43A047;overflow:hidden;margin-bottom:10px;">
-          <div style="background:#2E7D32;color:#fff;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;">
-            <div style="font-weight:800;font-size:13px;">🏞 Johnston Canyon ハイク</div>
-            <div style="display:flex;gap:5px;">
-              <span style="background:rgba(255,255,255,0.25);border-radius:20px;padding:2px 8px;font-size:10px;font-weight:700;">予約不要</span>
-              <span style="background:rgba(255,255,255,0.15);border-radius:20px;padding:2px 8px;font-size:10px;">国立公園パスのみ</span>
-            </div>
+        <!-- 選択肢 B: フリープラン -->
+        <div style="border-radius:12px;border:2px solid #78909C;overflow:hidden;margin-bottom:10px;">
+          <div style="background:#546E7A;color:#fff;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;">
+            <div style="font-weight:800;font-size:13px;">🗺 B. フリープラン</div>
+            <span style="background:rgba(255,255,255,0.2);border-radius:20px;padding:2px 10px;font-size:10px;font-weight:700;">予約不要・当日気分で決める</span>
           </div>
-          <div style="padding:10px 14px;background:#E8F5E9;">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;margin-bottom:8px;">
-              <div style="background:#fff;border-radius:8px;padding:8px 10px;">
-                <div style="font-weight:800;color:#2E7D32;margin-bottom:4px;">✅ Good</div>
-                <div style="color:#1a3a1a;line-height:1.6;">予約一切不要<br>追加費用ゼロ<br>渓谷の桟橋ハイク<br>全く別の体験・絵になる<br>バンフから近い</div>
-              </div>
-              <div style="background:#fff;border-radius:8px;padding:8px 10px;">
-                <div style="font-weight:800;color:#c62828;margin-bottom:4px;">✗ Bad</div>
-                <div style="color:#5a1a1a;line-height:1.6;">「湖」の絶景感はない<br>9時以降は混みやすい<br>多少ハイキング必要<br>（Lower Falls: 往復2.4km）</div>
-              </div>
-            </div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:10.5px;">
-              <span style="background:#C8E6C9;border-radius:6px;padding:3px 9px;">⏱ 2〜3時間</span>
-              <span style="background:#C8E6C9;border-radius:6px;padding:3px 9px;">🚗 バンフから25分</span>
-              <span style="background:#C8E6C9;border-radius:6px;padding:3px 9px;">💰 追加費用なし</span>
-              <a href="https://www.google.com/maps/search/?api=1&query=Johnston+Canyon+Banff+Alberta" target="_blank" style="background:#2E7D32;color:#fff;border-radius:6px;padding:3px 9px;text-decoration:none;font-weight:700;">📍 地図</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 選択肢③: バンフゴンドラ -->
-        <div style="border-radius:12px;border:2px solid #FB8C00;overflow:hidden;margin-bottom:10px;">
-          <div style="background:#E65100;color:#fff;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;">
-            <div style="font-weight:800;font-size:13px;">🚡 バンフゴンドラ（サルファー山）</div>
-            <div style="display:flex;gap:5px;">
-              <span style="background:rgba(255,255,255,0.2);border-radius:20px;padding:2px 8px;font-size:10px;font-weight:700;">事前予約推奨</span>
-              <span style="background:rgba(255,255,255,0.15);border-radius:20px;padding:2px 8px;font-size:10px;">CA$89.95〜/人</span>
-            </div>
-          </div>
-          <div style="padding:10px 14px;background:#FFF3E0;">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;margin-bottom:8px;">
-              <div style="background:#fff;border-radius:8px;padding:8px 10px;">
-                <div style="font-weight:800;color:#E65100;margin-bottom:4px;">✅ Good</div>
-                <div style="color:#3a1a00;line-height:1.6;">バンフ市内から10分<br>体力不要（ゴンドラ）<br>山頂360度パノラマ<br>Lake Louiseとは全く別の視点<br>最終日の締めくくりに◎</div>
-              </div>
-              <div style="background:#fff;border-radius:8px;padding:8px 10px;">
-                <div style="font-weight:800;color:#c62828;margin-bottom:4px;">✗ Bad</div>
-                <div style="color:#5a1a1a;line-height:1.6;">CA$89.95〜と高め<br>混雑する（観光地）<br>人工的な体験<br>当日券は高い・事前予約推奨</div>
-              </div>
-            </div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:10.5px;">
-              <span style="background:#FFE0B2;border-radius:6px;padding:3px 9px;">⏱ 2〜3時間</span>
-              <span style="background:#FFE0B2;border-radius:6px;padding:3px 9px;">🚗 バンフから10分</span>
-              <span style="background:#FFE0B2;border-radius:6px;padding:3px 9px;">💰 CA$89.95〜/人（変動制）</span>
-              <a href="https://www.banffjaspercollection.com/attractions/banff-gondola" target="_blank" style="background:#E65100;color:#fff;border-radius:6px;padding:3px 9px;text-decoration:none;font-weight:700;">🎫 事前予約</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 選択肢④: Lake Minnewanka -->
-        <div style="border-radius:12px;border:2px solid #8E24AA;overflow:hidden;margin-bottom:10px;">
-          <div style="background:#6A1B9A;color:#fff;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;">
-            <div style="font-weight:800;font-size:13px;">⛵ Lake Minnewanka クルーズ</div>
-            <div style="display:flex;gap:5px;">
-              <span style="background:rgba(255,255,255,0.2);border-radius:20px;padding:2px 8px;font-size:10px;font-weight:700;">事前予約推奨</span>
-              <span style="background:rgba(255,255,255,0.15);border-radius:20px;padding:2px 8px;font-size:10px;">CA$65〜/人</span>
-            </div>
-          </div>
-          <div style="padding:10px 14px;background:#F3E5F5;">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;margin-bottom:8px;">
-              <div style="background:#fff;border-radius:8px;padding:8px 10px;">
-                <div style="font-weight:800;color:#6A1B9A;margin-bottom:4px;">✅ Good</div>
-                <div style="color:#2a0a3a;line-height:1.6;">バンフから20分<br>クルーズで体力不要<br>氷河湖の穏やかな景色<br>観光地感が少なく落ち着く<br>旅の締めくくりに合う</div>
-              </div>
-              <div style="background:#fff;border-radius:8px;padding:8px 10px;">
-                <div style="font-weight:800;color:#c62828;margin-bottom:4px;">✗ Bad</div>
-                <div style="color:#5a1a1a;line-height:1.6;">Lake Louiseほどの感動度は低い<br>便が決まっている<br>CA$65〜と意外と高め<br>知名度低くメンバーのテンション上がりにくいかも</div>
-              </div>
-            </div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:10.5px;">
-              <span style="background:#E1BEE7;border-radius:6px;padding:3px 9px;">⏱ 2〜3時間（クルーズ1.5h）</span>
-              <span style="background:#E1BEE7;border-radius:6px;padding:3px 9px;">🚗 バンフから20分</span>
-              <span style="background:#E1BEE7;border-radius:6px;padding:3px 9px;">💰 CA$65〜/人</span>
-              <a href="https://www.google.com/maps/search/?api=1&query=Lake+Minnewanka+Banff+Alberta" target="_blank" style="background:#6A1B9A;color:#fff;border-radius:6px;padding:3px 9px;text-decoration:none;font-weight:700;">📍 地図</a>
+          <div style="padding:10px 14px;background:#ECEFF1;font-size:11.5px;line-height:1.7;color:#37474F;">
+            <div style="margin-bottom:8px;">モレーン湖のシャトルが取れなかった場合 or もうゆっくりしたい場合。バンフ周辺で適当に過ごす。</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="background:#fff;border-radius:8px;padding:8px 12px;">🏞 <strong>Johnston Canyon ハイク</strong>（バンフから25分・予約不要・追加費用なし）— 渓谷沿いの桟橋ハイク、気軽に楽しめる</div>
+              <div style="background:#fff;border-radius:8px;padding:8px 12px;">🚡 <strong>バンフゴンドラ</strong>（バンフから10分・CA$89.95〜）— 体力不要、山頂360度パノラマ。事前購入が安い</div>
+              <div style="background:#fff;border-radius:8px;padding:8px 12px;">⛵ <strong>Lake Minnewanka クルーズ</strong>（バンフから20分・CA$65〜）— 氷河湖のボートクルーズ1.5時間、のんびり系</div>
+              <div style="background:#fff;border-radius:8px;padding:8px 12px;">🛍 <strong>バンフ市街を散策・土産まとめ買い</strong> — Banff Ave で買い物、カフェ、ランチ。疲れてたらこれでOK</div>
             </div>
           </div>
         </div>
